@@ -6,6 +6,56 @@
 .swimming-table td {
   padding: 8px;
   text-align: center;
+  border: 1px solid #116cac;
+}
+
+.sidebar {
+  background-color: #f2f2f2;
+  padding: 20px;
+  float: left;
+  width: 150px;
+  height: 100vh;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sidebar button {
+  background-color: #1e51a4;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sidebar {
+  float: left;
+  width: 20%;
+  margin-right: 20px;
+}
+
+.swimming-table {
+  float: right;
+  width: 70%;
+  border-collapse: collapse;
+}
+
+.swimming-table td, .swimming-table th {
+  padding: 8px;
+  text-align: center;
   border: 1px solid #ddd;
+}
+
+.swimming-table thead {
+  background-color: #f2f2f2;
+}
+
+.swimming-table tr:hover {
+  background-color: #ddd;
 }
 
