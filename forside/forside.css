@@ -1,16 +1,9 @@
-.sidebar {
-  background-color: #f2f2f2;
-  padding: 1.25rem;
-  float: left;
-  width: 12%;
-  height: 100vh;
-  margin-right: 0.5rem;
-  z-index: 2;
-  justify-content: flex-start;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+body {
+  font-family: "Hind Guntur", sans-serif;
+}
+
+h1 {
+  font-family: "Delius Swash Caps", cursive;
 }
 
 .sidebar {
@@ -69,14 +62,11 @@
   text-align: center;
 }
 
-
-
 .swimming-table {
   float: right;
   width: 50%;
   top: 15%;
   left: 25%;
-
   position: fixed;
 }
 
