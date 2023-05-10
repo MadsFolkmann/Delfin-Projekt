@@ -1,0 +1,33 @@
+{
+"member":{
+"id":{
+"name": "name",
+"age": 21,
+"activity": "Active",
+"membership": "membership",
+"about": "biografi",
+"gender": "male",
+"disciplin": "disciplin",
+"competition": {uid},
+"training": {uid},
+"trainer": {uid},
+}
+},
+"results-convention": {
+"id":{
+"time": 10,
+"date": "date",
+"placement": 10
+}
+},
+"results-training":{
+"time": 10,
+"date": "date"
+},
+"trainer": {
+"name": "name",
+"age": 21,
+"disciplin": "disciplin",
+"training": {uid}, {uid},
+}
+}
