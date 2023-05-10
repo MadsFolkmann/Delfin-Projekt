@@ -179,5 +179,11 @@
             "disciplin": "Rygcrawl",
             "training": ["member_uid_3"]
         }
-     }
+     },
+     "login":{
+        "user1": {
+            "username": "admin",
+            "password": "test123"
+        }
+    }
 }
