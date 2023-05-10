@@ -32,3 +32,16 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+
+
+body {
+  font-family: 'Caudex', serif;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.sidebar button {
+  font-family: 'Crimson Text', serif;
+}

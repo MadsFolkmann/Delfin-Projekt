@@ -1,9 +1,13 @@
 body {
-  font-family: "Hind Guntur", sans-serif;
+  font-family: 'Caudex', serif;
 }
 
 h1 {
-  font-family: "Delius Swash Caps", cursive;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.sidebar button {
+  font-family: 'Crimson Text', serif;
 }
 
 .sidebar {
@@ -19,12 +23,14 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
+  
 }
 
 .sidebar a {
   display: block;
   margin-bottom: 1rem;
   text-decoration: none;
+  
 }
 
 .sidebar button {
@@ -37,6 +43,7 @@ h1 {
   font-size: 1.3rem;
   cursor: pointer;
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+
 }
 
 .sidebar button.forside {
@@ -56,10 +63,13 @@ h1 {
   width: 100%;
   height: 50%;
   background-color: #1e51a4;
+  
 }
 
 .header {
   text-align: center;
+  color:#000000;
+ 
 }
 
 .swimming-table {
@@ -70,15 +80,10 @@ h1 {
   position: fixed;
 }
 
-.swimming-table td,
-.swimming-table th {
-  padding: 0.5rem;
-  text-align: center;
-  border: 0.0625rem solid #ddd;
-}
+
 
 .swimming-table thead {
-  background-color: #f2f2f2;
+  background-color: #4db6ac;
 }
 
 .swimming-table tr:hover {
@@ -98,3 +103,41 @@ h1 {
   font-weight: bold;
   width: 1rem;
 }
+
+
+		table.medlemmer {
+      float: right;
+      width: 20%;
+      top: 50%;
+      left: 25%;
+      position: fixed;
+		}
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border: 1px solid #ddd;
+		}
+	
+
+    table.betaling {
+      float: right;
+      width: 20%;
+      top: 50%;
+      left:55%;
+      position: fixed;
+		}
+		th, td {
+			text-align: center;
+			padding: 8px;
+			border: 1px solid #ddd;
+		}
+
+    .medlemmer thead {
+      background-color: #4db6ac;
+    }
+
+    
+    .betaling thead {
+      background-color: #4db6ac;
+    }
+    
