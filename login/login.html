@@ -5,17 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SDF</title>
+    <link rel="stylesheet" href="loginAnimations.css" />
     <link rel="stylesheet" href="login.css" />
   </head>
+
   <body>
-    <h1>LOGIN:🗝</h1>
-    <div class="container">
-      <h2>Login 🔒</h2>
-      <form>
-        <input type="text" placeholder="👤 Brugernavn" name="brugernavn" required />
-        <input type="password" placeholder="🔑 Kodeord" name="kodeord" required />
-        <input type="submit" value="Log ind" />
-      </form>
+    <div class="animation-container">
+      <div class="water"></div>
+      <img class="dolphin" src="Pictures/dolphin-7036679_1280.webp" id="Dolphin1" alt="Dolphin" />
+      <img class="dolphin" src="Pictures/dolphin-7036679_1280.webp" id="Dolphin2" alt="Dolphin" />
+      <img class="dolphin" src="Pictures/dolphin-7036679_1280.webp" id="Dolphin3" alt="Dolphin" />
+      <img class="dolphin" src="Pictures/dolphin-7036679_1280.webp" id="Dolphin4" alt="Dolphin" />
+
+      <header></header>
+
+      <div class="container">
+        <img src="Pictures/logo.png" alt="logo" id="logo" />
+        <h2>Login 🔒</h2>
+        <form>
+          <input type="text" placeholder="👤 Brugernavn" name="brugernavn" required />
+          <input type="password" placeholder="🔑 Kodeord" name="kodeord" id="password-input" required />
+          <button onclick="togglePassword()" id="button">Vis/Skjul🤫</button>
+          <input type="submit" value="Log ind 🔐" />
+        </form>
+        <!-- <div class="bubble-container">
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+        </div> -->
+      </div>
     </div>
+
+    <footer><div class="footer">&copy; 2023 AEMO. Alle rettigheder forbeholdes AEMO.</div></footer>
+
+    <script src="login.js"></script>
   </body>
 </html>
+
+<!-- <div class="footer"><img src="Pictures/logo.png" alt="logo" id="logo-img" /></div> -->
