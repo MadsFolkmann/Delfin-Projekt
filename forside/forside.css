@@ -6,6 +6,9 @@ h1 {
   font-family: "Libre Baskerville", serif;
 }
 
+
+/* ------------------Sidebar---------------------- */
+
 .sidebar button {
   font-family: "Crimson Text", serif;
 }
@@ -31,6 +34,17 @@ h1 {
   text-decoration: none;
 }
 
+
+.sidebar button.forside {
+  background-color: #1e51a4;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
 .sidebar button {
   background-color: #e0f2f1;
   color: #1e51a4;
@@ -43,29 +57,21 @@ h1 {
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
 }
 
-.sidebar button.forside {
-  background-color: #1e51a4;
-  color: #fff;
-  font-size: 2.2rem;
-  padding: 0.5rem;
-  text-align: center;
-  border-radius: 50%;
-  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+.sidebar button:hover {
+  box-shadow: 0 0.50rem 0.50em rgba(0, 0, 0, 0.3);
+}
+.log-ud {
+  margin-top: 55vh;
 }
 
-.swimming-pool {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: #1e51a4;
-}
+/* ---------------------Main content------------------- */
 
 .header {
   text-align: center;
   color: #000000;
 }
+
+/*---Tables---*/
 
 .swimming-table {
   float: right;
@@ -97,10 +103,6 @@ h1 {
   width: 1rem;
 }
 
-.log-ud {
-  margin-top: 55vh;
-  align-items: ce;
-}
 
 table.medlemmer {
   float: right;
