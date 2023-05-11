@@ -34,9 +34,11 @@ td {
   border: 1px solid #DDD;
 }
 
-/* Stilarter til navigationen */
+.sidebar button {
+  font-family: 'Crimson Text', serif;
+}
 
-nav {
+.sidebar {
   background-color: #4db6ac;
   padding: 1.25rem;
   float: left;
@@ -49,36 +51,13 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0;
-}
-
-nav a {
+.sidebar a {
   display: block;
   margin-bottom: 1rem;
   text-decoration: none;
-}
-
-nav a:hover {
-  background-color: #666;
-}
-
-.sidebar button.forside {
-  background-color: #1e51a4;
-  color: #fff;
-  font-size: 2.2rem;
-  padding: 0.5rem;
-  text-align: center;
-  border-radius: 50%;
-  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
 }
 
 .sidebar button {
@@ -91,8 +70,18 @@ nav a:hover {
   font-size: 1.3rem;
   cursor: pointer;
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+
 }
 
+.sidebar button.forside {
+  background-color: #1e51a4;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+}
 
 table {
   border-collapse: separate;
