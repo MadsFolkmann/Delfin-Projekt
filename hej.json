@@ -9,30 +9,60 @@
       "about": "example",
       "gender": "male",
       "disciplin": "alle muligheder = rygcrawl, brystsvømning, butterfly, crawl",
-      "competition": ["competition_uid_1"] (hvis konkurrencesvømmer), 
-      "training": ["training_uid_1"] (hvis konkurrencesvømmer),
-      "trainer": ["trainer_uid_1"](hvis konkurrencesvømmer)
+      "trainer": "yes, no",
+      "competetion": ["results_uid_1"],
+      "traning": ["results_uid_2"]
     }
   },
-  "resultsCompetetion": {
-    "competition_uid_1": {
+
+  "results": {
+    "results_uid_1": {
       "time": "00:45 min",
       "date": "12-4-2023",
       "placement": 1
-    }
-  },
-  "resultsTraining": {
-    "training_uid_1": {
-      "time": "00:46 min",
+    },
+    "results_uid_2": {
+      "time": "00:45 min",
+      "date": "12-4-2023"
+    },
+    "results_uid_3": {
+      "time": "00:45 min",
+      "date": "12-4-2023",
+      "placement": 1
+    },
+    "results_uid_4": {
+      "time": "00:45 min",
+      "date": "12-4-2023"
+    },
+    "results_uid_5": {
+      "time": "00:48 min",
+      "date": "14-4-2023",
+      "placement": 2
+    },
+    "results_uid_6": {
+      "time": "00:50 min",
+      "date": "15-4-2023",
+      "placement": 3
+    },
+    "results_uid_7": {
+      "time": "00:47 min",
+      "date": "16-4-2023"
+    },
+    "results_uid_8": {
+      "time": "00:52 min",
+      "date": "18-4-2023",
+      "placement": 4
+    },
+    "results_uid_9": {
+      "time": "00:49 min",
       "date": "19-4-2023"
-    }
-  },
-  "trainer": {
-    "trainer_uid_1": {
-      "name": "name",
-      "age": 41,
-      "disciplin": "alle muligheder = rygcrawl, brystsvømning, butterfly, crawl",
-      "training": ["member_uid_1"]
+    },
+    "results_uid_10": {
+      "time": "00:46 min",
+      "date": "20-4-2023",
+      "placement": 1
     }
   }
+  
+
 }

@@ -1,0 +1,125 @@
+{
+  "member": {
+    "member_uid_1": {
+      "image": "https://example.com/profil-billede1.jpg",
+      "name": "John Doe",
+      "age": 21,
+      "activity": "konkurrencesvømmer",
+      "membership": "u18",
+      "about": "example",
+      "gender": "male",
+      "disciplin": "rygcrawl",
+      "competition": ["results_uid_1"],
+      "training": ["results_uid_2"]
+    },
+    "member_uid_2": {
+      "image": "https://example.com/profil-billede2.jpg",
+      "name": "Jane Smith",
+      "age": 25,
+      "activity": "motionist",
+      "membership": "18+",
+      "about": "example",
+      "gender": "female"
+    },
+    "member_uid_3": {
+      "image": "https://example.com/profil-billede3.jpg",
+      "name": "Alice Jensen",
+      "age": 60,
+      "activity": "passiv",
+      "membership": "pensionist",
+      "about": "example",
+      "gender": "female"
+    },
+    "member_uid_4": {
+      "image": "https://example.com/profil-billede4.jpg",
+      "name": "Peter Nielsen",
+      "age": 28,
+      "activity": "konkurrencesvømmer",
+      "membership": "18+",
+      "about": "example",
+      "gender": "male",
+      "disciplin": "butterfly",
+      "competition": ["results_uid_3"],
+      "training": ["results_uid_4"]
+    },
+    "member_uid_5": {
+      "image": "https://example.com/profil-billede5.jpg",
+      "name": "Sarah Andersen",
+      "age": 32,
+      "activity": "konkurrencesvømmer",
+      "membership": "u18",
+      "about": "example",
+      "gender": "female",
+      "disciplin": "crawl",
+      "competition": ["results_uid_5","results_uid_8"],
+      "training": ["results_uid_9" ]
+    },
+    "member_uid_6": {
+      "image": "https://example.com/profil-billede6.jpg",
+      "name": "David Møller",
+      "age": 19,
+      "activity": "konkurrencesvømmer",
+      "membership": "u18",
+      "about": "example",
+      "gender": "male",
+      "disciplin": "brystsvømning",
+      "competition": ["results_uid_6", "results_uid_10"],
+      "training": ["results_uid_7"]
+    }
+},
+
+  "results": {
+    "results_uid_1": {
+      "time": "00:45 min",
+      "date": "12-4-2023",
+      "placement": 1
+    },
+    "results_uid_2": {
+      "time": "00:45 min",
+      "date": "12-4-2023"
+    },
+    "results_uid_3": {
+      "time": "00:45 min",
+      "date": "12-4-2023",
+      "placement": 1
+    },
+    "results_uid_4": {
+      "time": "00:45 min",
+      "date": "12-4-2023"
+    },
+    "results_uid_5": {
+      "time": "00:48 min",
+      "date": "14-4-2023",
+      "placement": 2
+    },
+    "results_uid_6": {
+      "time": "00:50 min",
+      "date": "15-4-2023",
+      "placement": 3
+    },
+    "results_uid_7": {
+      "time": "00:47 min",
+      "date": "16-4-2023"
+    },
+    "results_uid_8": {
+      "time": "00:52 min",
+      "date": "18-4-2023",
+      "placement": 4
+    },
+    "results_uid_9": {
+      "time": "00:49 min",
+      "date": "19-4-2023"
+    },
+    "results_uid_10": {
+      "time": "00:46 min",
+      "date": "20-4-2023",
+      "placement": 1
+    }
+  },
+       "login":{
+        "user1": {
+            "username": "admin",
+            "password": "test123"
+        }
+    }
+}
