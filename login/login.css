@@ -1,5 +1,5 @@
 body {
-  background-image: url("Pictures/1MGW5kVf2piy_200_200.png");
+  background-image: url("Billeder/1MGW5kVf2piy_200_200.png");
   background-size: cover;
 }
 
@@ -31,4 +31,17 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+
+body {
+  font-family: 'Caudex', serif;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.sidebar button {
+  font-family: 'Crimson Text', serif;
 }

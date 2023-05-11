@@ -13,6 +13,38 @@ table {
   border-collapse: collapse;
   margin: 0 auto;
 }
+body {
+  font-family: 'Caudex', serif;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.sidebar button {
+  font-family: 'Crimson Text', serif;
+}
+
+.sidebar {
+  background-color: #4db6ac;
+  padding: 1.25rem;
+  float: left;
+  width: 12%;
+  height: 100vh;
+  margin-right: 0.5rem;
+  z-index: 2;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
 
 th,
 td {

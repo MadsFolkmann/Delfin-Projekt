@@ -1,33 +1,38 @@
 {
-"member":{
-"id":{
-"name": "name",
-"age": 21,
-"activity": "Active",
-"membership": "membership",
-"about": "biografi",
-"gender": "male",
-"disciplin": "disciplin",
-"competition": {uid},
-"training": {uid},
-"trainer": {uid},
-}
-},
-"results-convention": {
-"id":{
-"time": 10,
-"date": "date",
-"placement": 10
-}
-},
-"results-training":{
-"time": 10,
-"date": "date"
-},
-"trainer": {
-"name": "name",
-"age": 21,
-"disciplin": "disciplin",
-"training": {uid}, {uid},
-}
+  "member": {
+    "member_uid_1": {
+      "image": "https://example.com/profil-billede1.jpg",
+      "name": "name",
+      "age": 21,
+      "activity": "alle muligheder = passiv, motionist, konkurrencesvømmer",
+      "membership": "alle muligheder = u18, 18+, pensionist, passiv",
+      "about": "example",
+      "gender": "male",
+      "disciplin": "alle muligheder = rygcrawl, brystsvømning, butterfly, crawl",
+      "competition": ["competition_uid_1"] (hvis konkurrencesvømmer), 
+      "training": ["training_uid_1"] (hvis konkurrencesvømmer),
+      "trainer": ["trainer_uid_1"](hvis konkurrencesvømmer)
+    }
+  },
+  "resultsCompetetion": {
+    "competition_uid_1": {
+      "time": "00:45 min",
+      "date": "12-4-2023",
+      "placement": 1
+    }
+  },
+  "resultsTraining": {
+    "training_uid_1": {
+      "time": "00:46 min",
+      "date": "19-4-2023"
+    }
+  },
+  "trainer": {
+    "trainer_uid_1": {
+      "name": "name",
+      "age": 41,
+      "disciplin": "alle muligheder = rygcrawl, brystsvømning, butterfly, crawl",
+      "training": ["member_uid_1"]
+    }
+  }
 }
