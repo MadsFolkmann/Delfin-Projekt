@@ -56,6 +56,11 @@ body {
   height: auto;
 } */
 
+h2 {
+  font-size: 2em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
 #logo {
   display: flex;
   width: 17%;
@@ -123,3 +128,20 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* .bubble-container {
+  position: relative;
+  top: 41%;
+  left: 75%;
+  width: 10%;
+  overflow: hidden;
+}
+.bubble {
+  position: absolute;
+  top: 41%;
+  left: 75%;
+  width: 10%;
+  background-color: #f10000;
+  border-radius: 50%;
+  animation: bubbleAnimation 3s infinite;
+} */
