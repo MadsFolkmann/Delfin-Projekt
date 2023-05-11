@@ -115,5 +115,11 @@
       "date": "20-4-2023",
       "placement": 1
     }
-  }
+  },
+       "login":{
+        "user1": {
+            "username": "admin",
+            "password": "test123"
+        }
+    }
 }
