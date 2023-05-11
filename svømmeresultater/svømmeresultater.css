@@ -128,3 +128,13 @@ table caption {
     background-color: #4db6ac;
 }
 
+.u18 tr:hover {
+  background-color: #ddd;
+}
+
+.senior tr:hover {
+  background-color: #ddd;
+}
+
+
+
