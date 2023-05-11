@@ -13,6 +13,7 @@ table {
   border-collapse: collapse;
   margin: 0 auto;
 }
+
 body {
   font-family: 'Caudex', serif;
 }
@@ -25,7 +26,17 @@ h1 {
   font-family: 'Crimson Text', serif;
 }
 
-.sidebar {
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #DDD;
+}
+
+/* Stilarter til navigationen */
+
+nav {
   background-color: #4db6ac;
   padding: 1.25rem;
   float: left;
@@ -40,30 +51,6 @@ h1 {
   left: 0;
 }
 
-.sidebar a {
-  display: block;
-  margin-bottom: 1rem;
-  text-decoration: none;
-}
-
-th,
-td {
-  padding: 8px;
-  text-align: center;
-  border: 1px solid black;
-}
-
-/* Stilarter til navigationen */
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 150px;
-  height: 100%;
-  background-color: #333;
-}
-
 nav ul {
   list-style: none;
   margin: 0;
@@ -76,27 +63,49 @@ nav ul li {
 
 nav a {
   display: block;
-  color: #fff;
+  margin-bottom: 1rem;
   text-decoration: none;
-  padding: 10px;
 }
 
 nav a:hover {
   background-color: #666;
 }
 
+.sidebar button.forside {
+  background-color: #1e51a4;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+.sidebar button {
+  background-color: #e0f2f1;
+  color: #1e51a4;
+  border: none;
+  padding: 0.625rem;
+  width: 90%;
+  text-align: left;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
 
 table {
-  border-collapse: collapse;
-  width: 75%;
-  margin-bottom: 10em;
+  border-collapse: separate;
+  border-spacing: 0.1em;
+  width: 65%;
+  margin-bottom: 6em;
 }
 
 table td,
 table th {
-  border: 1px solid black;
-  padding: 8px;
+    padding: 8px;
   text-align: left;
+  padding: 0.5em;
 }
 
 table.u18 tr,
@@ -117,6 +126,16 @@ table.senior tr {
 
 table caption {
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.u18 thead {
+    background-color: #4db6ac;
+}
+
+.senior thead {
+    background-color: #4db6ac;
 }
 
