@@ -23,7 +23,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-.container input[type="submit"] {
+.container button[type="button"] {
   width: 97%;
   padding: 3%;
   background-color: #4caf50;
@@ -129,6 +129,10 @@ h2 {
   cursor: pointer;
 }
 
+.login:hover {
+  background-color: #00a8e8;
+}
+
 /* .bubble-container {
   position: relative;
   top: 41%;
@@ -145,3 +149,15 @@ h2 {
   border-radius: 50%;
   animation: bubbleAnimation 3s infinite;
 } */
+
+/* input:invalid:required {
+  background-image: linear-gradient(to right, rgb(0, 106, 255), rgb(238, 144, 144));
+} */
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}
