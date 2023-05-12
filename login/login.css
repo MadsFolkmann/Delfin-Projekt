@@ -154,6 +154,21 @@ h2 {
   background-image: linear-gradient(to right, rgb(0, 106, 255), rgb(238, 144, 144));
 } */
 
+/* ------------------error messages---------------------- */
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (max-width: 480px) {
+  input,
+  button {
+    width: 100%;
+  }
+}
+
 input:invalid {
   box-shadow: 0 0 5px 1px red;
 }
