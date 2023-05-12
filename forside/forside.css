@@ -68,27 +68,27 @@ h1 {
 /* ---------------------Main content------------------- */
 
 .header {
-  text-align: center;
+  position: fixed;
   color: #000000;
+  left: 43%;
 }
 
 /*---Tables---*/
 
 .swimming-table {
   float: right;
-  width: 50%;
-  top: 15%;
-  left: 25%;
+  width: 55%;
+  top: 20%;
+  left: 27%;
   position: fixed;
+  
 }
 
 .swimming-table thead {
   background-color: #4db6ac;
 }
 
-.swimming-table tr:hover {
-  background-color: #ddd;
-}
+
 
 .swimming-table caption {
   font-weight: bold;
@@ -107,11 +107,13 @@ h1 {
 
 table.medlemmer {
   float: right;
-  width: 20%;
-  top: 50%;
-  left: 25%;
+  width: 25%;
+  top: 55%;
+  left: 27%;
   position: fixed;
 }
+
+
 th,
 td {
   text-align: left;
@@ -121,9 +123,9 @@ td {
 
 table.betaling {
   float: right;
-  width: 20%;
-  top: 50%;
-  left: 55%;
+  width: 25%;
+  top: 55%;
+  left: 57%;
   position: fixed;
 }
 th,
@@ -140,3 +142,25 @@ td {
 .betaling thead {
   background-color: #4db6ac;
 }
+
+
+/* ______________________BUTTON_____________________ */
+
+#update-button {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #080101;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #4db6ac;
+ }
+ #update-button:hover {
+   background-color: #1e847c;
+   color: #fff;
+ }
+ 
+ #update-button {
+   position: absolute;
+   right: 4%;
+ }
