@@ -83,7 +83,7 @@ table {
   margin: 0 auto;
   border-spacing: 0.1em;
   width: 65%;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
     border: #4db6ac solid;
 
 }
@@ -101,7 +101,7 @@ table {
 .table-container{
   max-height: 18rem;
   overflow-y: auto;
-  margin-top: 1rem;
+  margin-top: 2rem;
 
 }
 
