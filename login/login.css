@@ -11,6 +11,10 @@ body {
   background-color: white;
   opacity: 0.8;
   border-radius: 5px;
+  position: relative;
+  border-radius: 50px 5px;
+  overflow: hidden;
+  justify-content: center;
 }
 .container h2 {
   text-align: center;
@@ -175,4 +179,39 @@ input:invalid {
 
 input:focus:invalid {
   box-shadow: none;
+}
+
+/* ------------------succes messages---------------------- */
+
+.container::before,
+.container::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  border-radius: 50px 5px; /* Samme afrunding som container */
+  pointer-events: none; /* For at tillade klik på baggrundselementer */
+  z-index: -1; /* Placer bag container */
+}
+
+.container::before {
+  background-image: conic-gradient(transparent, transparent, transparent, #ee00ff);
+  animation: rotate_border 6s linear infinite;
+}
+
+.container::after {
+  background-image: conic-gradient(transparent, transparent, transparent, #00ccff);
+  animation: rotate_border 6s linear infinite;
+  animation-delay: -3s; /* Forsinket start af animationen */
+}
+
+@keyframes rotate_border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
