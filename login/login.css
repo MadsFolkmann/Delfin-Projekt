@@ -11,6 +11,10 @@ body {
   background-color: white;
   opacity: 0.8;
   border-radius: 5px;
+  position: relative;
+  border-radius: 50px 5px;
+  overflow: hidden;
+  justify-content: center;
 }
 .container h2 {
   text-align: center;
