@@ -75,4 +75,6 @@ function showDialogMembers(member) {
   document.querySelector("#age").textContent = member.age;
   document.querySelector("#membership").textContent = member.membership;
   document.querySelector("#activity").textContent = member.activity;
+  document.querySelector("#disciplin").textContent = member.disciplin;
+  document.querySelector("#about").textContent = member.about;
 }
