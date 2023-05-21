@@ -11,6 +11,10 @@ body {
   background-color: white;
   opacity: 0.8;
   border-radius: 5px;
+  position: relative;
+  border-radius: 50px 5px;
+  overflow: hidden;
+  justify-content: center;
 }
 .container h2 {
   text-align: center;
@@ -153,6 +157,21 @@ h2 {
 /* input:invalid:required {
   background-image: linear-gradient(to right, rgb(0, 106, 255), rgb(238, 144, 144));
 } */
+
+/* ------------------error messages---------------------- */
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (max-width: 480px) {
+  input,
+  button {
+    width: 100%;
+  }
+}
 
 input:invalid {
   box-shadow: 0 0 5px 1px red;

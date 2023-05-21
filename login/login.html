@@ -20,11 +20,13 @@
       <header></header>
 
       <div class="container">
-        <img src="Pictures/logo.png" alt="logo" id="logo" />
+        <img src="/Billeder/logo.png" alt="logo" id="logo" />
         <h2>Login 🔒</h2>
         <form id="login1">
           <input type="text" placeholder="👤 Brugernavn" name="brugernavn" id="username" required minlength="6" maxlength="10" />
           <input type="password" placeholder="🔑 Kodeord" name="kodeord" id="password" min="5" max="10" required />
+          <!-- <p id="message" class="message"></p> -->
+          <p id="error-message" class="error-message"></p>
           <button id="login" type="button" onClick="getInfo()">Log ind 🔐</button>
           <!-- <input type="submit" id="login" onClick="getInfo()" value="Log ind 🔐" /> -->
         </form>

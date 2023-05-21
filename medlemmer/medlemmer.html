@@ -27,15 +27,13 @@
         <h1>Medlemmer</h1>
       </div>
       <div class="table-container">
-        <div id="add-swimmer">
-          <button>Tilføj svømmer</button>
-        </div>
         <table class="member-table">
           <tr>
             <thead>
               <tr>
                 <th colspan="4">
                   <div class="search-container">
+                    <button id="add-swimmer">Tilføj svømmer</button>
                     <input type="text" id="search-input" placeholder="Search..." />
                     <button id="search-button">Search</button>
                   </div>
@@ -48,11 +46,25 @@
                 <th>Aktivitetsform</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Emil</td>
-                <td>88 år</td>
+
+         <tbody id="members">
+              </tr>
+              <!-- <tr>
+                <td>Abdi</td>
+                <td>72 år</td>
                 <td>Pensionist</td>
+                <td>Motionist</td>
+              </tr>
+              <tr>
+                <td>Lone</td>
+                <td>92 år</td>
+                <td>Pensionist</td>
+                <td>Motionist</td>
+              </tr>
+              <tr>
+                <td>Jesper</td>
+                <td>30 år</td>
+                <td>Voksen</td>
                 <td>Motionist</td>
               </tr>
               <tr>
@@ -108,29 +120,36 @@
                 <td>88 år</td>
                 <td>Pensionist</td>
                 <td>Motionist</td>
-              </tr>
-              <tr>
-                <td>Emil</td>
-                <td>88 år</td>
-                <td>Pensionist</td>
-                <td>Motionist</td>
-              </tr>
-              <tr>
-                <td>Emil</td>
-                <td>88 år</td>
-                <td>Pensionist</td>
-                <td>Motionist</td>
-              </tr>
-              <tr>
-                <td>Emil</td>
-                <td>88 år</td>
-                <td>Pensionist</td>
-                <td>Motionist</td>
-              </tr>
+              </tr> -->
             </tbody>
           </tr>
         </table>
       </div>
     </main>
+
+    <dialog id="members-dialog" class="dialog">
+      <form action="" id="form-members">
+        <img src="/Billeder/logo.png" alt="logo" class="logo" />
+        <section>
+          <figure><img id="image" src="" /></figure>
+          <article>
+            <h2 id="name"></h2>
+            <h3 id="gender"></h3>
+            <h3 id="age"></h3>
+            <h3 id="membership"></h3>
+            <h3 id="activity"></h3>
+                        <h3 id="disciplin"></h3>
+            <h3 id="about"></h3>
+
+          </article>
+        </section>
+      </form>
+      <form method="dialog">
+        <button id="btn-close-dialog">CLOSE</button>
+      </form>
+    </dialog>
+
+    <script src="/js/medlemmer.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>

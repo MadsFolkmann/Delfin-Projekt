@@ -17,6 +17,8 @@ function start() {
   document.querySelector("#login1").addEventListener("submit", getInfo);
 }
 
+/* ------------------login oplysninger---------------------- */
+
 function getInfo() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
@@ -32,5 +34,22 @@ function getInfo() {
     }
   }
 
-  console.log("Incorrect username or password");
+  console.log("Forkert brugernavn eller kodeord");
 }
+
+/* ------------------error messages---------------------- */
+
+document.getElementById("login").addEventListener("click", function (event) {
+  event.preventDefault(); // For at forhindre standardadfærd for klik på knappen
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const errorMessage = document.getElementById("error-message");
+
+  if (username === "admin" && password === "password") {
+    errorMessage.textContent = "Velkommen admin";
+    window.location.href = "forside/forside.html"; // Redirect til forsiden
+  } else {
+    errorMessage.textContent = "Forkert brugernavn eller kodeord";
+  }
+});
