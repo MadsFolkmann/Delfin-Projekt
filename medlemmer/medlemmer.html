@@ -27,7 +27,6 @@
         <h1>Medlemmer</h1>
       </div>
       <div class="table-container">
-
         <table class="member-table">
           <tr>
             <thead>
@@ -40,6 +39,7 @@
                   </div>
                 </th>
               </tr>
+
               <tr>
                 <th>Navn</th>
                 <th>Alder</th>
@@ -48,28 +48,24 @@
               </tr>
             </thead>
             <tbody>
+              <section id="members" class="member-table"></section>
+
               <tr>
-                <td>Emil</td>
-                <td>88 år</td>
+                <td>Abdi</td>
+                <td>72 år</td>
                 <td>Pensionist</td>
                 <td>Motionist</td>
               </tr>
               <tr>
-                <td>Emil</td>
-                <td>88 år</td>
+                <td>Lone</td>
+                <td>92 år</td>
                 <td>Pensionist</td>
                 <td>Motionist</td>
               </tr>
               <tr>
-                <td>Emil</td>
-                <td>88 år</td>
-                <td>Pensionist</td>
-                <td>Motionist</td>
-              </tr>
-              <tr>
-                <td>Emil</td>
-                <td>88 år</td>
-                <td>Pensionist</td>
+                <td>Jesper</td>
+                <td>30 år</td>
+                <td>Voksen</td>
                 <td>Motionist</td>
               </tr>
               <tr>
@@ -131,7 +127,26 @@
         </table>
       </div>
     </main>
-    <script src="medlemmer.js"></script>
-    <script src="script.js"></script>
+
+    <dialog id="members-dialog" class="dialog">
+      <form action="" id="form-members">
+        <img src="https://i.imgur.com/n0hmIcV.png" alt="logo" class="logo" />
+        <section>
+          <figure><img id="image" src="" /></figure>
+          <article>
+            <h2 id="name"></h2>
+            <p id="age"></p>
+            <h3 id="membership"></h3>
+            <h3 id="activity"></h3>
+          </article>
+        </section>
+      </form>
+      <form method="dialog">
+        <button id="btn-close-dialog">CLOSE</button>
+      </form>
+    </dialog>
+
+    <script src="/js/medlemmer.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
