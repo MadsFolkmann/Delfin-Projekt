@@ -48,7 +48,7 @@ document.getElementById("login").addEventListener("click", function (event) {
 
   if (username === "admin" && password === "password") {
     errorMessage.textContent = "Velkommen admin";
-    window.location.href = "forside/forside.html"; // Redirect til forsiden
+    window.location.href = "forside.html"; // Redirect til forsiden
   } else {
     errorMessage.textContent = "Forkert brugernavn eller kodeord";
   }
