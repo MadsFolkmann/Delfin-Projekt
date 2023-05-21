@@ -187,16 +187,21 @@ td {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
 }
 
 #members-dialog .logo {
   width: 100px;
-  height: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
   margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 #members-dialog section {
@@ -210,8 +215,8 @@ td {
 }
 
 #members-dialog figure img {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   border-radius: 10%;
   position: fixed;
   left: 0.5%;
@@ -224,11 +229,6 @@ td {
 
 #members-dialog h2 {
   font-size: 24px;
-  margin-bottom: 10px;
-}
-
-#members-dialog p {
-  font-size: 16px;
   margin-bottom: 10px;
 }
 
@@ -249,9 +249,4 @@ td {
 
 #members-dialog #btn-close-dialog:hover {
   background-color: lightblue;
-}
-
-#logo {
-  width: 60px;
-  height: 60px;
 }

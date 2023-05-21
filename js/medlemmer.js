@@ -71,6 +71,7 @@ function membersClicked(member) {
 function showDialogMembers(member) {
   document.querySelector("#image").src = member.image;
   document.querySelector("#name").textContent = member.name;
+  document.querySelector("#gender").textContent = member.gender;
   document.querySelector("#age").textContent = member.age;
   document.querySelector("#membership").textContent = member.membership;
   document.querySelector("#activity").textContent = member.activity;
