@@ -163,7 +163,7 @@ td {
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 } */
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 273px));
   gap: 1.5em;
@@ -177,7 +177,10 @@ td {
   padding: 1.5em;
   cursor: pointer;
   color: #f3ce13;
-}
+} */
+
+/*-------------- chat gpt css dialog -------------*/
+
 #members-dialog {
   position: fixed;
   top: 50%;
@@ -203,13 +206,16 @@ td {
 
 #members-dialog figure {
   flex: 0 0 auto;
-  margin-right: 20px;
+  margin-right: 80px;
 }
 
 #members-dialog figure img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+  position: fixed;
+  left: 0.5%;
+  top: 40%;
 }
 
 #members-dialog article {
@@ -232,7 +238,7 @@ td {
 }
 
 #members-dialog #btn-close-dialog {
-  background-color: #ff0000;
+  background-color: #1e847c;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -242,7 +248,7 @@ td {
 }
 
 #members-dialog #btn-close-dialog:hover {
-  background-color: #e60000;
+  background-color: lightblue;
 }
 
 #logo {

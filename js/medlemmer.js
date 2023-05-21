@@ -54,14 +54,14 @@ function showMembers(member) {
   `;
 
   document.querySelector("#members").insertAdjacentHTML("beforeend", html);
-  // document.querySelector("#members article:last-child").addEventListener("click", () => membersClicked(member));
-  document.querySelector("#members article:last-child").addEventListener("click", createMemberClickHandler(member));
+  document.querySelector("#members article:last-child").addEventListener("click", () => membersClicked(member));
+  // document.querySelector("#members article:last-child").addEventListener("click", createMemberClickHandler(member));
 
-  function createMemberClickHandler(member) {
-    return function () {
-      membersClicked(member);
-    };
-  }
+  // function createMemberClickHandler(member) {
+  //   return function () {
+  //     membersClicked(member);
+  //   };
+  // }
 }
 
 function membersClicked(member) {
