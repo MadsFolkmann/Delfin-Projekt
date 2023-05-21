@@ -42,27 +42,26 @@ function displayMembers(listOfMembers) {
 
 function showMembers(member) {
   console.log("hej");
-  const html = /*html*/ `
-    <article class="member-table">
-                  <tr>
-                <td> ${member.name}</td>
-                <td>${member.age}</td>
-                <td>${member.membership}</td>
-                <td>${member.activity}</td>
-              </tr>
-    </article>
+  const html = `
+    <tr>
+      <td>${member.name}</td>
+      <td>${member.age}</td>
+      <td>${member.membership}</td>
+      <td>${member.activity}</td>
+    </tr>
   `;
 
   document.querySelector("#members").insertAdjacentHTML("beforeend", html);
-  document.querySelector("#members article:last-child").addEventListener("click", () => membersClicked(member));
-  // document.querySelector("#members article:last-child").addEventListener("click", createMemberClickHandler(member));
-
-  // function createMemberClickHandler(member) {
-  //   return function () {
-  //     membersClicked(member);
-  //   };
-  // }
+  document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
+
+// document.querySelector("#members article:last-child").addEventListener("click", createMemberClickHandler(member));
+
+// function createMemberClickHandler(member) {
+//   return function () {
+//     membersClicked(member);
+//   };
+// }
 
 function membersClicked(member) {
   console.log("Member dialog opened");
