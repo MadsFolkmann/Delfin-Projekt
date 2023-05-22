@@ -110,19 +110,21 @@ function showCreateMember() {
 }
 
 async function createMemberClicked(event) {
-  event.preventDefaut();
+  event.preventDefault();
 
   const form = event.target;
 
   const name = form.name.value;
   const age = form.age.value;
   const about = form.about.value;
+  const gender = form.gender.value;
   const membership = form.membership.value;
   const activity = form.activity.value;
   const disciplin = form.disciplin.value;
+  const trainer = form.trainer.value;
   const image = form.image.value;
 
-  const response = await createMember(name, age, membership, activity);
+  const response = await createMember(name, age, about, gender, disciplin, trainer, image, membership, activity);
 
   if (response.ok) {
     form.reset();
