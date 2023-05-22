@@ -1,6 +1,6 @@
 "use strict";
 
-import { getSwimmer, prepareSwimmer } from "./script.js";
+import { getSwimmer, prepareSwimmer, endpoint } from "./script.js";
 // const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
 
 window.addEventListener("load", start);

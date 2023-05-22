@@ -1,6 +1,6 @@
 "use strict";
 
-export { getSwimmer, prepareSwimmer };
+export { getSwimmer, prepareSwimmer, endpoint };
 
 // window.addEventListener("load", start);
 
