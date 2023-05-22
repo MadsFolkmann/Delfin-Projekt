@@ -182,12 +182,13 @@ th {
   color: #f3ce13;
 } */
 
-/*-------------- chat gpt css dialog -------------*/
+/*-------------- show swimmer dialog -------------*/
 
 #members-dialog {
+  border-radius: 10px;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 65%;
+  left: 40%;
   transform: translate(-50%, -50%);
   width: 400px;
   padding: 20px;
@@ -195,7 +196,18 @@ th {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #ffffff;
-  animation: waterAnimation 5s infinite;
+  animation: dialogMemberAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes dialogMemberAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 
 #members-dialog .logo {
@@ -242,7 +254,7 @@ th {
 }
 
 #members-dialog #btn-close-dialog {
-  background-color: #1e847c;
+  background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -255,16 +267,62 @@ th {
   background-color: lightblue;
 }
 
-/*-------------- animation til dialog -------------*/
+/*-------------- Tilføj svømmer dialog -------------*/
 
-@keyframes waterAnimation {
+#add-member {
+  position: fixed;
+  left: 10%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  transform: scale(1);
+  opacity: 1;
+  animation: dialogOpenAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#add-member .logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#add-member .closeButton {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: fixed;
+  left: 79%;
+  top: 92%;
+}
+
+#add-member-btn {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*-------------- Tilføj svømmer animation -------------*/
+
+@keyframes dialogOpenAnimation {
   0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+    transform: scale(1.5);
+    opacity: 0;
   }
   100% {
-    background-position: 0% 50%;
+    transform: scale(1);
+    opacity: 1;
   }
 }

@@ -67,10 +67,11 @@ h2 {
 
 #logo {
   display: flex;
-  width: 17%;
+  width: 23%;
   top: 5%;
   height: auto;
   border: black;
+  border-radius: 50%;
 }
 
 .animation-container {

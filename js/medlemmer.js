@@ -7,7 +7,6 @@ window.addEventListener("load", start);
 
 let swimmer;
 
-
 function start() {
   console.log("Velkommen Medlem");
   updateGrid();
@@ -22,12 +21,10 @@ function start() {
   document.querySelector("#sort-by-activity").addEventListener("click", sortByActivity)
 }
 
-
 // ---------------Swimmers---------------//
-getSwimmer(); 
+getSwimmer();
 
 prepareSwimmer();
-
 
 async function updateGrid() {
   swimmer = await getSwimmer();
@@ -131,6 +128,7 @@ async function createMemberClicked(event) {
   if (response.ok) {
     form.reset();
     updateGrid();
+    console.log("Succesfully added new member!");
   }
   document.querySelector("#add-member").close();
 }
