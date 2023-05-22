@@ -267,6 +267,8 @@ td {
 /*-------------- Tilføj svømmer dialog -------------*/
 
 #add-member {
+  position: fixed;
+  left: 10%;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background: linear-gradient(45deg, #00c6ff, #023b80);
