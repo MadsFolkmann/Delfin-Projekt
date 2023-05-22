@@ -81,7 +81,7 @@
 
 <dialog id="add-member" class="dialog">
   <img src="/Billeder/logo.png" alt="logo" class="logo" />
-<form action="" method="post" id="createMember"></form>
+<form action="" method="post" id="createMember">
 
  <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Name:" required /><br /><br />
@@ -195,6 +195,16 @@
             <label for="about">About:</label><br />
         <textarea id="about" name="about" rows="5" cols="50" maxlength="200" placeholder="Type a bio about the person" required></textarea> <br /><br />
 
+ <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+            <option value="none"></option>
+            <option value="Alien">Alien</option>
+            <option value="Alien">Male</option>
+            <option value="Alien">Female</option>
+          </select> <br /><br />
+
+
+
         <label for="membership">Membership:</label>
         <select name="membership" id="age">
             <option value="none"></option>
@@ -219,14 +229,21 @@
             <option value="butterfly">Butterfly</option>
             <option value="rygcrawl">Rygcrawl</option>
 
+          </select> 
+
+ <label for="trainer">Trainer:</label>
+        <select name="trainer" id="trainer">
+            <option value="none"></option>
+            <option value="Alien">Alien</option>
           </select> <br /><br />
 
  <label for="image">Image:</label>
         <input type="url" id="image" name="image" placeholder="Paste an image URL" required /><br /><br />
 
        <input type="submit" value="Add new swimmer" />
-      </form>
-      <button class="closeButton" type="button">Close</button>
+       
+      </form>  
+      <button class="closeButton" type="button">Close</button>  
     </dialog>
 
     <script src="/js/medlemmer.js" type="module"></script>
