@@ -182,6 +182,7 @@ td {
 /*-------------- show swimmer dialog -------------*/
 
 #members-dialog {
+  border-radius: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -192,7 +193,18 @@ td {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #ffffff;
-  animation: waterAnimation 5s infinite;
+  animation: dialogMemberAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes dialogMemberAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 
 #members-dialog .logo {
@@ -239,7 +251,7 @@ td {
 }
 
 #members-dialog #btn-close-dialog {
-  background-color: #1e847c;
+  background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -259,6 +271,9 @@ td {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #ffffff;
+  transform: scale(1);
+  opacity: 1;
+  animation: dialogOpenAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 #add-member .logo {
@@ -280,8 +295,8 @@ td {
   border-radius: 5px;
   cursor: pointer;
   position: fixed;
-  left: 59.5%;
-  top: 84%;
+  left: 79%;
+  top: 92%;
 }
 
 #add-member-btn {
@@ -292,4 +307,17 @@ td {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/*-------------- Tilføj svømmer animation -------------*/
+
+@keyframes dialogOpenAnimation {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
