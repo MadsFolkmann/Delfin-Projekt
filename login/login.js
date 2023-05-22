@@ -29,7 +29,7 @@ function getInfo() {
   for (let i = 0; i < admin.length; i++) {
     if (username == admin[i].username && password == admin[i].password) {
       console.log(username + " is logged in!");
-      window.location.href = "http://127.0.0.1:5500/forside/forside.html";
+      window.location.href = "http://127.0.0.1:5500/forside.html";
       return;
     }
   }

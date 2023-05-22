@@ -1,32 +1,24 @@
 "use strict";
 
-const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
+import { getSwimmer, prepareSwimmer } from "./script.js";
+// const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
 
 window.addEventListener("load", start);
 
 let swimmer;
+
 
 function start() {
   console.log("Velkommen Medlem");
   updateGrid();
 }
 
-async function getSwimmer() {
-  const response = await fetch(`${endpoint}/member.json`); // fetch request, (GET)
-  const data = await response.json(); // parse JSON to JavaScript
-  const swimmer = PrepareSwimmer(data);
-  return swimmer;
-}
 
-async function PrepareSwimmer(member) {
-  const swimmerArray = [];
-  for (const key in member) {
-    const swimmer = member[key];
-    swimmer.id = key;
-    swimmerArray.push(swimmer);
-  }
-  return swimmerArray;
-}
+// ---------------Swimmers---------------//
+getSwimmer(); 
+
+prepareSwimmer();
+
 
 async function updateGrid() {
   swimmer = await getSwimmer();
@@ -42,7 +34,7 @@ function displayMembers(listOfMembers) {
 
 function showMembers(member) {
   console.log("hej");
-  const html = `
+  const html = /*html*/ `
     <tr>
       <td>${member.name}</td>
       <td>${member.age}</td>

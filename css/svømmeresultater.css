@@ -123,16 +123,16 @@ table caption {
   }
   
 table.u18 tr,
-table.senior tr {
+table.senior-table tr {
   height: 50px;
 }
 
 .u18 thead,
-.senior thead {
+.senior-table thead {
     background-color: #4db6ac;
 }
 
 .u18 tr:hover,
-.senior tr:hover {
+.senior-table tr:hover {
   background-color: #ddd;
 }
