@@ -18,11 +18,19 @@
 </div>
    
  <div class="sidebar">
+<<<<<<< Updated upstream:forside/forside.html
     <a><button href="forside/forside.html" class="forside" onclick="location.reload()"">Forside</button></a>
     <a href="/medlemmer/medlemmer.html"><button>Medlemmer</button></a>
     <a href="/regnskab/regnskab.html"><button>Regnskab</button></a>
     <a href="/svømmeresultater/svømmeresultater.html"><button>Resultater</button></a>
         <a class="log-ud" href="http://127.0.0.1:5500/login/login.html?brugernavn=admin1&kodeord=test123"><button>Log ud</button></a>
+=======
+    <a><button href="forside.html" class="forside" onclick="location.reload()"">Forside</button></a>
+    <a href="medlemmer.html"><button>Medlemmer</button></a>
+    <a href="regnskab.html"><button>Regnskab</button></a>
+    <a href="svømmeresultater.html"><button>Resultater</button></a>
+    <a class="log-ud" href="http://127.0.0.1:5500/login/login.html?brugernavn=admin1&kodeord=test123"><button>Log ud</button></a>
+>>>>>>> Stashed changes:forside.html
 
 </div>
     
@@ -64,20 +72,26 @@
   <tfoot>
     <tr>
       <th colspan="5">
-        <button id="update-button">Show more</button>
+        <button id="resultat-button">Vis mere</button>
       </th>
     </tr>
   </tfoot>
 </table>
+
+<dialog id="more-info-dialog">
+  <h2>Mere information</h2>
+  <div id="dialog-content"></div>
+  <button id="close-dialog">Luk</button>
+</dialog>
 
 
 <table class="medlemmer">
   <thead>
     <tr>
       <th>X antal medlemmer</th>
-      </tr>
-      
+    </tr>
   </thead>
+<<<<<<< Updated upstream:forside/forside.html
 <tr><td>Oplysninger</td></tr>
 <tr><td>Oplysninger</td></tr>
 <tr><td>Oplysninger</td>
@@ -87,6 +101,29 @@
       <button id="update-button">Show more</button>
   </th>
 </tr>
+=======
+  <tbody id="data-body">
+    <tr>
+      <td>Oplysninger</td>
+    </tr>
+    <tr>
+      <td>Oplysninger</td>
+    </tr>
+    <tr>
+      <td>Oplysninger</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        <button id="medlem-button">Vis mere</button>
+      </th>
+    </tr>
+  </tfoot>
+</table>
+
+
+>>>>>>> Stashed changes:forside.html
 
 <table class="betaling">
   <thead>
@@ -100,7 +137,7 @@
   <tr><td>Ching Chong Yung</td><td>1800,-</td></tr>
   
   <th colspan="4">
-        <button id="update-button">Show more</button>
+        <button id="betaling-button">Vis mere</button>
     </th>
 
   

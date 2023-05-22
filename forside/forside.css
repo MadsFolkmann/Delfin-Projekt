@@ -142,7 +142,7 @@ td {
 
 /* ______________________BUTTON_____________________ */
 
-#update-button {
+#update-button, #resultat-button, #medlem-button, #betaling-button {
   padding: 0.5rem 1rem;
   background-color: #fff;
   color: #080101;
@@ -156,7 +156,7 @@ td {
    color: #fff;
  }
  
- #update-button {
+ #update-button, #resultat-button, #medlem-button, #betaling-button {
    position: absolute;
    right: 4%;
  }
