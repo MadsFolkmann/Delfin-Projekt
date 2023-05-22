@@ -10,6 +10,11 @@ let swimmer;
 
 function start() {
   console.log("Velkommen Medlem");
+
+  // SortBy //
+  document.querySelector("#sort-by-name").addEventListener("click", sortByName)
+  document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership)
+
   updateGrid();
 }
 
@@ -80,3 +85,30 @@ function showMembers(member) {
 
 //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
+
+// ------------------ Sorting ------------------- \\
+
+function sortByName() {
+  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name))
+  displayMembers(swimmer)
+}
+
+function sortByMembership() {
+  swimmer.sort((swimmer1, swimmer2) => swimmer1.membership.localeCompare(swimmer2.membership));
+  displayMembers(swimmer);
+}
+
+// function sortByPayment() {
+//   swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
+//   displayMembers(swimmer)
+// }
+
+// function sortByPaid() {
+//   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
+//   displayMembers(swimmer);
+// }
+
+// function sortByMissingPayment() {
+//   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
+//   displayMembers(swimmer);
+// }

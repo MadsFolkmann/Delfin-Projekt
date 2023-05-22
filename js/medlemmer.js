@@ -14,6 +14,12 @@ function start() {
 
   //Create//
   document.querySelector("#add-swimmer").addEventListener("click", showCreateMember);
+
+  // Sort //
+  document.querySelector("#sort-by-name").addEventListener("click", sortByName)
+  document.querySelector("#sort-by-age").addEventListener("click", sortByAge)
+  document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership)
+  document.querySelector("#sort-by-activity").addEventListener("click", sortByActivity)
 }
 
 
@@ -36,7 +42,6 @@ function displayMembers(listOfMembers) {
 }
 
 function showMembers(member) {
-  console.log("hej");
   const html = /*html*/ `
     <tr>
       <td>${member.name}</td>
@@ -128,4 +133,27 @@ async function createMemberClicked(event) {
     updateGrid();
   }
   document.querySelector("#add-member").close();
+}
+
+
+// ------------------ Sorting ------------------- \\
+
+function sortByName() {
+  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name))
+  displayMembers(swimmer)
+}
+
+function sortByAge() {
+  swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
+  displayMembers(swimmer)
+}
+
+function sortByMembership() {
+  swimmer.sort((swimmer1, swimmer2) => swimmer1.membership.localeCompare(swimmer2.membership));
+  displayMembers(swimmer);
+}
+
+function sortByActivity() {
+  swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
+  displayMembers(swimmer);
 }

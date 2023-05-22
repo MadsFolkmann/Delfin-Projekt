@@ -101,6 +101,9 @@ td {
   padding: 8px;
   border: 1px solid #ddd;
 }
+th {
+  cursor: pointer;
+}
 
 /* -----Tilføj Svømmer----- */
 
