@@ -7,7 +7,6 @@ window.addEventListener("load", start);
 
 let swimmer;
 
-
 function start() {
   console.log("Velkommen Medlem");
   updateGrid();
@@ -16,12 +15,10 @@ function start() {
   document.querySelector("#add-swimmer").addEventListener("click", showCreateMember);
 }
 
-
 // ---------------Swimmers---------------//
-getSwimmer(); 
+getSwimmer();
 
 prepareSwimmer();
-
 
 async function updateGrid() {
   swimmer = await getSwimmer();

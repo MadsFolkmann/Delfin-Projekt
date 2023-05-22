@@ -179,7 +179,7 @@ td {
   color: #f3ce13;
 } */
 
-/*-------------- chat gpt css dialog -------------*/
+/*-------------- show swimmer dialog -------------*/
 
 #members-dialog {
   position: fixed;
@@ -252,16 +252,44 @@ td {
   background-color: lightblue;
 }
 
-/*-------------- animation til dialog -------------*/
+/*-------------- Tilføj svømmer dialog -------------*/
 
-@keyframes waterAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+#add-member {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+}
+
+#add-member .logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#add-member .closeButton {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: fixed;
+  left: 59.5%;
+  top: 84%;
+}
+
+#add-member-btn {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
