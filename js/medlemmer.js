@@ -123,6 +123,7 @@ async function createMemberClicked(event) {
   if (response.ok) {
     form.reset();
     updateGrid();
+    console.log("Succesfully added new member!");
   }
   document.querySelector("#add-member").close();
 }
