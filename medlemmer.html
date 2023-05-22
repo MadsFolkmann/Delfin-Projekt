@@ -79,7 +79,7 @@
       </form>
     </dialog>
 
-<dialog open id="add-member" class="dialog">
+<dialog id="add-member" class="dialog">
   <img src="/Billeder/logo.png" alt="logo" class="logo" />
 <form action="" method="post" id="createMember"></form>
 
@@ -208,7 +208,17 @@
           <label for="activity">Activity:</label>
         <select name="activity" id="activity">
            <option value="none"></option>
+            <option value="motionist">Motionist</option>
             <option value="konkurrencesvømmer">Konkurrencesvømmer</option>
+          </select> <br /><br />
+
+           <label for="disciplin">Disciplin:</label>
+        <select name="disciplin" id="disciplin">
+           <option value="none"></option>
+            <option value="cravl">Crawl</option>
+            <option value="butterfly">Butterfly</option>
+            <option value="rygcrawl">Rygcrawl</option>
+
           </select> <br /><br />
 
  <label for="image">Image:</label>
@@ -216,7 +226,7 @@
 
        <input type="submit" value="Add new swimmer" />
       </form>
-      <button class="close" type="button">Close</button>
+      <button class="closeButton" type="button">Close</button>
     </dialog>
 
     <script src="/js/medlemmer.js"></script>
