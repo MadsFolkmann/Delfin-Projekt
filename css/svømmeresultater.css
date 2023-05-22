@@ -78,6 +78,24 @@ header {
   margin-top: 55vh;
 }
 
+/* ------------Add Btn------------- */
+
+#add-training-competetion {
+  position: fixed;
+  left: 72%;
+  padding: 0.5rem 1rem;
+  background-color: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+#add-training-competetion:hover {
+  background-color: #1e847c;
+  color: #fff;
+} 
 
 /* -------------Table--------------- */
 
@@ -136,3 +154,17 @@ table.senior-table tr {
 .senior-table tr:hover {
   background-color: #ddd;
 }
+
+.update-btn {
+  padding: 0.5rem 1rem;
+  background-color: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #1e847c;
+  color: #fff;
+} 

@@ -57,7 +57,7 @@ function showU18Members(member) {
       <td>${member.disciplin}</td>
       <td>${member.training}</td>
       <td>${member.competition}</td>
-      <td><button class="update-button">Update</button></td>
+      <td><button class="update-btn">Update</button></td>
     </tr>
   `;
   document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
@@ -73,7 +73,7 @@ function showSeniorMembers(member) {
       <td>${member.disciplin}</td>
       <td>${member.training}</td>
       <td>${member.competition}</td>
-      <td><button class="update-button">Update</button></td>
+      <td><button class="update-btn">Update</button></td>
     </tr>
   `;
   document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
