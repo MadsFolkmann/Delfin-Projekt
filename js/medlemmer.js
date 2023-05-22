@@ -74,10 +74,15 @@ function showDialogMembers(member) {
   document.querySelector("#about").textContent = member.about;
 }
 
-async function createMember(name, age, membership, activity) {
+async function createMember(name, age, about, gender, disciplin, trainer, image, membership, activity) {
   const newMember = {
     name: name,
     age: age,
+    about: about,
+    gender: gender,
+    disciplin: disciplin,
+    trainer: trainer,
+    image: image,
     membership: membership,
     activity: activity,
   };
