@@ -85,5 +85,3 @@ async function prepareGameData(dataObject) {
   return gameArray;
 }
 
-
-console.log("Forside");
