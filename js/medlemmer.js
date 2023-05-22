@@ -11,6 +11,9 @@ let swimmer;
 function start() {
   console.log("Velkommen Medlem");
   updateGrid();
+
+  //Create//
+  document.querySelector("#add-swimmer").addEventListener("click", showCreateMember);
 }
 
 
@@ -69,4 +72,53 @@ function showDialogMembers(member) {
   document.querySelector("#activity").textContent = member.activity;
   document.querySelector("#disciplin").textContent = member.disciplin;
   document.querySelector("#about").textContent = member.about;
+}
+
+async function createMember(name, age, membership, activity) {
+  const newMember = {
+    name: name,
+    age: age,
+    membership: membership,
+    activity: activity,
+  };
+  const postAsJson = JSON.stringify(newMember);
+  const respone = await fetch(`${endpoint}/member.json`, { method: "POST", body: postAsJson });
+
+  return respone;
+}
+
+function showCreateMember() {
+  const dialog = document.querySelector("#add-member");
+
+  console.log("Create Member Dialog Opened");
+  dialog.showModal();
+
+  document.querySelector("#createMember").addEventListener("submit", createMemberClicked);
+
+  dialog.querySelector(".closeButton").addEventListener("click", () => {
+    console.log("Create Member Dialog Closed");
+    dialog.close();
+  });
+}
+
+async function createMemberClicked(event) {
+  event.preventDefaut();
+
+  const form = event.target;
+
+  const name = form.name.value;
+  const age = form.age.value;
+  const about = form.about.value;
+  const membership = form.membership.value;
+  const activity = form.activity.value;
+  const disciplin = form.disciplin.value;
+  const image = form.image.value;
+
+  const response = await createMember(name, age, membership, activity);
+
+  if (response.ok) {
+    form.reset();
+    updateGrid();
+  }
+  document.querySelector("#add-member").close();
 }

@@ -79,11 +79,10 @@
       </form>
     </dialog>
 
-<dialog open id="add-member" class="dialog">
+<dialog id="add-member" class="dialog">
   <img src="/Billeder/logo.png" alt="logo" class="logo" />
 <form action="" method="post" id="createMember"></form>
- <label for="image">Image:</label>
-        <input type="url" id="image" name="image" placeholder="Paste an image URL" required /><br /><br />
+
  <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Name:" required /><br /><br />
 
@@ -199,15 +198,35 @@
         <label for="membership">Membership:</label>
         <select name="membership" id="age">
             <option value="none"></option>
-           <option value="voksen">Voksen</option>
+           <option value="18+">18+</option>
+              <option value="u18">u18</option>
              <option value="pensionist">Pensionist</option>
                <option value="barn">Barn</option>
                  <option value="passiv">Passiv</option>
           </select> <br /><br />
 
+          <label for="activity">Activity:</label>
+        <select name="activity" id="activity">
+           <option value="none"></option>
+            <option value="motionist">Motionist</option>
+            <option value="konkurrencesvømmer">Konkurrencesvømmer</option>
+          </select> <br /><br />
+
+           <label for="disciplin">Disciplin:</label>
+        <select name="disciplin" id="disciplin">
+           <option value="none"></option>
+            <option value="cravl">Crawl</option>
+            <option value="butterfly">Butterfly</option>
+            <option value="rygcrawl">Rygcrawl</option>
+
+          </select> <br /><br />
+
+ <label for="image">Image:</label>
+        <input type="url" id="image" name="image" placeholder="Paste an image URL" required /><br /><br />
+
        <input type="submit" value="Add new swimmer" />
       </form>
-      <button class="close" type="button">Close</button>
+      <button class="closeButton" type="button">Close</button>
     </dialog>
 
     <script src="/js/medlemmer.js" type="module"></script>
