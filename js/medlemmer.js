@@ -42,6 +42,8 @@ async function updateGrid() {
   displayMembers(swimmer);
 }
 
+// ------------Display Members------------ //
+
 function displayMembers(listOfMembers) {
   document.querySelector("#members").innerHTML = "";
   for (const member of listOfMembers) {
@@ -56,8 +58,8 @@ function showMembers(member) {
       <td>${member.age}</td>
       <td>${member.membership}</td>
       <td>${member.activity}</td>
-        <td> <button class="btn-update">Update</button></td>
-        <td> <button class="btn-delete">Delete</button></td>
+        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-delete">Slet</button></td>
     </tr>
   `;
 
@@ -76,14 +78,6 @@ function showMembers(member) {
   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
 
-// document.querySelector("#members article:last-child").addEventListener("click", createMemberClickHandler(member));
-
-// function createMemberClickHandler(member) {
-//   return function () {
-//     membersClicked(member);
-//   };
-// }
-
 function membersClicked(member) {
   console.log("Member dialog opened");
   showDialogMembers(member);
@@ -99,6 +93,8 @@ function showDialogMembers(member) {
   document.querySelector("#disciplin").textContent = member.disciplin;
   document.querySelector("#about").textContent = member.about;
 }
+
+// ------------Create member------------ //
 
 async function createMember(name, age, about, gender, disciplin, trainer, image, membership, activity) {
   const newMember = {
@@ -200,7 +196,7 @@ deleteSwimmer();
 
 function deleteClicked(member) {
   console.log("Delete button clicked");
-  document.querySelector("#memberName").textContent = `Do you want to delete: ${member.name}`;
+  document.querySelector("#memberName").textContent = `Vil du gerne slette: ${member.name}?`;
   document.querySelector("#form-delete-member").setAttribute("data-id", member.id);
   document.querySelector("#dialog-delete-member").showModal();
 }
