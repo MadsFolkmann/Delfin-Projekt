@@ -124,6 +124,38 @@ h2 {
   animation: dolphinAnimation 4s ease-in-out infinite;
 }
 
+#bubbles1 {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 87%;
+  animation: bubble 5s linear infinite;
+}
+
+#bubbles2 {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 60%;
+  animation: bubble 5s linear infinite;
+}
+
+#bubbles3 {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 35%;
+  animation: bubble 5s linear infinite;
+}
+
+#bubbles4 {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 8%;
+  animation: bubble 5s linear infinite;
+}
+
 #button {
   width: 30%;
   padding: 0.2%;
@@ -137,27 +169,6 @@ h2 {
 .login:hover {
   background-color: #00a8e8;
 }
-
-/* .bubble-container {
-  position: relative;
-  top: 41%;
-  left: 75%;
-  width: 10%;
-  overflow: hidden;
-}
-.bubble {
-  position: absolute;
-  top: 41%;
-  left: 75%;
-  width: 10%;
-  background-color: #f10000;
-  border-radius: 50%;
-  animation: bubbleAnimation 3s infinite;
-} */
-
-/* input:invalid:required {
-  background-image: linear-gradient(to right, rgb(0, 106, 255), rgb(238, 144, 144));
-} */
 
 /* ------------------error messages---------------------- */
 
