@@ -129,7 +129,7 @@ h2 {
   width: 10%;
   top: 80%;
   left: 87%;
-  animation: bubble 5s linear infinite;
+  animation: bubble 3s linear infinite;
 }
 
 #bubbles2 {
@@ -137,7 +137,7 @@ h2 {
   width: 10%;
   top: 80%;
   left: 60%;
-  animation: bubble 5s linear infinite;
+  animation: bubble 4s linear infinite;
 }
 
 #bubbles3 {
@@ -153,7 +153,21 @@ h2 {
   width: 10%;
   top: 80%;
   left: 8%;
-  animation: bubble 5s linear infinite;
+  animation: bubble 6s linear infinite;
+}
+
+#coral1 {
+  position: absolute;
+  width: 20%;
+  top: 66.5%;
+  left: 82%;
+}
+
+#coral2 {
+  position: absolute;
+  width: 20%;
+  top: 66.5%;
+  left: -6%;
 }
 
 #button {
