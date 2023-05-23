@@ -140,6 +140,10 @@ table caption {
     border: 1px solid #DDD;
   }
   
+  th {
+    cursor: pointer;
+  }
+
 table.u18 tr,
 table.senior-table tr {
   height: 50px;
