@@ -6,10 +6,6 @@ export { getSwimmer, prepareSwimmer, deleteSwimmer, updateMember, endpoint, getR
 
 const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
 
-// function start() {
-//   console.log("hello normal");
-// }
-
 async function getSwimmer() {
   const response = await fetch(`${endpoint}/member.json`); // fetch request, (GET)
   const data = await response.json(); // parse JSON to JavaScript

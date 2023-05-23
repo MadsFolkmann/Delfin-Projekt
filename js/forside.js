@@ -28,16 +28,16 @@ async function openMoreInfoDialog() {
 }
 
 async function openMedlemDialog() {
-    const medlem = await getMedlem();
-    let htmlContent = "";
-    medlem.forEach((item) => {
-      htmlContent += `<p>${item.name}: ${item.about}: ${item.gender}: ${item.age}: ${item.membership}: ${item.activity}: ${item.disciplin}: ${item.trainer}</p>`;
-      htmlContent += `<img src="${item.image}" alt="${item.name}">`;
-    });
-  
-    dialogContent.innerHTML = htmlContent;
-    moreInfoDialog.showModal();
-  }
+  const medlem = await getMedlem();
+  let htmlContent = "";
+  medlem.forEach((item) => {
+    htmlContent += `<p>${item.name}: ${item.about}: ${item.gender}: ${item.age}: ${item.membership}: ${item.activity}: ${item.disciplin}: ${item.trainer}</p>`;
+    htmlContent += `<img src="${item.image}" alt="${item.name}">`;
+  });
+
+  dialogContent.innerHTML = htmlContent;
+  moreInfoDialog.showModal();
+}
 
 async function openResultatDialog() {
   const resultat = await getResultat();
@@ -84,4 +84,3 @@ async function prepareGameData(dataObject) {
   }
   return gameArray;
 }
-

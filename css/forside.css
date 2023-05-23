@@ -78,14 +78,11 @@ h1 {
   top: 20%;
   left: 27%;
   position: fixed;
-  
 }
 
 .swimming-table thead {
   background-color: #4db6ac;
 }
-
-
 
 .swimming-table caption {
   font-weight: bold;
@@ -108,7 +105,6 @@ table.medlemmer {
   left: 27%;
   position: fixed;
 }
-
 
 th,
 td {
@@ -139,10 +135,12 @@ td {
   background-color: #4db6ac;
 }
 
-
 /* ______________________BUTTON_____________________ */
 
-#update-button, #resultat-button, #medlem-button, #betaling-button {
+#update-button,
+#resultat-button,
+#medlem-button,
+#betaling-button {
   padding: 0.5rem 1rem;
   background-color: #fff;
   color: #080101;
@@ -150,13 +148,16 @@ td {
   border-radius: 4px;
   cursor: pointer;
   border: 1px solid #4db6ac;
- }
- #update-button:hover {
-   background-color: #1e847c;
-   color: #fff;
- }
- 
- #update-button, #resultat-button, #medlem-button, #betaling-button {
-   position: absolute;
-   right: 4%;
- }
+}
+#update-button:hover {
+  background-color: #1e847c;
+  color: #fff;
+}
+
+#update-button,
+#resultat-button,
+#medlem-button,
+#betaling-button {
+  position: absolute;
+  right: 4%;
+}

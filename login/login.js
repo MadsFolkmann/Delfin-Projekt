@@ -36,7 +36,6 @@ function getInfo() {
 
   console.log("Forkert brugernavn eller kodeord");
 }
-
 /* ------------------error messages---------------------- */
 
 document.getElementById("login").addEventListener("click", function (event) {
