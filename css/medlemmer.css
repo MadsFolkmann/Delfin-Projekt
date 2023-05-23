@@ -267,7 +267,7 @@ th {
   background-color: lightblue;
 }
 
-/*-------------- Tilføj svømmer dialog -------------*/
+/*-------------- Create dialog -------------*/
 
 #add-member {
   position: fixed;
@@ -336,7 +336,18 @@ th {
   opacity: 0;
 }
 
-/*-------------- delete og update buttons -------------*/
+@keyframes dialogOpenAnimation {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*-------------- Delete og Update buttons -------------*/
 
 .btn-update {
   padding: 0.5rem 1rem;
@@ -366,7 +377,7 @@ th {
   color: #fff;
 }
 
-/*-------------- delete dialog -------------*/
+/*-------------- Delete dialog -------------*/
 
 #dialog-delete-member {
   width: 26%;
@@ -402,8 +413,8 @@ th {
   object-fit: cover;
   border-radius: 50%;
   position: absolute;
-  top: 32%;
-  left: 74%;
+  top: 43%;
+  left: 76%;
 }
 
 .btn-cancel-no {
@@ -458,7 +469,7 @@ th {
   opacity: 0;
 }
 
-/*-------------- update dialog -------------*/
+/*-------------- Update dialog -------------*/
 
 #dialog-update-member {
   position: fixed;
@@ -529,17 +540,4 @@ th {
 .closeButtonUpdate:hover {
   background: lightblue;
   color: #fff;
-}
-
-/*-------------- Tilføj svømmer animation -------------*/
-
-@keyframes dialogOpenAnimation {
-  0% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
