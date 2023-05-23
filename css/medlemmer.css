@@ -278,7 +278,7 @@ th {
   color: #ffffff;
   transform: scale(1);
   opacity: 1;
-  animation: dialogOpenAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: dialogOpenAnimation 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 #add-member .logo {
@@ -291,7 +291,7 @@ th {
   border-radius: 50%;
 }
 
-#add-member .closeButton {
+.closeButton {
   background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #ffffff;
   border: none;
@@ -300,8 +300,13 @@ th {
   border-radius: 5px;
   cursor: pointer;
   position: fixed;
-  left: 79%;
+  left: 83%;
   top: 92%;
+}
+
+.closeButton:hover {
+  background-color: #00c6ff;
+  color: #fff;
 }
 
 #add-member-btn {
@@ -351,11 +356,24 @@ th {
   height: 20%;
   position: fixed;
   left: 10%;
-  top: 30%;
+  top: 1%;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #fff;
+  animation: zoomOut 0.3s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .btn-cancel-no {
@@ -376,6 +394,16 @@ th {
   border-radius: 3px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.btn-cancel-no:hover {
+  background: lightblue;
+  color: #fff;
+}
+
+.btn-cancel-yes:hover {
+  background: lightblue;
+  color: #fff;
 }
 
 /*-------------- update dialog -------------*/
@@ -426,6 +454,11 @@ th {
   position: fixed;
   left: 82.5%;
   top: 93.5%;
+}
+
+.closeButtonUpdate:hover {
+  background: lightblue;
+  color: #fff;
 }
 
 /*-------------- Tilføj svømmer animation -------------*/
