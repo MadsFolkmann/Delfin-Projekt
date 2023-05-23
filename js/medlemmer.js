@@ -19,6 +19,10 @@ function start() {
   document.querySelector("#sort-by-age").addEventListener("click", sortByAge)
   document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership)
   document.querySelector("#sort-by-activity").addEventListener("click", sortByActivity)
+
+  // Search //
+  document.querySelector("#search-input").addEventListener("keyup", inputSearchChanged);
+  document.querySelector("#search-input").addEventListener("search", inputSearchChanged);
 }
 
 // ---------------Swimmers---------------//
@@ -132,6 +136,22 @@ async function createMemberClicked(event) {
   }
   document.querySelector("#add-member").close();
 }
+
+// ------------Search------------ //
+
+function inputSearchChanged(event) {
+  const value = event.target.value;
+  const membersToShow = searchMembers(value);
+  console.log(membersToShow)
+  displayMembers(membersToShow);
+}
+
+function searchMembers(searchValue) {
+  searchValue = searchValue.toLowerCase();
+  const results = swimmer.filter(member => member.name.toLowerCase().includes(searchValue))
+  return results
+}
+
 
 
 // ------------------ Sorting ------------------- \\
