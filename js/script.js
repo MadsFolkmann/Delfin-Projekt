@@ -1,6 +1,6 @@
 "use strict";
 
-export { getSwimmer, prepareSwimmer, endpoint, getResults, getTraining };
+export { getSwimmer, prepareSwimmer, endpoint, getResults, prepareResult, getCompSwimmer };
 
 // window.addEventListener("load", start);
 
@@ -28,16 +28,45 @@ async function prepareSwimmer(member) {
   return swimmerArray;
 }
 
-async function getResults(uid) {
-  const response = await fetch(`${endpoint}/results/${uid}.json`);
-  const result = await response.json();
-  console.log(result);
+async function getResults() {
+  const response = await fetch(`${endpoint}/results.json`); // fetch request, (GET)
+  const data = await response.json(); // parse JSON to JavaScript
+  const result = prepareResult(data);
+  
   return result;
 }
-async function getTraining(uid) {
-  const response = await fetch(`${endpoint}/results/${uid}.json`);
+
+async function prepareResult(results) {
+  const resultsArray = [];
+  for (const key in results) {
+    const result = results[key];
+    result.id = key;
+    resultsArray.push(result);
+  }
+  return resultsArray;
+}
+
+
+async function getCompSwimmer(uid) {
+  console.log(uid)
+
+  const response = await fetch(`${endpoint}/member/${uid}.json`);
   const result = await response.json();
-  console.log(result);
   return result;
 }
+
+
+
+// async function getResults(uid) {
+//   const response = await fetch(`${endpoint}/results/${uid}.json`);
+//   const result = await response.json();
+//   console.log(result);
+//   return result;
+// }
+// async function getTraining(uid) {
+//   const response = await fetch(`${endpoint}/results/${uid}.json`);
+//   const result = await response.json();
+//   console.log(result);
+//   return result;
+// }
 

@@ -1,17 +1,15 @@
 "use strict"
 
-console.log("Svømmeresultater")
 
-import { prepareSwimmer, getSwimmer, endpoint, getResults, getTraining } from "./script.js";
+import { getCompSwimmer, getResults, prepareResult } from "./script.js";
 
-console.log("Regnskab");
 
 window.addEventListener("load", start);
 
 let swimmer;
+let results;
 
 function start() {
-  console.log("Velkommen Medlem");
 
   // Sort U18 //
     document.querySelector("#sort-by-name-u18").addEventListener("click", sortByNameU18);
@@ -27,39 +25,60 @@ function start() {
   updateGrid();
 }
 
-getSwimmer();
+getResults();
 
-prepareSwimmer();
+prepareResult();
 
+// async function updateGrid() {
+//   swimmer = await getSwimmer();
+//   displayMembers(swimmer);
+// }
 async function updateGrid() {
-  swimmer = await getSwimmer();
-  displayMembers(swimmer);
+  results = await getResults();
+  for (const result of results) {
+      const member = await getCompSwimmer(result.member);
+    console.log(member);
+    result.memberObject = member
+  }
+  console.log(results.memberObject)
+  displayResults(results);
 }
+
 
 //----------------- Showing Swimmers ------------------//
 
-function displayMembers(listOfMembers) {
+// function displayMembers(listOfMembers) {
+//     document.querySelector("#u-18").innerHTML = "";
+//     for (const member of listOfMembers) {
+//       if (member.activity === "konkurrencesvømmer" && member.age < 18) {
+//           showU18Members(member);
+//       } else if (member.activity === "konkurrencesvømmer" && member.age > 18) {
+//       showSeniorMembers(member)
+//       }
+//   }
+// }
+function displayResults(listOfResults) {
     document.querySelector("#u-18").innerHTML = "";
-    for (const member of listOfMembers) {
-      if (member.activity === "konkurrencesvømmer" && member.age < 18) {
-          showU18Members(member);
-      } else if (member.activity === "konkurrencesvømmer" && member.age > 18) {
-      showSeniorMembers(member)
+    for (const result of listOfResults) {
+      if (result.memberObject.activity === "konkurrencesvømmer" && result.memberObject.age < 18) {
+        showU18Members(result);
+      } else if (result.memberObject.activity === "konkurrencesvømmer" && result.memberObject.age > 18) {
+        showSeniorMembers(result);
       }
-  }
+    }
 }
 
-async function showU18Members(member) {
 
-  const training = await getTraining(member.training);
-  const result = await getResults(member.competition);
+
+async function showU18Members(result) {
+
   const html = /*html*/ `
     <tr>
-      <td>${member.name}</td>
-      <td>${member.age}</td>
-      <td>${member.trainer}</td>
-      <td>${member.disciplin}</td>
-      <td>${training.time}</td>
+      <td>${result.memberObject.name}</td>
+      <td>${result.memberObject.age}</td>
+      <td>${result.memberObject.trainer}</td>
+      <td>${result.memberObject.disciplin}</td>
+      <td>${result.time}</td>
       <td>${result.placement}</td>
       <td><button class="update-btn">Update</button></td>
     </tr>
@@ -68,16 +87,15 @@ async function showU18Members(member) {
   //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
 
-async function showSeniorMembers(member) {
-  const training = await getResults(member.training);
-  const result = await getResults(member.competition);
+async function showSeniorMembers(result) {
+
   const html = /*html*/ `
     <tr>
-      <td>${member.name}</td>
-      <td>${member.age}</td>
-      <td>${member.trainer}</td>
-      <td>${member.disciplin}</td>
-      <td>${training.time}</td>
+      <td>${result.memberObject.name}</td>
+      <td>${result.memberObject.age}</td>
+      <td>${result.memberObject.trainer}</td>
+      <td>${result.memberObject.disciplin}</td>
+      <td>${result.time}</td>
       <td>${result.placement}</td>
       <td><button class="update-btn">Update</button></td>
     </tr>
@@ -85,6 +103,7 @@ async function showSeniorMembers(member) {
   document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
   //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
+
 
 // async function getResults(uid) {
 //   const response = await fetch(`${endpoint}/results/${uid}.json`);
