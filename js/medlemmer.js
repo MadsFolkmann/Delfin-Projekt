@@ -26,6 +26,10 @@ function start() {
   document.querySelector("#sort-by-age").addEventListener("click", sortByAge);
   document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership);
   document.querySelector("#sort-by-activity").addEventListener("click", sortByActivity);
+
+  // search //
+  document.querySelector("#search-input").addEventListener("keyup", inputSearchChanged);
+  document.querySelector("#search-input").addEventListener("search", inputSearchChanged);
 }
 
 // ---------------Swimmers---------------//
