@@ -280,7 +280,6 @@ th {
   opacity: 1;
   animation: dialogOpenAnimation 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
 #add-member .logo {
   width: 150px;
   height: auto;
@@ -317,6 +316,24 @@ th {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.create-feedback {
+  position: fixed;
+  top: 15%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #b5ff7c, #00c811);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.create-feedback.fade-out {
+  opacity: 0;
 }
 
 /*-------------- delete og update buttons -------------*/
@@ -429,7 +446,7 @@ th {
   left: 55%;
   transform: translate(-50%, -50%);
   padding: 10px 20px;
-  background: linear-gradient(45deg, #00c6ff, #023b80);
+  background: linear-gradient(45deg, #a30000, #ff0000);
   color: white;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -476,6 +493,24 @@ th {
   border-radius: 3px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.update-feedback {
+  position: fixed;
+  top: 15%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.update-feedback.fade-out {
+  opacity: 0;
 }
 
 .closeButtonUpdate {

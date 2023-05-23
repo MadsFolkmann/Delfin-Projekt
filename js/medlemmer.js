@@ -146,11 +146,26 @@ async function createMemberClicked(event) {
   const response = await createMember(name, age, about, gender, disciplin, trainer, image, membership, activity);
 
   if (response.ok) {
+    showCreateFeedback("Medlemmet er blevet oprettet!");
     form.reset();
     updateGrid();
     console.log("Succesfully added new member!");
   }
   document.querySelector("#add-member").close();
+}
+
+function showCreateFeedback(message) {
+  const feedbackElement = document.createElement("div");
+  feedbackElement.classList.add("create-feedback");
+  feedbackElement.textContent = message;
+  document.body.appendChild(feedbackElement);
+
+  setTimeout(() => {
+    feedbackElement.classList.add("fade-out");
+    setTimeout(() => {
+      feedbackElement.remove();
+    }, 500);
+  }, 2000);
 }
 
 // ------------Search------------ //
@@ -275,9 +290,23 @@ async function updateMemberClicked(event) {
 
   const response = await updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image);
   if (response.ok) {
+    showUpdateFeedBack("Medlemmet er blevet opdateret!");
     updateGrid();
-
     updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image);
   }
   document.querySelector("#dialog-update-member").close();
+}
+
+function showUpdateFeedBack(message) {
+  const feedbackElement = document.createElement("div");
+  feedbackElement.classList.add("update-feedback");
+  feedbackElement.textContent = message;
+  document.body.appendChild(feedbackElement);
+
+  setTimeout(() => {
+    feedbackElement.classList.add("fade-out");
+    setTimeout(() => {
+      feedbackElement.remove();
+    }, 500);
+  }, 2000);
 }
