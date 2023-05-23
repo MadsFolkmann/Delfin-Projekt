@@ -1,6 +1,6 @@
 "use strict";
 
-export { getSwimmer, prepareSwimmer, endpoint, getResults, prepareResult, getCompSwimmer };
+export { getSwimmer, prepareSwimmer, deleteSwimmer, updateMember, endpoint, getResults, prepareResult, getCompSwimmer };
 
 // window.addEventListener("load", start);
 
@@ -9,7 +9,6 @@ const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.fire
 // function start() {
 //   console.log("hello normal");
 // }
-
 
 async function getSwimmer() {
   const response = await fetch(`${endpoint}/member.json`); // fetch request, (GET)
@@ -27,6 +26,33 @@ async function prepareSwimmer(member) {
   }
   return swimmerArray;
 }
+
+async function deleteSwimmer(id) {
+  const response = await fetch(`${endpoint}/member/${id}.json`, {
+    method: "DELETE",
+  });
+  return response;
+}
+
+async function updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image) {
+  const updatedMember = {
+    name: name,
+    age: age,
+    about: about,
+    gender: gender,
+    membership: membership,
+    activity: activity,
+    disciplin: disciplin,
+    trainer: trainer,
+    image: image,
+  };
+
+  const json = JSON.stringify(updatedMember);
+  const response = await fetch(`${endpoint}/member/${id}.json`, { method: "PUT", body: json });
+
+  return response;
+}
+
 
 async function getResults() {
   const response = await fetch(`${endpoint}/results.json`); // fetch request, (GET)
