@@ -15,10 +15,10 @@ function start() {
   document.querySelector("#add-swimmer").addEventListener("click", showCreateMember);
 
   // Sort //
-  document.querySelector("#sort-by-name").addEventListener("click", sortByName)
-  document.querySelector("#sort-by-age").addEventListener("click", sortByAge)
-  document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership)
-  document.querySelector("#sort-by-activity").addEventListener("click", sortByActivity)
+  document.querySelector("#sort-by-name").addEventListener("click", sortByName);
+  document.querySelector("#sort-by-age").addEventListener("click", sortByAge);
+  document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership);
+  document.querySelector("#sort-by-activity").addEventListener("click", sortByActivity);
 }
 
 // ---------------Swimmers---------------//
@@ -45,6 +45,8 @@ function showMembers(member) {
       <td>${member.age}</td>
       <td>${member.membership}</td>
       <td>${member.activity}</td>
+        <td> <button class="btn-update">Update</button></td>
+        <td> <button class="btn-delete">Delete</button></td>
     </tr>
   `;
 
@@ -133,17 +135,16 @@ async function createMemberClicked(event) {
   document.querySelector("#add-member").close();
 }
 
-
 // ------------------ Sorting ------------------- \\
 
 function sortByName() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name))
-  displayMembers(swimmer)
+  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name));
+  displayMembers(swimmer);
 }
 
 function sortByAge() {
   swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
-  displayMembers(swimmer)
+  displayMembers(swimmer);
 }
 
 function sortByMembership() {

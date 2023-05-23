@@ -314,6 +314,34 @@ th {
   cursor: pointer;
 }
 
+.btn-update {
+  padding: 0.5rem 1rem;
+  background-color: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  background-color: #1e847c;
+  color: #fff;
+}
+
+.btn-delete {
+  padding: 0.5rem 1rem;
+  background-color: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #1e847c;
+  color: #fff;
+}
+
 /*-------------- Tilføj svømmer animation -------------*/
 
 @keyframes dialogOpenAnimation {
