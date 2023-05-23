@@ -1,6 +1,6 @@
 "use strict";
 
-export { getSwimmer, prepareSwimmer, endpoint, deleteSwimmer };
+export { getSwimmer, prepareSwimmer, deleteSwimmer, updateMember, endpoint };
 
 // window.addEventListener("load", start);
 
@@ -31,5 +31,24 @@ async function deleteSwimmer(id) {
   const response = await fetch(`${endpoint}/member/${id}.json`, {
     method: "DELETE",
   });
+  return response;
+}
+
+async function updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image) {
+  const updatedMember = {
+    name: name,
+    age: age,
+    about: about,
+    gender: gender,
+    membership: membership,
+    activity: activity,
+    disciplin: disciplin,
+    trainer: trainer,
+    image: image,
+  };
+
+  const json = JSON.stringify(updatedMember);
+  const response = await fetch(`${endpoint}/member/${id}.json`, { method: "PUT", body: json });
+
   return response;
 }

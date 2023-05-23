@@ -1,6 +1,6 @@
 "use strict";
 
-import { getSwimmer, prepareSwimmer, endpoint, deleteSwimmer } from "./script.js";
+import { getSwimmer, prepareSwimmer, deleteSwimmer, endpoint, updateMember } from "./script.js";
 // const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
 
 window.addEventListener("load", start);
@@ -17,6 +17,9 @@ function start() {
   //Delete//
   document.querySelector("#form-delete-member").addEventListener("submit", deleteMemberClicked);
   document.querySelector("#form-delete-member").addEventListener("click", deleteMemberClickedNo);
+
+  //Update//
+  document.querySelector("#form-update-member").addEventListener("submit", updateMemberClicked);
 
   // Sort //
   document.querySelector("#sort-by-name").addEventListener("click", sortByName);
@@ -55,6 +58,11 @@ function showMembers(member) {
   `;
 
   document.querySelector("#members").insertAdjacentHTML("beforeend", html);
+
+  document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
+    event.stopPropagation();
+    updateClicked(member);
+  });
 
   document.querySelector("#members tr:last-child .btn-delete").addEventListener("click", (event) => {
     event.stopPropagation();
@@ -183,8 +191,7 @@ async function deleteMemberClicked(event) {
   const id = event.target.getAttribute("data-id");
   const response = await deleteSwimmer(id);
   if (response.ok) {
-    console.log("Member has been succesfully deleted!");
-    deleteSwimmer(id);
+    console.log("Member has succesfully been deleted!");
     updateGrid();
   }
   document.querySelector("#dialog-delete-member").close();
@@ -193,4 +200,55 @@ async function deleteMemberClicked(event) {
 function deleteMemberClickedNo() {
   console.log("Close delete dialog");
   document.querySelector("#dialog-delete-member").close();
+}
+
+// ------------------ Update member ------------------- \\
+updateMember();
+
+function updateClicked(member) {
+  console.log("Update Button Clicked");
+  const updateForm = document.querySelector("#form-update-member");
+  const dialog = document.querySelector("#dialog-update-member");
+
+  updateForm.name.value = member.name;
+  updateForm.age.value = member.age;
+  updateForm.about.value = member.about;
+  updateForm.gender.value = member.gender;
+  updateForm.membership.value = member.membership;
+  updateForm.activity.value = member.activity;
+  updateForm.disciplin.value = member.disciplin;
+  updateForm.trainer.value = member.trainer;
+  updateForm.image.value = member.image;
+
+  document.querySelector("#form-update-member").setAttribute("data-id", member.id);
+  dialog.showModal();
+
+  dialog.querySelector(".closeButtonUpdate").addEventListener("click", () => {
+    dialog.close();
+    console.log("Update dialog closed");
+  });
+}
+
+async function updateMemberClicked(event) {
+  event.preventDefault();
+  const form = event.target;
+  const id = event.target.getAttribute("data-id");
+
+  const name = form.name.value;
+  const age = form.age.value;
+  const about = form.about.value;
+  const gender = form.gender.value;
+  const membership = form.membership.value;
+  const activity = form.activity.value;
+  const disciplin = form.disciplin.value;
+  const trainer = form.trainer.value;
+  const image = form.image.value;
+
+  const response = await updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image);
+  if (response.ok) {
+    updateGrid();
+
+    updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image);
+  }
+  document.querySelector("#dialog-update-member").close();
 }
