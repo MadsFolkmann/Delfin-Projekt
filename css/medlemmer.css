@@ -314,6 +314,120 @@ th {
   cursor: pointer;
 }
 
+/*-------------- delete og update buttons -------------*/
+
+.btn-update {
+  padding: 0.5rem 1rem;
+  background-color: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  background-color: #1e847c;
+  color: #fff;
+}
+
+.btn-delete {
+  padding: 0.5rem 1rem;
+  background-color: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #1e847c;
+  color: #fff;
+}
+
+/*-------------- delete dialog -------------*/
+
+#dialog-delete-member {
+  width: 26%;
+  height: 20%;
+  position: fixed;
+  left: 10%;
+  top: 30%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #00ffd9);
+  color: #fff;
+}
+
+.btn-cancel-no {
+  background: linear-gradient(45deg, #00c6ff, #00ffd9);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-cancel-yes {
+  background: linear-gradient(45deg, #00c6ff, #00ffd9);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/*-------------- update dialog -------------*/
+
+#dialog-update-member {
+  position: fixed;
+  left: 10%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  transform: scale(1);
+  opacity: 1;
+  animation: dialogOpenAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#dialog-update-member .logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+#dialog-update-member h1 {
+  text-align: center;
+  font-family: "Crimson Text", serif;
+}
+
+#update-member-btn {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.closeButtonUpdate {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed;
+  left: 82.5%;
+  top: 93.5%;
+}
+
 /*-------------- Tilføj svømmer animation -------------*/
 
 @keyframes dialogOpenAnimation {

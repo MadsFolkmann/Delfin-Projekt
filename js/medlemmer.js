@@ -1,6 +1,6 @@
 "use strict";
 
-import { getSwimmer, prepareSwimmer, endpoint } from "./script.js";
+import { getSwimmer, prepareSwimmer, deleteSwimmer, endpoint, updateMember } from "./script.js";
 // const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
 
 window.addEventListener("load", start);
@@ -14,15 +14,18 @@ function start() {
   //Create//
   document.querySelector("#add-swimmer").addEventListener("click", showCreateMember);
 
-  // Sort //
-  document.querySelector("#sort-by-name").addEventListener("click", sortByName)
-  document.querySelector("#sort-by-age").addEventListener("click", sortByAge)
-  document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership)
-  document.querySelector("#sort-by-activity").addEventListener("click", sortByActivity)
+  //Delete//
+  document.querySelector("#form-delete-member").addEventListener("submit", deleteMemberClicked);
+  document.querySelector("#form-delete-member").addEventListener("click", deleteMemberClickedNo);
 
-  // Search //
-  document.querySelector("#search-input").addEventListener("keyup", inputSearchChanged);
-  document.querySelector("#search-input").addEventListener("search", inputSearchChanged);
+  //Update//
+  document.querySelector("#form-update-member").addEventListener("submit", updateMemberClicked);
+
+  // Sort //
+  document.querySelector("#sort-by-name").addEventListener("click", sortByName);
+  document.querySelector("#sort-by-age").addEventListener("click", sortByAge);
+  document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership);
+  document.querySelector("#sort-by-activity").addEventListener("click", sortByActivity);
 }
 
 // ---------------Swimmers---------------//
@@ -49,10 +52,23 @@ function showMembers(member) {
       <td>${member.age}</td>
       <td>${member.membership}</td>
       <td>${member.activity}</td>
+        <td> <button class="btn-update">Update</button></td>
+        <td> <button class="btn-delete">Delete</button></td>
     </tr>
   `;
 
   document.querySelector("#members").insertAdjacentHTML("beforeend", html);
+
+  document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
+    event.stopPropagation();
+    updateClicked(member);
+  });
+
+  document.querySelector("#members tr:last-child .btn-delete").addEventListener("click", (event) => {
+    event.stopPropagation();
+    deleteClicked(member);
+  });
+
   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
 
@@ -142,28 +158,26 @@ async function createMemberClicked(event) {
 function inputSearchChanged(event) {
   const value = event.target.value;
   const membersToShow = searchMembers(value);
-  console.log(membersToShow)
+  console.log(membersToShow);
   displayMembers(membersToShow);
 }
 
 function searchMembers(searchValue) {
   searchValue = searchValue.toLowerCase();
-  const results = swimmer.filter(member => member.name.toLowerCase().includes(searchValue))
-  return results
+  const results = swimmer.filter((member) => member.name.toLowerCase().includes(searchValue));
+  return results;
 }
-
-
 
 // ------------------ Sorting ------------------- \\
 
 function sortByName() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name))
-  displayMembers(swimmer)
+  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name));
+  displayMembers(swimmer);
 }
 
 function sortByAge() {
   swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
-  displayMembers(swimmer)
+  displayMembers(swimmer);
 }
 
 function sortByMembership() {
@@ -174,4 +188,82 @@ function sortByMembership() {
 function sortByActivity() {
   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
   displayMembers(swimmer);
+}
+
+// ------------------ Delete member ------------------- \\
+
+deleteSwimmer();
+
+function deleteClicked(member) {
+  console.log("Delete button clicked");
+  document.querySelector("#memberName").textContent = `Do you want to delete: ${member.name}`;
+  document.querySelector("#form-delete-member").setAttribute("data-id", member.id);
+  document.querySelector("#dialog-delete-member").showModal();
+}
+
+async function deleteMemberClicked(event) {
+  console.log(event);
+  const id = event.target.getAttribute("data-id");
+  const response = await deleteSwimmer(id);
+  if (response.ok) {
+    console.log("Member has succesfully been deleted!");
+    updateGrid();
+  }
+  document.querySelector("#dialog-delete-member").close();
+}
+
+function deleteMemberClickedNo() {
+  console.log("Close delete dialog");
+  document.querySelector("#dialog-delete-member").close();
+}
+
+// ------------------ Update member ------------------- \\
+updateMember();
+
+function updateClicked(member) {
+  console.log("Update Button Clicked");
+  const updateForm = document.querySelector("#form-update-member");
+  const dialog = document.querySelector("#dialog-update-member");
+
+  updateForm.name.value = member.name;
+  updateForm.age.value = member.age;
+  updateForm.about.value = member.about;
+  updateForm.gender.value = member.gender;
+  updateForm.membership.value = member.membership;
+  updateForm.activity.value = member.activity;
+  updateForm.disciplin.value = member.disciplin;
+  updateForm.trainer.value = member.trainer;
+  updateForm.image.value = member.image;
+
+  document.querySelector("#form-update-member").setAttribute("data-id", member.id);
+  dialog.showModal();
+
+  dialog.querySelector(".closeButtonUpdate").addEventListener("click", () => {
+    dialog.close();
+    console.log("Update dialog closed");
+  });
+}
+
+async function updateMemberClicked(event) {
+  event.preventDefault();
+  const form = event.target;
+  const id = event.target.getAttribute("data-id");
+
+  const name = form.name.value;
+  const age = form.age.value;
+  const about = form.about.value;
+  const gender = form.gender.value;
+  const membership = form.membership.value;
+  const activity = form.activity.value;
+  const disciplin = form.disciplin.value;
+  const trainer = form.trainer.value;
+  const image = form.image.value;
+
+  const response = await updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image);
+  if (response.ok) {
+    updateGrid();
+
+    updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image);
+  }
+  document.querySelector("#dialog-update-member").close();
 }
