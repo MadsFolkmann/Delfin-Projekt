@@ -1,17 +1,15 @@
 "use strict"
 
-console.log("Svømmeresultater")
 
-import { prepareSwimmer, getSwimmer } from "./script.js";
+import { getCompSwimmer, getResults, prepareResult } from "./script.js";
 
-console.log("Regnskab");
 
 window.addEventListener("load", start);
 
 let swimmer;
+let results;
 
 function start() {
-  console.log("Velkommen Medlem");
 
   // Sort U18 //
     document.querySelector("#sort-by-name-u18").addEventListener("click", sortByNameU18);
@@ -27,58 +25,93 @@ function start() {
   updateGrid();
 }
 
-getSwimmer();
+getResults();
 
-prepareSwimmer();
+prepareResult();
 
+// async function updateGrid() {
+//   swimmer = await getSwimmer();
+//   displayMembers(swimmer);
+// }
 async function updateGrid() {
-  swimmer = await getSwimmer();
-  displayMembers(swimmer);
-}
-
-function displayMembers(listOfMembers) {
-    document.querySelector("#u-18").innerHTML = "";
-    for (const member of listOfMembers) {
-      if (member.activity === "konkurrencesvømmer" && member.age < 18) {
-          showU18Members(member);
-      } else if (member.activity === "konkurrencesvømmer" && member.age > 18) {
-      showSeniorMembers(member)
-      }
+  results = await getResults();
+  for (const result of results) {
+      const member = await getCompSwimmer(result.member);
+    console.log(member);
+    result.memberObject = member
   }
+  console.log(results.memberObject)
+  displayResults(results);
 }
 
-function showU18Members(member) {
-  console.log("hej");
-  const html = /*html*/`
+
+//----------------- Showing Swimmers ------------------//
+
+// function displayMembers(listOfMembers) {
+//     document.querySelector("#u-18").innerHTML = "";
+//     for (const member of listOfMembers) {
+//       if (member.activity === "konkurrencesvømmer" && member.age < 18) {
+//           showU18Members(member);
+//       } else if (member.activity === "konkurrencesvømmer" && member.age > 18) {
+//       showSeniorMembers(member)
+//       }
+//   }
+// }
+function displayResults(listOfResults) {
+    document.querySelector("#u-18").innerHTML = "";
+    for (const result of listOfResults) {
+      if (result.memberObject.activity === "konkurrencesvømmer" && result.memberObject.age < 18) {
+        showU18Members(result);
+      } else if (result.memberObject.activity === "konkurrencesvømmer" && result.memberObject.age > 18) {
+        showSeniorMembers(result);
+      }
+    }
+}
+
+
+
+async function showU18Members(result) {
+
+  const html = /*html*/ `
     <tr>
-      <td>${member.name}</td>
-      <td>${member.age}</td>
-      <td>${member.trainer}</td>
-      <td>${member.disciplin}</td>
-      <td>${member.training}</td>
-      <td>${member.competition}</td>
+      <td>${result.memberObject.name}</td>
+      <td>${result.memberObject.age}</td>
+      <td>${result.memberObject.trainer}</td>
+      <td>${result.memberObject.disciplin}</td>
+      <td>${result.time}</td>
+      <td>${result.placement}</td>
       <td><button class="update-btn">Update</button></td>
     </tr>
   `;
   document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
   //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
-function showSeniorMembers(member) {
-  console.log("hej");
-  const html = /*html*/`
+
+async function showSeniorMembers(result) {
+
+  const html = /*html*/ `
     <tr>
-      <td>${member.name}</td>
-      <td>${member.age}</td>
-      <td>${member.trainer}</td>
-      <td>${member.disciplin}</td>
-      <td>${member.training}</td>
-      <td>${member.competition}</td>
+      <td>${result.memberObject.name}</td>
+      <td>${result.memberObject.age}</td>
+      <td>${result.memberObject.trainer}</td>
+      <td>${result.memberObject.disciplin}</td>
+      <td>${result.time}</td>
+      <td>${result.placement}</td>
       <td><button class="update-btn">Update</button></td>
     </tr>
   `;
   document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
   //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
+
+
+// async function getResults(uid) {
+//   const response = await fetch(`${endpoint}/results/${uid}.json`);
+//   const result = await response.json();
+//   console.log(result)
+//   return result;
+// }
+
 
 // ----------------Sort By--------------- //
 
@@ -115,7 +148,6 @@ function sortByCompetetionU18() {
 function sortByNameSenior() {
   swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name));
   displayMembers(swimmer);
-  console.log("senior")
 }
 function sortByAgeSenior() {
   swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);

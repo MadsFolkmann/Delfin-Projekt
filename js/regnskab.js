@@ -45,9 +45,9 @@ function showMembers(member) {
       <tr>
         <td>${member.name}</td>
         <td>${member.membership}</td>
-        <td>1600</td>
-        <td>1600</td>
-        <td class="debt">0</td>
+        <td>1600,-</td>
+        <td>0,-</td>
+        <td class="debt">1600,-</td>
       </tr>
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
@@ -56,9 +56,9 @@ function showMembers(member) {
       <tr>
         <td>${member.name}</td>
         <td>${member.membership}</td>
-        <td>1000</td>
-        <td>1000</td>
-        <td class="debt">0</td>
+        <td>1000,-</td>
+        <td>0,-</td>
+        <td class="debt">1000,-</td>
       </tr>
     `;
         document.querySelector("#members").insertAdjacentHTML("beforeend", html);
@@ -67,9 +67,9 @@ function showMembers(member) {
       <tr>
         <td>${member.name}</td>
         <td>${member.membership}</td>
-        <td>1200</td>
-        <td>1200</td>
-        <td class="debt">0</td>
+        <td>1200,-</td>
+        <td>0,-</td>
+        <td class="debt">1200,-</td>
       </tr>
     `;
         document.querySelector("#members").insertAdjacentHTML("beforeend", html);
@@ -78,9 +78,9 @@ function showMembers(member) {
       <tr>
         <td>${member.name}</td>
         <td>${member.membership}</td>
-        <td>500</td>
-        <td>500</td>
-        <td class="debt">0</td>
+        <td>500,-</td>
+        <td>0,-</td>
+        <td class="debt">500,-</td>
       </tr>
     `;
         document.querySelector("#members").insertAdjacentHTML("beforeend", html);
