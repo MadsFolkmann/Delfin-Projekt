@@ -53,12 +53,11 @@ async function updateMember(id, name, age, about, gender, membership, activity, 
   return response;
 }
 
-
 async function getResults() {
   const response = await fetch(`${endpoint}/results.json`); // fetch request, (GET)
   const data = await response.json(); // parse JSON to JavaScript
   const result = prepareResult(data);
-  
+
   return result;
 }
 
@@ -72,16 +71,13 @@ async function prepareResult(results) {
   return resultsArray;
 }
 
-
 async function getCompSwimmer(uid) {
-  console.log(uid)
+  console.log(uid);
 
   const response = await fetch(`${endpoint}/member/${uid}.json`);
   const result = await response.json();
   return result;
 }
-
-
 
 // async function getResults(uid) {
 //   const response = await fetch(`${endpoint}/results/${uid}.json`);
@@ -95,4 +91,3 @@ async function getCompSwimmer(uid) {
 //   console.log(result);
 //   return result;
 // }
-

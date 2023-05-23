@@ -423,6 +423,24 @@ th {
   color: #fff;
 }
 
+.delete-feedback {
+  position: fixed;
+  top: 15%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.delete-feedback.fade-out {
+  opacity: 0;
+}
+
 /*-------------- update dialog -------------*/
 
 #dialog-update-member {

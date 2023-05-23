@@ -207,6 +207,7 @@ async function deleteMemberClicked(event) {
   const response = await deleteSwimmer(id);
   if (response.ok) {
     console.log("Member has succesfully been deleted!");
+    showDeleteFeedback("Medlemmet er blevet slettet!");
     updateGrid();
   }
   document.querySelector("#dialog-delete-member").close();
@@ -217,6 +218,19 @@ function deleteMemberClickedNo() {
   document.querySelector("#dialog-delete-member").close();
 }
 
+function showDeleteFeedback(message) {
+  const feedbackElement = document.createElement("div");
+  feedbackElement.classList.add("delete-feedback");
+  feedbackElement.textContent = message;
+  document.body.appendChild(feedbackElement);
+
+  setTimeout(() => {
+    feedbackElement.classList.add("fade-out");
+    setTimeout(() => {
+      feedbackElement.remove();
+    }, 500); // Vent 500ms (varigheden af transitionen) og fjern derefter elementet
+  }, 2000); // Vis feedback i 2 sekunder og start derefter fade-out
+}
 // ------------------ Update member ------------------- \\
 updateMember();
 
