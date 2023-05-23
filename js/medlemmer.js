@@ -14,6 +14,9 @@ function start() {
   //Create//
   document.querySelector("#add-swimmer").addEventListener("click", showCreateMember);
 
+  //Delete//
+  // document.querySelector("#form-delete-member").addEventListener("submit", deleteGameClicked);
+
   // Sort //
   document.querySelector("#sort-by-name").addEventListener("click", sortByName);
   document.querySelector("#sort-by-age").addEventListener("click", sortByAge);
@@ -51,6 +54,12 @@ function showMembers(member) {
   `;
 
   document.querySelector("#members").insertAdjacentHTML("beforeend", html);
+
+  document.querySelector("#members tr:last-child .btn-delete").addEventListener("click", (event) => {
+    event.stopPropagation();
+    deleteClicked(member);
+  });
+
   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
 
@@ -155,4 +164,19 @@ function sortByMembership() {
 function sortByActivity() {
   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
   displayMembers(swimmer);
+}
+
+// ------------------ Delete member ------------------- \\
+// async function deleteSwimmer(id) {
+//   const response = await fetch(`${endpoint}/member/${id}.json`, {
+//     method: "DELETE",
+//   });
+//   return response;
+// }
+
+function deleteClicked(member) {
+  console.log("Delete button clicked");
+  document.querySelector("#memberName").textContent = `Do you want to delete: ${member.name}`;
+  document.querySelector("#form-delete-member").setAttribute("data-id", member.id);
+  document.querySelector("#dialog-delete-member").showModal();
 }
