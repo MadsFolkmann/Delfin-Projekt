@@ -354,12 +354,12 @@ th {
   top: 30%;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(45deg, #00c6ff, #00ffd9);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #fff;
 }
 
 .btn-cancel-no {
-  background: linear-gradient(45deg, #00c6ff, #00ffd9);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
   color: white;
   padding: 10px 15px;
   border: none;
@@ -369,7 +369,7 @@ th {
 }
 
 .btn-cancel-yes {
-  background: linear-gradient(45deg, #00c6ff, #00ffd9);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
   color: white;
   padding: 10px 15px;
   border: none;
