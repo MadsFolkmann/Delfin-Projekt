@@ -1,6 +1,6 @@
 "use strict";
 
-export { getSwimmer, prepareSwimmer, endpoint };
+export { getSwimmer, prepareSwimmer, endpoint, getResults, getTraining };
 
 // window.addEventListener("load", start);
 
@@ -27,3 +27,17 @@ async function prepareSwimmer(member) {
   }
   return swimmerArray;
 }
+
+async function getResults(uid) {
+  const response = await fetch(`${endpoint}/results/${uid}.json`);
+  const result = await response.json();
+  console.log(result);
+  return result;
+}
+async function getTraining(uid) {
+  const response = await fetch(`${endpoint}/results/${uid}.json`);
+  const result = await response.json();
+  console.log(result);
+  return result;
+}
+

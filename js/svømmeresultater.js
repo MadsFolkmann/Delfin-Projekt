@@ -2,7 +2,7 @@
 
 console.log("Svømmeresultater")
 
-import { prepareSwimmer, getSwimmer } from "./script.js";
+import { prepareSwimmer, getSwimmer, endpoint, getResults, getTraining } from "./script.js";
 
 console.log("Regnskab");
 
@@ -36,6 +36,8 @@ async function updateGrid() {
   displayMembers(swimmer);
 }
 
+//----------------- Showing Swimmers ------------------//
+
 function displayMembers(listOfMembers) {
     document.querySelector("#u-18").innerHTML = "";
     for (const member of listOfMembers) {
@@ -47,38 +49,50 @@ function displayMembers(listOfMembers) {
   }
 }
 
-function showU18Members(member) {
-  console.log("hej");
-  const html = /*html*/`
+async function showU18Members(member) {
+
+  const training = await getTraining(member.training);
+  const result = await getResults(member.competition);
+  const html = /*html*/ `
     <tr>
       <td>${member.name}</td>
       <td>${member.age}</td>
       <td>${member.trainer}</td>
       <td>${member.disciplin}</td>
-      <td>${member.training}</td>
-      <td>${member.competition}</td>
+      <td>${training.time}</td>
+      <td>${result.placement}</td>
       <td><button class="update-btn">Update</button></td>
     </tr>
   `;
   document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
   //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
-function showSeniorMembers(member) {
-  console.log("hej");
-  const html = /*html*/`
+
+async function showSeniorMembers(member) {
+  const training = await getResults(member.training);
+  const result = await getResults(member.competition);
+  const html = /*html*/ `
     <tr>
       <td>${member.name}</td>
       <td>${member.age}</td>
       <td>${member.trainer}</td>
       <td>${member.disciplin}</td>
-      <td>${member.training}</td>
-      <td>${member.competition}</td>
+      <td>${training.time}</td>
+      <td>${result.placement}</td>
       <td><button class="update-btn">Update</button></td>
     </tr>
   `;
   document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
   //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
+
+// async function getResults(uid) {
+//   const response = await fetch(`${endpoint}/results/${uid}.json`);
+//   const result = await response.json();
+//   console.log(result)
+//   return result;
+// }
+
 
 // ----------------Sort By--------------- //
 
@@ -115,7 +129,6 @@ function sortByCompetetionU18() {
 function sortByNameSenior() {
   swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name));
   displayMembers(swimmer);
-  console.log("senior")
 }
 function sortByAgeSenior() {
   swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
