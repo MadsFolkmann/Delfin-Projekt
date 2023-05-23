@@ -1,6 +1,6 @@
 "use strict";
 
-import { getSwimmer, prepareSwimmer, endpoint } from "./script.js";
+import { getSwimmer, prepareSwimmer, endpoint, deleteSwimmer } from "./script.js";
 // const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
 
 window.addEventListener("load", start);
@@ -15,7 +15,8 @@ function start() {
   document.querySelector("#add-swimmer").addEventListener("click", showCreateMember);
 
   //Delete//
-  // document.querySelector("#form-delete-member").addEventListener("submit", deleteGameClicked);
+  document.querySelector("#form-delete-member").addEventListener("submit", deleteMemberClicked);
+  document.querySelector("#form-delete-member").addEventListener("click", deleteMemberClickedNo);
 
   // Sort //
   document.querySelector("#sort-by-name").addEventListener("click", sortByName);
@@ -167,16 +168,29 @@ function sortByActivity() {
 }
 
 // ------------------ Delete member ------------------- \\
-// async function deleteSwimmer(id) {
-//   const response = await fetch(`${endpoint}/member/${id}.json`, {
-//     method: "DELETE",
-//   });
-//   return response;
-// }
+
+deleteSwimmer();
 
 function deleteClicked(member) {
   console.log("Delete button clicked");
   document.querySelector("#memberName").textContent = `Do you want to delete: ${member.name}`;
   document.querySelector("#form-delete-member").setAttribute("data-id", member.id);
   document.querySelector("#dialog-delete-member").showModal();
+}
+
+async function deleteMemberClicked(event) {
+  console.log(event);
+  const id = event.target.getAttribute("data-id");
+  const response = await deleteSwimmer(id);
+  if (response.ok) {
+    console.log("Member has been succesfully deleted!");
+    deleteSwimmer(id);
+    updateGrid();
+  }
+  document.querySelector("#dialog-delete-member").close();
+}
+
+function deleteMemberClickedNo() {
+  console.log("Close delete dialog");
+  document.querySelector("#dialog-delete-member").close();
 }
