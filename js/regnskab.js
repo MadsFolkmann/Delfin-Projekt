@@ -12,8 +12,11 @@ function start() {
   console.log("Velkommen Medlem");
 
   // SortBy //
-  document.querySelector("#sort-by-name").addEventListener("click", sortByName)
-  document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership)
+  document.querySelector("#sort-by-name").addEventListener("click", sortByName);
+  document.querySelector("#sort-by-membership").addEventListener("click", sortByMembership);
+  // Search //
+  document.querySelector("#search-input").addEventListener("keyup", inputSearchChanged);
+  document.querySelector("#search-input").addEventListener("search", inputSearchChanged);
 
   updateGrid();
 }
@@ -84,6 +87,21 @@ function showMembers(member) {
   }
 
 //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
+}
+
+// ----------------Search--------------------//
+
+function inputSearchChanged(event) {
+  const value = event.target.value;
+  const membersToShow = searchMembers(value);
+  console.log(membersToShow);
+  displayMembers(membersToShow);
+}
+
+function searchMembers(searchValue) {
+  searchValue = searchValue.toLowerCase();
+  const results = swimmer.filter((member) => member.name.toLowerCase().includes(searchValue));
+  return results;
 }
 
 // ------------------ Sorting ------------------- \\
