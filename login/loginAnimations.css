@@ -1,3 +1,5 @@
+/* ---------------Vand animation------------ */
+
 @keyframes waterAnimation {
   0% {
     transform: translateY(0);
@@ -9,6 +11,8 @@
     transform: translateY(0);
   }
 }
+
+/* ---------------Delfin animation------------ */
 
 @keyframes dolphinAnimation {
   0% {
@@ -22,6 +26,8 @@
   }
 }
 
+/* ---------------Bobble animation------------ */
+
 @keyframes bubble {
   0% {
     transform: translateY(0);
@@ -30,5 +36,24 @@
   100% {
     transform: translateY(-300%);
     opacity: 0;
+  }
+}
+
+/* ---------------Fisk animation------------ */
+
+@keyframes swim {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-1000%);
+  }
+
+  99% {
+    transform: scaleX(-1);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
