@@ -20,7 +20,11 @@ function start() {
     document.querySelector("#sort-by-competetion-u18").addEventListener("click", sortByCompetetionU18);
   // Sort Senior //
    document.querySelector("#sort-by-name-senior").addEventListener("click", sortByNameSenior);
-   document.querySelector("#sort-by-age-senior").addEventListener("click", sortByAgeSenior);
+  document.querySelector("#sort-by-age-senior").addEventListener("click", sortByAgeSenior);
+      document.querySelector("#sort-by-trainer-senior").addEventListener("click", sortByTrainerSenior);
+      document.querySelector("#sort-by-disciplin-senior").addEventListener("click", sortByDisciplinSenior);
+      document.querySelector("#sort-by-training-senior").addEventListener("click", sortByTrainingSenior);
+      document.querySelector("#sort-by-competetion-senior").addEventListener("click", sortByCompetetionSenior);
 
   //Add Time
   document.querySelector("#add-training-competetion").addEventListener("click", showAddTime)
