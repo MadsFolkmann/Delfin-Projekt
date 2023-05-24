@@ -157,30 +157,6 @@ th {
   background-color: #fff;
 }
 
-/*-------------- Show dialog -------------*/
-
-/* #members-dialog {
-  width: 500px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-} */
-/* .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 273px));
-  gap: 1.5em;
-  padding: 0.6em;
-}
-.grid-item {
-  background-color: #292626;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
-  animation: fadeIn 0.5s;
-  padding: 1.5em;
-  cursor: pointer;
-  color: #f3ce13;
-} */
 
 /*-------------- show swimmer dialog -------------*/
 
@@ -303,12 +279,13 @@ th {
   top: 92%;
 }
 
-.closeButton:hover {
-  background-color: #00c6ff;
+#close-create-btn:hover {
+  background: lightblue;
   color: #fff;
 }
 
-#add-member-btn {
+
+.add-btn {
   background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #ffffff;
   border: none;
@@ -316,6 +293,11 @@ th {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.add-btn:hover {
+  background: lightblue;
+  color: #fff;
 }
 
 .create-feedback {
@@ -505,6 +487,10 @@ th {
   font-size: 16px;
   cursor: pointer;
 }
+#update-member-btn:hover {
+  background: lightblue;
+  color: #fff;
+}
 
 .update-feedback {
   position: fixed;
@@ -541,3 +527,7 @@ th {
   background: lightblue;
   color: #fff;
 }
+
+
+
+
