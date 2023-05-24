@@ -1,8 +1,8 @@
-"use strict"
+"use strict";
 
 import { prepareSwimmer, getSwimmer } from "./script.js";
 
-console.log("Regnskab")
+console.log("Regnskab");
 
 window.addEventListener("load", start);
 
@@ -24,7 +24,6 @@ function start() {
 getSwimmer();
 
 prepareSwimmer();
-
 
 async function updateGrid() {
   swimmer = await getSwimmer();
@@ -48,45 +47,57 @@ function showMembers(member) {
         <td>1600,-</td>
         <td>0,-</td>
         <td class="debt">1600,-</td>
+        <td> <button class="btn-update">Opdatere</button></td>
+
       </tr>
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
   } else if (member.membership === "u18") {
-        const html = /*html*/ `
+    const html = /*html*/ `
       <tr>
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>1000,-</td>
         <td>0,-</td>
         <td class="debt">1000,-</td>
+        <td> <button class="btn-update">Opdatere</button></td>
       </tr>
     `;
-        document.querySelector("#members").insertAdjacentHTML("beforeend", html);
+    document.querySelector("#members").insertAdjacentHTML("beforeend", html);
   } else if (member.membership === "pensionist") {
-        const html = /*html*/ `
+    const html = /*html*/ `
       <tr>
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>1200,-</td>
         <td>0,-</td>
         <td class="debt">1200,-</td>
+        <td> <button class="btn-update">Opdatere</button></td>
+
       </tr>
     `;
-        document.querySelector("#members").insertAdjacentHTML("beforeend", html);
+    document.querySelector("#members").insertAdjacentHTML("beforeend", html);
   } else {
-        const html = /*html*/ `
+    const html = /*html*/ `
       <tr>
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>500,-</td>
         <td>0,-</td>
         <td class="debt">500,-</td>
+        <td> <button class="btn-update">Opdatere</button></td>
       </tr>
+      
     `;
-        document.querySelector("#members").insertAdjacentHTML("beforeend", html);
+    document.querySelector("#members").insertAdjacentHTML("beforeend", html);
   }
 
-//   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
+  document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
+    event.stopPropagation();
+    updateKontigentClicked(member);
+  });
+
+  //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
 
 // ----------------Search--------------------//
@@ -107,8 +118,8 @@ function searchMembers(searchValue) {
 // ------------------ Sorting ------------------- \\
 
 function sortByName() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name))
-  displayMembers(swimmer)
+  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name));
+  displayMembers(swimmer);
 }
 
 function sortByMembership() {
@@ -130,3 +141,21 @@ function sortByMembership() {
 //   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
 //   displayMembers(swimmer);
 // }
+
+// ------------------ Update ------------------- \\
+
+function updateKontigentClicked(member) {
+  console.log("Update Kontigent Button Clicked");
+  const updateForm = document.querySelector("#form-update-kontigent");
+  const dialog = document.querySelector("#dialog-update-kontigent");
+
+  updateForm.paid.value = member.paid;
+
+  document.querySelector("#form-update-kontigent").setAttribute("data-id", member.id);
+  dialog.showModal();
+
+  dialog.querySelector(".closeButtonKontigent").addEventListener("click", () => {
+    dialog.close();
+    console.log("Update dialog closed");
+  });
+}

@@ -7,9 +7,12 @@
     <title>SDF</title>
     <link rel="stylesheet" type="text/css" href="css/regnskab.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caudex&family=Crimson+Text:wght@700&family=Libre+Baskerville&family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caudex&family=Crimson+Text:wght@700&family=Libre+Baskerville&family=Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="sidebar">
@@ -20,20 +23,19 @@
       <a class="log-ud" href="http://127.0.0.1:5500/login/login.html?brugernavn=admin1&kodeord=test123"><button>Log ud</button></a>
     </div>
 
-
     <main>
-    <div class="header">
-      <h1>Kontingent Betaling</h1>
-    </div>
-   <div class="table-container">
+      <div class="header">
+        <h1>Kontingent Betaling</h1>
+      </div>
+      <div class="table-container">
         <table class="account-table">
           <tr>
             <thead>
               <tr>
-                <th colspan="5">
+                <th colspan="7">
                   <div class="search-container">
                     <input type="text" id="search-input" placeholder="Search..." />
-                     <button id="update-button">Update</button>
+                    <button id="update-button">Update</button>
                   </div>
                 </th>
               </tr>
@@ -43,136 +45,52 @@
                 <th id="sort-by-payment">Betaling</th>
                 <th id="sort-by-paid">Betalt</th>
                 <th id="sort-by-missing-payment">Manglende betaling</th>
+                <th id="none"></th>
               </tr>
             </thead>
-            <tbody id="members">
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <!-- <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr>
-              <tr>
-                <td>Emil Schitter</td>
-                <td>Voksen 18+</td>
-                <td>1600,-</td>
-                <td>1000,-</td>
-                <td class="debt">600,-</td>
-              </tr> -->
-            </tbody>
+            <tbody id="members"></tbody>
           </tr>
         </table>
       </div>
-  <div class="table-container-right">
-    <table class="account-table-right">
-      <thead>
-        <tr>
-          <th>Forskellige kontingenter</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-          Voksen 18+ 
-          1600,-
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Pensionist 60+
-            25%-
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Barn u18
-            1000,-
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Passiv
-            500,-
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <div class="table-container-right">
+        <table class="account-table-right">
+          <thead>
+            <tr>
+              <th>Forskellige kontingenter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Voksen 18+ 1600,-</td>
+            </tr>
+            <tr>
+              <td>Pensionist 60+ 25%-</td>
+            </tr>
+            <tr>
+              <td>Barn u18 1000,-</td>
+            </tr>
+            <tr>
+              <td>Passiv 500,-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
 
-<script src="js/regnskab.js" type="module"></script>
-<!-- <script src="js/script.js"></script> -->
+    <dialog id="dialog-update-kontigent" class="dialog">
+      <h1>Opdatere betaling</h1>
+      <img src="/Billeder/logo.png" alt="logo" class="logo" />
 
+      <form id="form-update-kontigent">
+        <label for="paid">Betalt: </label>
+        <input type="number" id="paid" name="paid" required /><br /><br />
+
+        <input type="submit" id="update-kontigent-btn" value="Opdatere betaling" />
+      </form>
+      <button class="closeButtonKontigent" type="button">Luk</button>
+    </dialog>
+
+    <script src="js/regnskab.js" type="module"></script>
+    <!-- <script src="js/script.js"></script> -->
   </body>
 </html>
