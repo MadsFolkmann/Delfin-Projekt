@@ -1,5 +1,6 @@
 "use strict";
 
+
 const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
 const moreInfoDialog = document.getElementById("more-info-dialog");
 const dialogContent = document.getElementById("dialog-content");
