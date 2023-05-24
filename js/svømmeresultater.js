@@ -25,6 +25,9 @@ function start() {
   //Add Time
   document.querySelector("#add-training-competetion").addEventListener("click", showAddTime)
 
+  // Update time //
+  document.querySelector("#updateTime").addEventListener("submit", updateTimeClicked)
+
   updateGrid();
   swimmerAddedToSelect();
 }
@@ -56,6 +59,7 @@ async function updateGrid() {
 
 function displayResults(listOfResults) {
     document.querySelector("#u-18").innerHTML = "";
+    document.querySelector("#senior").innerHTML = "";
     for (const result of listOfResults) {
       if (result.memberObject.activity === "konkurrencesvømmer" && result.memberObject.age < 18) {
         showU18Members(result);
@@ -94,6 +98,9 @@ async function showU18Members(result) {
   `;
         document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
   }
+
+  document.querySelector("#u-18 tr:last-child .update-btn").addEventListener("click", () => updateClicked(result));
+
 }
 
 async function showSeniorMembers(result) {
@@ -125,6 +132,8 @@ async function showSeniorMembers(result) {
   `;
     document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
   }
+  document.querySelector("#senior tr:last-child .update-btn").addEventListener("click", () => updateClicked(result));
+
 }
 
 // ----------------Add training/competetion--------------- //
@@ -136,6 +145,7 @@ async function swimmerAddedToSelect() {
     console.log(swimmer.activity)
     if (swimmer.activity === "konkurrencesvømmer") {
       showSwimmerAddedToSelect(swimmer);
+      showSwimmerAddedToSelectUpdate(swimmer);
     }
   }
 }
@@ -144,8 +154,14 @@ function showSwimmerAddedToSelect(swimmer) {
   const html = /*html*/ `
   <option value="${swimmer.id}">${swimmer.name}</option>
   `;
-
   document.querySelector("#swimmer").insertAdjacentHTML("beforeend", html)
+}
+
+function showSwimmerAddedToSelectUpdate(swimmer) {
+  const html = /*html*/ `
+  <option value="${swimmer.id}">${swimmer.name}</option>
+  `;
+  document.querySelector("#updateSwimmer").insertAdjacentHTML("beforeend", html);
 }
 
 
@@ -212,8 +228,55 @@ function showAddFeedback(message) {
   }, 2000);
 }
 
+// ----------------Update Time--------------- //
 
-// ----------------Sort By--------------- //
+function updateClicked(result) {
+  const updateForm = document.querySelector("#updateTime");
+  const dialog = document.querySelector("#update-time");
+
+  updateForm.date.value = result.date
+  updateForm.placement.value = result.placement
+  updateForm.time.value = result.time
+  updateForm.updateSwimmer.value = result.member
+
+  console.log(result.swimmer);
+  updateForm.setAttribute("data-id", result.id);
+  document.querySelector("#update-time").showModal();
+
+    dialog.querySelector("#close-update-btn").addEventListener("click", () => {
+      dialog.close();
+      console.log("Update dialog closed");
+    });
+  
+}
+
+function updateTimeClicked(event) {
+  const form = event.target;
+
+  const date = form.date.value;
+  const placement = form.placement.value;
+  const time = form.time.value;
+  const member = form.updateSwimmer.value;
+
+  const id = form.getAttribute("data-id");
+  updateTime (id, date, placement, time, member)
+}
+
+async function updateTime(id, date, placement, time, member) {
+  const timeToUpdate = { date, placement, time, member };
+  const json = JSON.stringify(timeToUpdate);
+
+  const response = await fetch(`${endpoint}/results/${id}.json`, { method: "PUT", body: json });
+
+  if (response.ok) {
+    console.log("Update succesfuld")    
+    updateGrid()
+  }
+}
+
+
+
+// ---------- ------Sort By--------------- //
 
 
 //U18

@@ -72,15 +72,15 @@
 </table>
 </div>
 </div>
-
+</section>
 
     <!------------------ Add swimmer ----------------->
 
 <dialog id="add-time" class="dialog">
   <img src="/Billeder/logo.png" alt="logo" class="logo" />
-<form action="" method="post" id="addTime">
+<form action="" method="dialog" id="addTime">
 
- <label for="swimmer">Swimmer:</label>
+ <label for="swimmer">Svømmer:</label>
     <select name="swimmer" id="swimmer">
       <option value="none"></option>
     </select required>
@@ -90,14 +90,35 @@
     <input type="text" placeholder="00:00" id="time" required>
     <label for="placement">Placering (Optional)</label>
     <input type="number" placeholder="1,2,3....." id="placement">
-
  <br /><br />
        <input type="submit" id="add-time-btn" class="add-btn" value="Tilføj ny tid" />
       </form>  
       <button class="closeButton" id="close-add-btn" type="button">Luk</button>  
     </dialog>
 
-</section>
+    <!------------------ Update swimmer ----------------->
+
+<dialog id="update-time" class="dialog">
+  <img src="/Billeder/logo.png" alt="logo" class="logo" />
+<form action="" method="dialog" id="updateTime">
+
+ <label for="update-swimmer">Svømmer:</label>
+    <select name="swimmer" name="swimmer" id="updateSwimmer">
+      <option value="none"></option>
+    </select required>
+    <label for="update-date">Dato</label>
+    <input type="date"  id="update-date" name="date" required>
+    <label for="update-time">Tid (I minut)</label>
+    <input type="text" name="time" placeholder="00:00" id="update-time" required>
+    <label for="update-placement">Placering (Optional)</label>
+    <input type="number" name="placement" placeholder="1,2,3....." id="update-placement">
+ <br /><br />
+       <input type="submit" id="update-time-btn" class="update-btn" value="Opdater tid" />
+      </form>  
+      <button class="closeButton" id="close-update-btn" type="button">Luk</button>  
+    </dialog>
+
+
 
     <script src="js/svømmeresultater.js" type="module"></script>
     <!-- <script src="js/script.js" type="module"></script> -->
