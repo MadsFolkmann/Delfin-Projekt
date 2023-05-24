@@ -65,8 +65,6 @@ function displayResults(listOfResults) {
     }
 }
 
-
-
 async function showU18Members(result) {
 
   if (result.placement) {
@@ -180,6 +178,7 @@ async function addTimeClicked(event) {
      form.reset();
      updateGrid();
      console.log("Tid addet")
+     showAddFeedback("Tid er blevet oprettet!");
   }
   document.querySelector("#add-time").close();
 }
@@ -197,6 +196,21 @@ async function addTime(date, placement, time, member) {
   return response;
 }
 
+//---Feedback---//
+
+function showAddFeedback(message) {
+  const feedbackElement = document.createElement("div");
+  feedbackElement.classList.add("create-feedback");
+  feedbackElement.textContent = message;
+  document.body.appendChild(feedbackElement);
+
+  setTimeout(() => {
+    feedbackElement.classList.add("fade-out");
+    setTimeout(() => {
+      feedbackElement.remove();
+    }, 500);
+  }, 2000);
+}
 
 
 // ----------------Sort By--------------- //

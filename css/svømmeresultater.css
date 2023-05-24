@@ -177,3 +177,114 @@ table.senior-table tr {
 td::first-letter {
   text-transform: uppercase;
 }
+
+/* -------------Add Time----------------- */
+
+#add-time {
+  position: fixed;
+  left: 10%;
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  transform: scale(1);
+  opacity: 1;
+  animation: dialogOpenAnimation 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#add-time .logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+#add-time form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+#add-time label {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+#add-time input,
+#add-time select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+.closeButton {
+  background: linear-gradient(45deg, #023b80, #00c6ff);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: fixed;
+  left: 83%;
+  top: 2%;
+}
+
+#close-add-btn:hover {
+  background: lightblue;
+  color: #fff;
+}
+
+
+.add-btn {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: lightblue;
+  color: #fff;
+}
+
+#add-time select {
+  font-size: 16px; /* Increase the font size for the dropdown options */
+}
+
+
+.create-feedback {
+  position: fixed;
+  top: 15%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #b5ff7c, #00c811);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.create-feedback.fade-out {
+  opacity: 0;
+}
+
+@keyframes dialogOpenAnimation {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
