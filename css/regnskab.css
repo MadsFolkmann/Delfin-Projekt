@@ -129,6 +129,10 @@ th, td {
 	border: 1px solid #ddd;
 		}
 
+  td::first-letter {
+  text-transform: uppercase;
+}
+
   #sort-by-missing-payment {
     width: 20%;
   }

@@ -74,7 +74,7 @@ async function showU18Members(result) {
     <tr>
       <td>${result.memberObject.name}</td>
       <td>${result.memberObject.age}</td>
-      <td>${result.memberObject.trainer}</td>
+      <td class="trainer">${result.memberObject.trainer}</td>
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>${result.placement}</td>
@@ -87,7 +87,7 @@ async function showU18Members(result) {
     <tr>
       <td>${result.memberObject.name}</td>
       <td>${result.memberObject.age}</td>
-      <td>${result.memberObject.trainer}</td>
+      <td class="trainer">${result.memberObject.trainer}</td>
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>Trænings Pas</td>
@@ -105,7 +105,7 @@ async function showSeniorMembers(result) {
     <tr>
       <td>${result.memberObject.name}</td>
       <td>${result.memberObject.age}</td>
-      <td>${result.memberObject.trainer}</td>
+      <td class="trainer">${result.memberObject.trainer}</td>
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>${result.placement}</td>
@@ -118,7 +118,7 @@ async function showSeniorMembers(result) {
     <tr>
       <td>${result.memberObject.name}</td>
       <td>${result.memberObject.age}</td>
-      <td>${result.memberObject.trainer}</td>
+      <td class="trainer">${result.memberObject.trainer}</td>
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>Trænings Pas</td>

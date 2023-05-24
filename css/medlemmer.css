@@ -105,6 +105,9 @@ th {
   cursor: pointer;
 }
 
+td::first-letter {
+  text-transform: uppercase;
+}
 /* -----Tilføj Svømmer----- */
 
 #add-swimmer {

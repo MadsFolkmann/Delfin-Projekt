@@ -173,3 +173,7 @@ table.senior-table tr {
   background-color: #1e847c;
   color: #fff;
 } 
+
+td::first-letter {
+  text-transform: uppercase;
+}
