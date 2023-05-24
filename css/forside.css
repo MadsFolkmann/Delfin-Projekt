@@ -67,7 +67,7 @@ h1 {
 .header {
   position: fixed;
   color: #000000;
-  left: 43%;
+  left: 42%;
 }
 
 /*---Tables---*/
@@ -137,7 +137,6 @@ td {
 
 /* ______________________BUTTON_____________________ */
 
-#update-button,
 #resultat-button,
 #medlem-button,
 #betaling-button {
@@ -148,16 +147,32 @@ td {
   border-radius: 4px;
   cursor: pointer;
   border: 1px solid #4db6ac;
+    text-decoration: none;
+    font-weight: bold;
 }
-#update-button:hover {
+
+#resultat-button:hover,
+#medlem-button:hover,
+#betaling-button:hover {
   background-color: #1e847c;
   color: #fff;
 }
 
-#update-button,
-#resultat-button,
-#medlem-button,
+
+#resultat-button {
+  position: fixed;
+  right: 42.5%;
+  top: 46.9%;
+}
+
 #betaling-button {
-  position: absolute;
-  right: 4%;
+  position: fixed;
+  right: 57%;
+  top: 76.5%;
+}
+
+#medlem-button {
+  position: fixed;
+  right: 27%;
+  top: 76.5%;
 }
