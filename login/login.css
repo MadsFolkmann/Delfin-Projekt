@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
 }
+/* ---------------Grid------------ */
 
 .container {
   width: 370px;
@@ -11,6 +12,10 @@ body {
   background-color: white;
   opacity: 0.8;
   border-radius: 5px;
+  position: relative;
+  border-radius: 50px 5px;
+  overflow: hidden;
+  justify-content: center;
 }
 .container h2 {
   text-align: center;
@@ -23,7 +28,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-.container input[type="submit"] {
+.container button[type="button"] {
   width: 97%;
   padding: 3%;
   background-color: #4caf50;
@@ -33,14 +38,6 @@ body {
   cursor: pointer;
 }
 
-/* #logo-img {
-  display: absolute;
-  align-items: center;
-  width: 6em;
-  height: 6em;
-  margin-top: 1em;
-} */
-
 .footer {
   background-color: #333;
   color: #fff;
@@ -49,12 +46,6 @@ body {
   margin-top: 0vh;
   font-size: 1.8vh;
 }
-/* .footer #logo-img {
-  display: flex;
-  align-items: left;
-  width: 8vh;
-  height: auto;
-} */
 
 h2 {
   font-size: 2em;
@@ -63,11 +54,14 @@ h2 {
 
 #logo {
   display: flex;
-  width: 17%;
+  width: 23%;
   top: 5%;
   height: auto;
   border: black;
+  border-radius: 50%;
 }
+
+/* ---------------Objekter------------ */
 
 .animation-container {
   position: relative;
@@ -84,6 +78,9 @@ h2 {
   background-color: #00a8e8;
   animation: waterAnimation 4s ease-in-out infinite;
 }
+
+/* ---------------Delfiner------------ */
+
 #Dolphin1 {
   position: absolute;
   top: 12%;
@@ -119,6 +116,66 @@ h2 {
   animation: dolphinAnimation 4s ease-in-out infinite;
 }
 
+/* ---------------Bobler------------ */
+
+#bubbles1 {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 87%;
+  animation: bubble 3s linear infinite;
+}
+
+#bubbles2 {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 60%;
+  animation: bubble 4s linear infinite;
+}
+
+#bubbles3 {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 35%;
+  animation: bubble 5s linear infinite;
+}
+
+#bubbles4 {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 8%;
+  animation: bubble 6s linear infinite;
+}
+
+/* ---------------Corals------------ */
+
+#coral1 {
+  position: absolute;
+  width: 20%;
+  top: 66.5%;
+  left: 82%;
+}
+
+#coral2 {
+  position: absolute;
+  width: 20%;
+  top: 66.5%;
+  left: -6%;
+}
+
+#fish1 {
+  position: absolute;
+  width: 6%;
+  top: 90%;
+  left: 70%;
+  animation: swim 30s infinite linear;
+}
+
+/* ---------------Buttons------------ */
+
 #button {
   width: 30%;
   padding: 0.2%;
@@ -129,19 +186,29 @@ h2 {
   cursor: pointer;
 }
 
-/* .bubble-container {
-  position: relative;
-  top: 41%;
-  left: 75%;
-  width: 10%;
-  overflow: hidden;
+.login:hover {
+  background-color: #00a8e8;
 }
-.bubble {
-  position: absolute;
-  top: 41%;
-  left: 75%;
-  width: 10%;
-  background-color: #f10000;
-  border-radius: 50%;
-  animation: bubbleAnimation 3s infinite;
-} */
+
+/* ------------------error messages---------------------- */
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (max-width: 480px) {
+  input,
+  button {
+    width: 100%;
+  }
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}

@@ -1,0 +1,163 @@
+body {
+  font-family: "Caudex", serif;
+}
+
+h1 {
+  font-family: "Libre Baskerville", serif;
+}
+
+/* ------------------Sidebar---------------------- */
+
+.sidebar button {
+  font-family: "Crimson Text", serif;
+}
+
+.sidebar {
+  background-color: #4db6ac;
+  padding: 1.25rem;
+  float: left;
+  width: 12%;
+  height: 100vh;
+  margin-right: 0.5rem;
+  z-index: 2;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.sidebar button.forside {
+  background-color: #1e51a4;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+.sidebar button {
+  background-color: #e0f2f1;
+  color: #1e51a4;
+  border: none;
+  padding: 0.625rem;
+  width: 90%;
+  text-align: left;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+.sidebar button:hover {
+  box-shadow: 0 0.5rem 0.5em rgba(0, 0, 0, 0.3);
+}
+.log-ud {
+  margin-top: 55vh;
+}
+
+/* ---------------------Main content------------------- */
+
+.header {
+  position: fixed;
+  color: #000000;
+  left: 43%;
+}
+
+/*---Tables---*/
+
+.swimming-table {
+  float: right;
+  width: 55%;
+  top: 20%;
+  left: 27%;
+  position: fixed;
+}
+
+.swimming-table thead {
+  background-color: #4db6ac;
+}
+
+.swimming-table caption {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.swimming-table th:first-child,
+.swimming-table td:first-child {
+  text-align: center;
+  font-weight: bold;
+  width: 1rem;
+}
+
+table.medlemmer {
+  float: right;
+  width: 25%;
+  top: 55%;
+  left: 27%;
+  position: fixed;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+table.betaling {
+  float: right;
+  width: 25%;
+  top: 55%;
+  left: 57%;
+  position: fixed;
+}
+th,
+td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.medlemmer thead {
+  background-color: #4db6ac;
+}
+
+.betaling thead {
+  background-color: #4db6ac;
+}
+
+/* ______________________BUTTON_____________________ */
+
+#update-button,
+#resultat-button,
+#medlem-button,
+#betaling-button {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #080101;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #4db6ac;
+}
+#update-button:hover {
+  background-color: #1e847c;
+  color: #fff;
+}
+
+#update-button,
+#resultat-button,
+#medlem-button,
+#betaling-button {
+  position: absolute;
+  right: 4%;
+}

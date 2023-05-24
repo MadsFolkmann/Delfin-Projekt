@@ -1,0 +1,174 @@
+
+body {
+  font-family: 'Caudex', serif;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', serif;
+
+}
+header {
+  text-align: center;
+  position: fixed;
+  left: 46%;
+}
+
+
+/* ------------------sidebar---------------- */
+
+.sidebar button {
+  font-family: 'Crimson Text', serif;
+}
+
+
+
+.sidebar button {
+  font-family: 'Crimson Text', serif;
+}
+
+.sidebar {
+  background-color: #4db6ac;
+  padding: 1.25rem;
+  float: left;
+  width: 12%;
+  height: 100vh;
+  margin-right: 0.5rem;
+  z-index: 2;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0; 
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.sidebar button {
+  background-color: #e0f2f1;
+  color: #1e51a4;
+  border: none;
+  padding: 0.625rem;
+  width: 90%;
+  text-align: left;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+
+}
+
+.sidebar button.forside {
+  background-color: #1e51a4;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+.sidebar button:hover {
+  box-shadow: 0 0.50rem 0.50em rgba(0, 0, 0, 0.3);
+}
+
+.log-ud {
+  margin-top: 55vh;
+}
+
+/* ------------Add Btn------------- */
+
+#add-training-competetion {
+  position: fixed;
+  left: 72%;
+  padding: 0.5rem 1rem;
+  background-color: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+#add-training-competetion:hover {
+  background-color: #1e847c;
+  color: #fff;
+} 
+
+/* -------------Table--------------- */
+
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  border-spacing: 0.1em;
+  width: 65%;
+  margin-bottom: 1em;
+    border: #4db6ac solid;
+
+}
+
+.table-wrapper {
+  position: fixed;
+  top: 15%;
+  left: 56%;
+  width: 100%;
+  margin: 0 auto;
+  transform: translate(-50%);
+
+}
+
+.table-container{
+  max-height: 18rem;
+  overflow-y: auto;
+  margin-top: 2rem;
+
+}
+
+table caption {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+  th,
+  td {
+    padding: 8px;
+  text-align: left;
+    border: 1px solid #DDD;
+  }
+  
+  th {
+    cursor: pointer;
+  }
+
+table.u18 tr,
+table.senior-table tr {
+  height: 50px;
+}
+
+.u18 thead,
+.senior-table thead {
+    background-color: #4db6ac;
+}
+
+.u18 tr:hover,
+.senior-table tr:hover {
+  background-color: #ddd;
+}
+
+.update-btn {
+  padding: 0.5rem 1rem;
+  background-color: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #1e847c;
+  color: #fff;
+} 

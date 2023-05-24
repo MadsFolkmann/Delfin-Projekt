@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDF</title>
+    <link rel="stylesheet" href="css/svømmeresultater.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caudex&family=Crimson+Text:wght@700&family=Libre+Baskerville&family=Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="forside.html"><button class="forside">Forside</button></a>
+      <a href="medlemmer.html"><button>Medlemmer</button></a>
+      <a href="regnskab.html"><button>Regnskab</button></a>
+      <a href="svømmeresultater.html"><button>Resultater</button></a>
+      <a class="log-ud" href="http://127.0.0.1:5500/login/login.html?brugernavn=admin1&kodeord=test123"><button>Log ud</button></a>
+    </div>
+    <header>
+      <h1>Svømmeresultater</h1>
+    </header>
+    <section>
+      <!-- <div id="btn">
+        <button id="add-training-competetion">Tilføj Traning/Turnering</button>
+      </div> -->
+  <div class="table-wrapper">
+     <div class="table-container">
+    <table class="u18">
+  <caption>U-18</caption>
+        <div id="btn">
+        <button id="add-training-competetion">Tilføj Træning/Turnering</button>
+      </div>
+  <thead>
+    <tr>
+      <th id="sort-by-name-u18">Navn</th>
+      <th id="sort-by-age-u18">Alder</th>
+      <th id="sort-by-trainer-u18">Træner</th>
+      <th id="sort-by-disciplin-u18">Disciplin</th>
+      <th id="sort-by-training-u18">Bedste træningstid</th>
+      <th id="sort-by-competetion-u18">Seneste placering</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="u-18">
+
+  </tbody>
+</table>
+     </div>
+
+      <div class="table-container">
+<table class="senior-table">
+  <caption>Senior</caption>
+  <thead>
+    <tr>
+      <th id="sort-by-name-senior">Navn</th>
+      <th id="sort-by-age-senior">Alder</th>
+      <th id="sort-by-trainer-senior">Træner</th>
+      <th id="sort-by-disciplin-senior">Disciplin</th>
+      <th id="sort-by-training-senior">Bedste træningstid</th>
+      <th id="sort-by-competetion-senior">Seneste placering</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="senior">
+
+  </tbody>
+</table>
+</div>
+</div>
+
+</section>
+
+    <script src="js/svømmeresultater.js" type="module"></script>
+    <!-- <script src="js/script.js" type="module"></script> -->
+  </body>
+</html>
