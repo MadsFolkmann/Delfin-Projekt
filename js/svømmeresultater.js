@@ -28,6 +28,9 @@ function start() {
   // Update time //
   document.querySelector("#updateTime").addEventListener("submit", updateTimeClicked)
 
+  // Delete //
+  document.querySelector("#form-delete-time").addEventListener("submit", deleteTimeClicked)
+
   updateGrid();
   swimmerAddedToSelect();
 }
@@ -80,7 +83,8 @@ async function showU18Members(result) {
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>${result.placement}</td>
-      <td><button class="update-btn">Update</button></td>
+      <td><button class="update-btn">Update</button>
+        <button class="delete-btn">Delete</button></td>
     </tr>
   `;
     document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
@@ -93,13 +97,15 @@ async function showU18Members(result) {
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>Trænings Pas</td>
-      <td><button class="update-btn">Update</button></td>
+      <td><button class="update-btn">Update</button>
+        <button class="delete-btn">Delete</button></td>
     </tr>
   `;
         document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
   }
 
   document.querySelector("#u-18 tr:last-child .update-btn").addEventListener("click", () => updateClicked(result));
+  document.querySelector("#u-18 tr:last-child .delete-btn").addEventListener("click", () => deleteClicked(result));
 
 }
 
@@ -114,7 +120,8 @@ async function showSeniorMembers(result) {
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>${result.placement}</td>
-      <td><button class="update-btn">Update</button></td>
+      <td><button class="update-btn">Update</button>
+        <button class="delete-btn">Delete</button></td>
     </tr>
   `;
     document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
@@ -127,12 +134,14 @@ async function showSeniorMembers(result) {
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>Trænings Pas</td>
-      <td><button class="update-btn">Update</button></td>
+      <td><button class="update-btn">Update</button>
+      <button class="delete-btn">Delete</button></td>
     </tr>
   `;
     document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
   }
   document.querySelector("#senior tr:last-child .update-btn").addEventListener("click", () => updateClicked(result));
+  document.querySelector("#senior tr:last-child .delete-btn").addEventListener("click", () => deleteClicked(result));
 
 }
 
@@ -155,13 +164,6 @@ function showSwimmerAddedToSelect(swimmer) {
   <option value="${swimmer.id}">${swimmer.name}</option>
   `;
   document.querySelector("#swimmer").insertAdjacentHTML("beforeend", html)
-}
-
-function showSwimmerAddedToSelectUpdate(swimmer) {
-  const html = /*html*/ `
-  <option value="${swimmer.id}">${swimmer.name}</option>
-  `;
-  document.querySelector("#updateSwimmer").insertAdjacentHTML("beforeend", html);
 }
 
 
@@ -228,7 +230,29 @@ function showAddFeedback(message) {
   }, 2000);
 }
 
+function showDeleteFeedback(message) {
+  const feedbackElement = document.createElement("div");
+  feedbackElement.classList.add("delete-feedback");
+  feedbackElement.textContent = message;
+  document.body.appendChild(feedbackElement);
+
+  setTimeout(() => {
+    feedbackElement.classList.add("fade-out");
+    setTimeout(() => {
+      feedbackElement.remove();
+    }, 500);
+  }, 2000);
+}
+
 // ----------------Update Time--------------- //
+
+function showSwimmerAddedToSelectUpdate(swimmer) {
+  const html = /*html*/ `
+  <option value="${swimmer.id}">${swimmer.name}</option>
+  `;
+  document.querySelector("#updateSwimmer").insertAdjacentHTML("beforeend", html);
+}
+
 
 function updateClicked(result) {
   const updateForm = document.querySelector("#updateTime");
@@ -271,6 +295,31 @@ async function updateTime(id, date, placement, time, member) {
   if (response.ok) {
     console.log("Update succesfuld")    
     updateGrid()
+    showAddFeedback("Tid er blevet opdateret!");
+  }
+}
+
+// ----------------Delete--------------- //
+
+function deleteClicked(result) {
+  
+  document.querySelector("#time-swimmer").textContent = `${result.time}, ${result.memberObject.name}`;
+  document.querySelector("#form-delete-time").setAttribute("data-id", result.id);
+  document.querySelector("#dialog-delete-time").showModal();
+}
+
+function deleteTimeClicked(event) {
+  const id = event.target.getAttribute("data-id");
+  deleteTime(id)
+}
+
+async function deleteTime(id) {
+  const response = await fetch(`${endpoint}/results/${id}.json`, { method: "DELETE" });
+  
+  if (response.ok) {
+    console.log("Time Deleted")
+    updateGrid()
+    showDeleteFeedback("Tiden er blevet slettet")
   }
 }
 

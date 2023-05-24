@@ -243,8 +243,8 @@ function showDeleteFeedback(message) {
     feedbackElement.classList.add("fade-out");
     setTimeout(() => {
       feedbackElement.remove();
-    }, 500); // Vent 500ms (varigheden af transitionen) og fjern derefter elementet
-  }, 2000); // Vis feedback i 2 sekunder og start derefter fade-out
+    }, 500); 
+  }, 2000); 
 }
 // ------------------ Update member ------------------- \\
 updateMember();

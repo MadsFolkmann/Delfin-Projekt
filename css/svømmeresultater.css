@@ -160,7 +160,8 @@ table.senior-table tr {
   background-color: #ddd;
 }
 
-.update-btn {
+.update-btn, 
+.delete-btn {
   padding: 0.5rem 1rem;
   background-color: #4db6ac;
   color: #fff;
@@ -169,7 +170,8 @@ table.senior-table tr {
   cursor: pointer;
 }
 
-.update-btn:hover {
+.update-btn:hover,
+.delete-btn:hover {
   background-color: #1e847c;
   color: #fff;
 } 
@@ -256,10 +258,23 @@ td::first-letter {
 }
 
 #add-time select {
-  font-size: 16px; /* Increase the font size for the dropdown options */
+  font-size: 16px; 
 }
 
 
+
+@keyframes dialogOpenAnimation {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* -------------Feedback---------------- */
 .create-feedback {
   position: fixed;
   top: 15%;
@@ -278,13 +293,20 @@ td::first-letter {
   opacity: 0;
 }
 
-@keyframes dialogOpenAnimation {
-  0% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.delete-feedback {
+  position: fixed;
+  top: 15%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #a30000, #ff0000);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.delete-feedback.fade-out {
+  opacity: 0;
 }
