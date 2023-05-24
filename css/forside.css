@@ -137,7 +137,6 @@ td {
 
 /* ______________________BUTTON_____________________ */
 
-#update-button,
 #resultat-button,
 #medlem-button,
 #betaling-button {
@@ -148,26 +147,32 @@ td {
   border-radius: 4px;
   cursor: pointer;
   border: 1px solid #4db6ac;
+    text-decoration: none;
+    font-weight: bold;
 }
-#update-button:hover {
+
+#resultat-button:hover,
+#medlem-button:hover,
+#betaling-button:hover {
   background-color: #1e847c;
   color: #fff;
 }
 
+
 #resultat-button {
   position: fixed;
   right: 42.5%;
-  top: 47.2%;
+  top: 46.9%;
 }
 
 #betaling-button {
   position: fixed;
   right: 57%;
-  top: 77%;
+  top: 76.5%;
 }
 
 #medlem-button {
   position: fixed;
   right: 27%;
-  top: 77%;
+  top: 76.5%;
 }
