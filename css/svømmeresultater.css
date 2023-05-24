@@ -82,7 +82,8 @@ header {
 
 #add-training-competetion {
   position: fixed;
-  left: 72%;
+  left: 70.5%;
+  top:-1%;
   padding: 0.5rem 1rem;
   background-color: #4db6ac;
   color: #fff;

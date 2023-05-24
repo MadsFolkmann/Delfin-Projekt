@@ -41,8 +41,8 @@
       <th id="sort-by-age-u18">Alder</th>
       <th id="sort-by-trainer-u18">Træner</th>
       <th id="sort-by-disciplin-u18">Disciplin</th>
-      <th id="sort-by-training-u18">Bedste træningstid</th>
-      <th id="sort-by-competetion-u18">Seneste placering</th>
+      <th id="sort-by-training-u18">Bedste Tid</th>
+      <th id="sort-by-competetion-u18">Placering</th>
       <th></th>
     </tr>
   </thead>
@@ -61,8 +61,8 @@
       <th id="sort-by-age-senior">Alder</th>
       <th id="sort-by-trainer-senior">Træner</th>
       <th id="sort-by-disciplin-senior">Disciplin</th>
-      <th id="sort-by-training-senior">Bedste træningstid</th>
-      <th id="sort-by-competetion-senior">Seneste placering</th>
+      <th id="sort-by-training-senior">Bedste tid</th>
+      <th id="sort-by-competetion-senior">Placering</th>
       <th></th>
     </tr>
   </thead>
@@ -72,6 +72,29 @@
 </table>
 </div>
 </div>
+
+    <!------------------ Add swimmer ----------------->
+
+<dialog id="add-time" class="dialog">
+  <img src="/Billeder/logo.png" alt="logo" class="logo" />
+<form action="" method="post" id="addTime">
+
+ <label for="swimmer">Swimmer:</label>
+    <select name="swimmer" id="swimmer">
+      <option value="none"></option>
+    </select required>
+    <label for="date">Dato</label>
+    <input type="date"  id="date" required>
+    <label for="time">Tid (I minut)</label>
+    <input type="text" placeholder="00:00" id="time" required>
+    <label for="placement">Placering (Optional)</label>
+    <input type="number" placeholder="1,2,3....." id="placement">
+
+ <br /><br />
+       <input type="submit" id="add-time-btn" class="add-btn" value="Tilføj ny svømmer" />
+      </form>  
+      <button class="closeButton" id="close-add-btn" type="button">Luk</button>  
+    </dialog>
 
 </section>
 

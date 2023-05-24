@@ -1,7 +1,7 @@
 "use strict"
 
 
-import { getCompSwimmer, getResults, prepareResult } from "./script.js";
+import { getCompSwimmer, getResults, getSwimmer, prepareResult, endpoint } from "./script.js";
 
 
 window.addEventListener("load", start);
@@ -22,7 +22,11 @@ function start() {
    document.querySelector("#sort-by-name-senior").addEventListener("click", sortByNameSenior);
    document.querySelector("#sort-by-age-senior").addEventListener("click", sortByAgeSenior);
 
+  //Add Time
+  document.querySelector("#add-training-competetion").addEventListener("click", showAddTime)
+
   updateGrid();
+  swimmerAddedToSelect();
 }
 
 getResults();
@@ -37,26 +41,19 @@ async function updateGrid() {
   results = await getResults();
   for (const result of results) {
       const member = await getCompSwimmer(result.member);
-    console.log(member);
+    // console.log(member);
     result.memberObject = member
   }
-  console.log(results.memberObject)
+  // console.log(results.memberObject)
+  // console.log(results)
   displayResults(results);
 }
 
 
 //----------------- Showing Swimmers ------------------//
 
-// function displayMembers(listOfMembers) {
-//     document.querySelector("#u-18").innerHTML = "";
-//     for (const member of listOfMembers) {
-//       if (member.activity === "konkurrencesvømmer" && member.age < 18) {
-//           showU18Members(member);
-//       } else if (member.activity === "konkurrencesvømmer" && member.age > 18) {
-//       showSeniorMembers(member)
-//       }
-//   }
-// }
+
+
 function displayResults(listOfResults) {
     document.querySelector("#u-18").innerHTML = "";
     for (const result of listOfResults) {
@@ -72,45 +69,134 @@ function displayResults(listOfResults) {
 
 async function showU18Members(result) {
 
-  const html = /*html*/ `
+  if (result.placement) {
+    const html = /*html*/ `
     <tr>
       <td>${result.memberObject.name}</td>
       <td>${result.memberObject.age}</td>
       <td>${result.memberObject.trainer}</td>
       <td>${result.memberObject.disciplin}</td>
-      <td>${result.time}</td>
+      <td>${result.time} min</td>
       <td>${result.placement}</td>
       <td><button class="update-btn">Update</button></td>
     </tr>
   `;
-  document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
-  //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
+    document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
+  } else {
+        const html = /*html*/ `
+    <tr>
+      <td>${result.memberObject.name}</td>
+      <td>${result.memberObject.age}</td>
+      <td>${result.memberObject.trainer}</td>
+      <td>${result.memberObject.disciplin}</td>
+      <td>${result.time} min</td>
+      <td>Trænings Pas</td>
+      <td><button class="update-btn">Update</button></td>
+    </tr>
+  `;
+        document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
+  }
 }
 
 async function showSeniorMembers(result) {
 
-  const html = /*html*/ `
+  if (result.placement) {
+    const html = /*html*/ `
     <tr>
       <td>${result.memberObject.name}</td>
       <td>${result.memberObject.age}</td>
       <td>${result.memberObject.trainer}</td>
       <td>${result.memberObject.disciplin}</td>
-      <td>${result.time}</td>
+      <td>${result.time} min</td>
       <td>${result.placement}</td>
       <td><button class="update-btn">Update</button></td>
     </tr>
   `;
-  document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
-  //   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
+    document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
+  } else {
+    const html = /*html*/ `
+    <tr>
+      <td>${result.memberObject.name}</td>
+      <td>${result.memberObject.age}</td>
+      <td>${result.memberObject.trainer}</td>
+      <td>${result.memberObject.disciplin}</td>
+      <td>${result.time} min</td>
+      <td>Trænings Pas</td>
+      <td><button class="update-btn">Update</button></td>
+    </tr>
+  `;
+    document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
+  }
+}
+
+// ----------------Add training/competetion--------------- //
+
+async function swimmerAddedToSelect() {
+  const swimmers = await getSwimmer();
+  console.log(swimmers)
+  for (const swimmer of swimmers) {
+    console.log(swimmer.activity)
+    if (swimmer.activity === "konkurrencesvømmer") {
+      showSwimmerAddedToSelect(swimmer);
+    }
+  }
+}
+
+function showSwimmerAddedToSelect(swimmer) {
+  const html = /*html*/ `
+  <option value="${swimmer.id}">${swimmer.name}</option>
+  `;
+
+  document.querySelector("#swimmer").insertAdjacentHTML("beforeend", html)
 }
 
 
-// async function getResults(uid) {
-//   const response = await fetch(`${endpoint}/results/${uid}.json`);
-//   const result = await response.json();
-//   console.log(result)
-//   return result;
-// }
+function showAddTime() {
+  const dialog = document.querySelector("#add-time");
+
+  console.log("Create Member Dialog Opened");
+  dialog.showModal();
+
+  document.querySelector("#addTime").addEventListener("submit", addTimeClicked);
+
+  dialog.querySelector("#close-add-btn").addEventListener("click", () => {
+    console.log("Create Member Dialog Closed");
+    dialog.close();
+  });
+}
+
+async function addTimeClicked(event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const date = form.date.value
+  const placement = form.placement.value
+  const time = form.time.value
+  const member = form.swimmer.value
+
+  const response = await addTime(date, placement, time, member)
+   if (response.ok) {
+     form.reset();
+     updateGrid();
+     console.log("Tid addet")
+  }
+  document.querySelector("#add-time").close();
+}
+
+async function addTime(date, placement, time, member) {
+  const newTime = {
+    date: date,
+    placement: placement,
+    time: time,
+    member: member
+  };
+  const timeAsJson = JSON.stringify(newTime)
+  const response = await fetch(`${endpoint}/results.json`, { method: "POST", body: timeAsJson })
+  
+  return response;
+}
+
 
 
 // ----------------Sort By--------------- //
@@ -118,38 +204,53 @@ async function showSeniorMembers(result) {
 
 //U18
 function sortByNameU18() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name));
-  displayMembers(swimmer);
+  results.sort((swimmer1, swimmer2) => swimmer1.memberObject.name.localeCompare(swimmer2.memberObject.name));
+  displayResults(results);
 }
 function sortByAgeU18() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
-  displayMembers(swimmer);
+  results.sort((swimmer1, swimmer2) => swimmer2.memberObject.age - swimmer1.memberObject.age);
+  displayResults(results);
 }
 function sortByTrainerU18() {
-  console.log(swimmer)
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.trainer.localeCompare(swimmer2.trainer));
-  displayMembers(swimmer);
+  results.sort((swimmer1, swimmer2) => swimmer1.memberObject.trainer.localeCompare(swimmer2.memberObject.trainer));
+  displayResults(results);
 }
 function sortByDisciplinU18() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.disciplin.localeCompare(swimmer2.disciplin));
-  displayMembers(swimmer);
+  results.sort((swimmer1, swimmer2) => swimmer1.memberObject.disciplin.localeCompare(swimmer2.memberObject.disciplin));
+  displayResults(results);
 }
 function sortByTrainingU18() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.training.localeCompare(swimmer2.training));
-  displayMembers(swimmer);
+  results.sort((swimmer1, swimmer2) => swimmer1.time.localeCompare(swimmer2.time));
+  displayResults(results);
 }
 function sortByCompetetionU18() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.competition.localeCompare(swimmer2.competition));
-  displayMembers(swimmer);
+  results.sort((swimmer1, swimmer2) => swimmer1.placement.localeCompare(swimmer2.placement));
+  displayResults(results);
 }
 
-//Senior
+//Senior, virker ikke
 
 function sortByNameSenior() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer1.name.localeCompare(swimmer2.name));
-  displayMembers(swimmer);
+  results.sort((swimmer1, swimmer2) => swimmer1.memberObject.name.localeCompare(swimmer2.memberObject.name));
+  displayResults(results);
 }
 function sortByAgeSenior() {
-  swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
-  displayMembers(swimmer);
+  results.sort((swimmer1, swimmer2) => swimmer2.memberObject.age - swimmer1.memberObject.age);
+  displayResults(results);
+}
+function sortByTrainerSenior() {
+  results.sort((swimmer1, swimmer2) => swimmer1.memberObject.trainer.localeCompare(swimmer2.memberObject.trainer));
+  displayResults(results);
+}
+function sortByDisciplinSenior() {
+  results.sort((swimmer1, swimmer2) => swimmer1.memberObject.disciplin.localeCompare(swimmer2.memberObject.disciplin));
+  displayResults(results);
+}
+function sortByTrainingSenior() {
+  results.sort((swimmer1, swimmer2) => swimmer1.time.localeCompare(swimmer2.time));
+  displayResults(results);
+}
+function sortByCompetetionSenior() {
+  results.sort((swimmer1, swimmer2) => swimmer1.placement - swimmer2.placement);
+  displayResults(results);
 }

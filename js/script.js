@@ -68,7 +68,6 @@ async function prepareResult(results) {
 }
 
 async function getCompSwimmer(uid) {
-  console.log(uid);
 
   const response = await fetch(`${endpoint}/member/${uid}.json`);
   const result = await response.json();
