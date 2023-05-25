@@ -96,8 +96,29 @@ function showMembers(member) {
     event.stopPropagation();
     openUpdateDialog();
   });
-
   document.querySelector("#members tr:last-child").addEventListener("click", () => kontigentShow(member));
+  updateTotalPay();
+}
+
+// ----------------Calculate pay--------------------//
+
+function calculateTotalPay() {
+  let totalPay = 0;
+  const payElements = document.querySelectorAll("#members tr .pay");
+  payElements.forEach((element) => {
+    const pay = parseFloat(element.textContent.replace(/[^0-9.-]+/g, ""));
+    totalPay += pay;
+  });
+
+  return totalPay.toFixed(2);
+}
+
+
+function updateTotalPay() {
+  const totalPayCell = document.getElementById("total-pay");
+  const totalPay = calculateTotalPay();
+  const formattedTotalPay = "Kontingent betaling i alt" + " " + totalPay.toLocaleString("en") + ",-"; 
+  totalPayCell.textContent = formattedTotalPay;
 }
 
 // ----------------Search--------------------//

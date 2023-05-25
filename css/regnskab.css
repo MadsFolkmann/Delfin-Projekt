@@ -134,6 +134,22 @@ td::first-letter {
   color: red;
 }
 
+tfoot {
+  background-color: #4db6ac;
+}
+
+.footer-cell {
+  font-weight: bold;
+  color: white;
+}
+
+#total-pay {
+  text-align: center;
+  font-size: 1.2em;
+  padding-right: 16px;
+}
+
+
 /* -------Forskellige kontingenter-------- */
 .table-container-right {
   position: fixed;
