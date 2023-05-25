@@ -30,12 +30,11 @@ async function deleteSwimmer(id) {
   return response;
 }
 
-async function updateMember(id, name, age, paid, about, gender, membership, activity, disciplin, trainer, image) {
+async function updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image) {
   const updatedMember = {
     name: name,
     age: age,
     about: about,
-    paid: paid,
     gender: gender,
     membership: membership,
     activity: activity,
@@ -76,12 +75,11 @@ async function getCompSwimmer(uid) {
   return result;
 }
 
-async function updateKontigent(id, name, age, paid, about, gender, membership, activity, disciplin, trainer, image) {
+async function updateKontigent(id, name, age, about, gender, membership, activity, disciplin, trainer, image) {
   const updatedKontigent = {
     name: name,
     age: age,
     about: about,
-    paid: paid,
     gender: gender,
     membership: membership,
     activity: activity,
