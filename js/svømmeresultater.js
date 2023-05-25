@@ -306,10 +306,16 @@ async function updateTime(id, date, placement, time, member) {
 // ----------------Delete--------------- //
 
 function deleteClicked(result) {
-  
+    const dialog = document.querySelector("#dialog-delete-time");
+
   document.querySelector("#time-swimmer").textContent = `${result.time}, ${result.memberObject.name}`;
   document.querySelector("#form-delete-time").setAttribute("data-id", result.id);
-  document.querySelector("#dialog-delete-time").showModal();
+  dialog.showModal();
+
+  dialog.querySelector(".btn-cancel-no").addEventListener("click", () => {
+   dialog.close();
+  console.log("Update dialog closed");
+  });
 }
 
 function deleteTimeClicked(event) {
@@ -326,6 +332,9 @@ async function deleteTime(id) {
     showDeleteFeedback("Tiden er blevet slettet")
   }
 }
+// function deleteCancelClicked() {
+//   document.querySelector("#dialog")
+// }
 
 
 
