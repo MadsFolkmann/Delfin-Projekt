@@ -55,6 +55,14 @@ h1 {
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
 }
 
+.sidebar button:hover {
+  box-shadow: 0 0.5rem 0.5em rgba(0, 0, 0, 0.3);
+}
+
+.log-ud {
+  margin-top: 55vh;
+}
+
 /* ---------------------Main content------------------- */
 
 .header {
@@ -112,6 +120,10 @@ td {
   text-align: left;
   padding: 8px;
   border: 1px solid #ddd;
+}
+
+td::first-letter {
+  text-transform: uppercase;
 }
 
 #sort-by-missing-payment {

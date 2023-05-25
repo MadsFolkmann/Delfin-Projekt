@@ -41,8 +41,8 @@
       <th id="sort-by-age-u18">Alder</th>
       <th id="sort-by-trainer-u18">Træner</th>
       <th id="sort-by-disciplin-u18">Disciplin</th>
-      <th id="sort-by-training-u18">Bedste træningstid</th>
-      <th id="sort-by-competetion-u18">Seneste placering</th>
+      <th id="sort-by-training-u18">Bedste Tid</th>
+      <th id="sort-by-competetion-u18">Placering</th>
       <th></th>
     </tr>
   </thead>
@@ -61,8 +61,8 @@
       <th id="sort-by-age-senior">Alder</th>
       <th id="sort-by-trainer-senior">Træner</th>
       <th id="sort-by-disciplin-senior">Disciplin</th>
-      <th id="sort-by-training-senior">Bedste træningstid</th>
-      <th id="sort-by-competetion-senior">Seneste placering</th>
+      <th id="sort-by-training-senior">Bedste tid</th>
+      <th id="sort-by-competetion-senior">Placering</th>
       <th></th>
     </tr>
   </thead>
@@ -72,8 +72,65 @@
 </table>
 </div>
 </div>
-
 </section>
+
+    <!------------------ Add swimmer ----------------->
+
+<dialog id="add-time" class="dialog">
+  <img src="/Billeder/logo.png" alt="logo" class="logo" />
+<form action="" method="dialog" id="addTime">
+
+ <label for="swimmer">Svømmer:</label>
+    <select name="swimmer" id="swimmer">
+      <option value="none"></option>
+    </select required>
+    <label for="date">Dato</label>
+    <input type="date"  id="date" required>
+    <label for="time">Tid (I minut)</label>
+    <input type="text" placeholder="00:00" id="time" required>
+    <label for="placement">Placering (Optional)</label>
+    <input type="number" placeholder="1,2,3....." id="placement">
+ <br /><br />
+       <input type="submit" id="add-time-btn" class="add-btn" value="Tilføj ny tid" />
+      </form>  
+      <button class="closeButton" id="close-add-btn" type="button">Luk</button>  
+    </dialog>
+
+    <!------------------ Update swimmer ----------------->
+
+<dialog id="dialog-update-time" class="dialog">
+  <img src="/Billeder/logo.png" alt="logo" class="logo" />
+<form action="" method="dialog" id="updateTime">
+
+ <label for="update-swimmer">Svømmer:</label>
+    <select name="swimmer" name="swimmer" id="updateSwimmer">
+      <option value="none"></option>
+    </select required>
+    <label for="update-date">Dato</label>
+    <input type="date"  id="update-date" name="date" required>
+    <label for="update-time">Tid (I minut)</label>
+    <input type="text" name="time" placeholder="00:00" id="update-time" required>
+    <label for="update-placement">Placering (Optional)</label>
+    <input type="number" name="placement" placeholder="1,2,3....." id="update-placement">
+    <br /><br />
+       <input type="submit" id="update-time-btn" class="add-btn" value="Opdater tid" />
+      </form>  
+      <button class="closeButton" id="close-update-btn" type="button">Luk</button>  
+    </dialog>
+
+    <!------------------ delete swimmer ----------------->
+
+      <dialog id="dialog-delete-time" class="dialog">
+      <img src="/Billeder/logo.png" alt="logo" class="logo" />
+      <h2>Er du sikker på du vil slette denne tid?</h2>
+      <p id="time-swimmer"></p>
+      <form method="dialog" id="form-delete-time">
+      <button  type="submit" class="btn-cancel-yes">Ja</button>
+      <button type="button" class="btn-cancel-no">Nej</button>
+      </form>
+    </dialog>
+
+
 
     <script src="js/svømmeresultater.js" type="module"></script>
     <!-- <script src="js/script.js" type="module"></script> -->

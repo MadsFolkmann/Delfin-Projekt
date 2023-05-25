@@ -214,15 +214,12 @@
   <option value="Female">Kvinde</option>
    </select> <br /><br />
 
-
-
         <label for="membership">Medlemskab:</label>
         <select name="membership" id="membership">
             <option value="none"></option>
            <option value="18+">18+</option>
               <option value="u18">u18</option>
              <option value="pensionist">Pensionist</option>
-               <option value="barn">Barn</option>
                  <option value="passiv">Passiv</option>
           </select> <br /><br />
 
@@ -253,15 +250,17 @@
             <option value="emma">Emma</option>
           </select> <br /><br />
 
- <label for="image">Billede:</label>
+      <label for="image">Billede:</label>
         <input type="url" id="image" name="image" placeholder="Paste an image URL" required /><br /><br />
 
        <input type="submit" id="add-member-btn" class="add-btn" value="Tilføj ny svømmer" />
        
       </form>  
-      <button class="closeButton" type="button">Luk</button>  
+      <button class="closeButton" id="close-create-btn" type="button">Luk</button>  
     </dialog>
 
+
+    <!------------------------- Update member ---------------------------->
 
     <dialog id="dialog-update-member" class="dialog">
       <h1>Opdatere medlem</h1>
@@ -399,7 +398,6 @@
            <option value="18+">18+</option>
               <option value="u18">u18</option>
              <option value="pensionist">Pensionist</option>
-               <option value="barn">Barn</option>
                  <option value="passiv">Passiv</option>
           </select> <br /><br />
 
