@@ -48,7 +48,7 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>1600,-</td>
-        <td id="paid">${member.paid}</td>
+        <td ${member.paid}</td>
         <td class="debt">1600,-</td>
         <td> <button class="btn-update">Opdatere</button></td>
 
@@ -61,7 +61,7 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>1000,-</td>
-        <td id="paid">${member.paid}</td>
+        <td ${member.paid}</td>
         <td class="debt">1000,-</td>
         <td> <button class="btn-update">Opdatere</button></td>
       </tr>
@@ -73,7 +73,7 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>1200,-</td>
-        <td id="paid">${member.paid}</td>
+        <td ${member.paid}</td>
         <td class="debt">1200,-</td>
         <td> <button class="btn-update">Opdatere</button></td>
 
@@ -86,7 +86,7 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>500,-</td>
-        <td id="paid">${member.paid}</td>
+        <td ${member.paid}</td>
         <td class="debt">500,-</td>
         <td> <button class="btn-update">Opdatere</button></td>
       </tr>
