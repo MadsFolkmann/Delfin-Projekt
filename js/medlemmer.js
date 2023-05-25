@@ -69,12 +69,12 @@ function showMembers(member) {
     event.stopPropagation();
     updateClicked(member);
   });
-
+  
   document.querySelector("#members tr:last-child .btn-delete").addEventListener("click", (event) => {
     event.stopPropagation();
     deleteClicked(member);
   });
-
+  
   document.querySelector("#members tr:last-child").addEventListener("click", () => membersClicked(member));
 }
 

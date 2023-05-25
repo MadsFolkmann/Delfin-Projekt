@@ -202,6 +202,111 @@ td::first-letter {
   text-transform: uppercase;
 }
 
+/* -------------Dialog----------------- */
+
+
+#result-dialog {
+  border-radius: 10px;
+  position: fixed;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  animation: dialogResultAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes dialogResultAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+#result-dialog .logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#result-dialog #image-dialog {
+  width: 45%;
+  height: 35%;
+  float: left;
+  margin-right: 20px;
+}
+
+#result-dialog .info-competetion-wrapper {
+  overflow: auto;
+}
+
+#result-dialog .info-swimmer {
+  float: left;
+  width: 50%;
+}
+
+#result-dialog .competetion {
+  width: 50%;
+  clear: both;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#result-dialog .competetion h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+   margin-right: 10px;
+}
+
+#result-dialog .field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#result-dialog label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+#result-dialog h2,
+#result-dialog h3 {
+  font-size: 17px;
+}
+
+#result-dialog label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#result-dialog #btn-close-dialog {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#result-dialog #btn-close-dialog:hover {
+  background-color: lightblue;
+}
+
+
+
 /* -------------Add/update Time----------------- */
 
 #add-time, #dialog-update-time {

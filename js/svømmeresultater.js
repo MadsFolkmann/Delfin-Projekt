@@ -108,6 +108,7 @@ async function showU18Members(result) {
 
   document.querySelector("#u-18 tr:last-child .update-btn").addEventListener("click", () => updateClicked(result));
   document.querySelector("#u-18 tr:last-child .delete-btn").addEventListener("click", () => deleteClicked(result));
+   document.querySelector("#u-18 tr:last-child").addEventListener("click", () => resultClicked(result));
 
 }
 
@@ -144,6 +145,8 @@ async function showSeniorMembers(result) {
   }
   document.querySelector("#senior tr:last-child .update-btn").addEventListener("click", () => updateClicked(result));
   document.querySelector("#senior tr:last-child .delete-btn").addEventListener("click", () => deleteClicked(result));
+  document.querySelector("#senior tr:last-child").addEventListener("click", () => resultClicked(result));
+
 
 }
 
@@ -330,6 +333,25 @@ async function deleteTime(id) {
     updateGrid()
     showDeleteFeedback("Tiden er blevet slettet")
   }
+}
+
+// ---------- ------Show Dialog--------------- //
+
+function resultClicked(result) {
+  console.log("Member dialog opened");
+  showDialogResult(result);
+  document.querySelector("#result-dialog").showModal();
+}
+function showDialogResult(result) {
+  document.querySelector("#image-dialog").src = result.memberObject.image;
+  document.querySelector("#name-dialog").textContent = result.memberObject.name;
+  document.querySelector("#gender-dialog").textContent = result.memberObject.gender;
+  document.querySelector("#age-dialog").textContent = result.memberObject.age;
+  document.querySelector("#about-dialog").textContent = result.memberObject.about;
+  document.querySelector("#time-dialog").textContent = result.time;
+  document.querySelector("#date-dialog").textContent = result.date;
+  document.querySelector("#disciplin-dialog").textContent = result.disciplin;
+  document.querySelector("#placement-dialog").textContent = result.placement;
 }
 
 // ---------- ------Sort By--------------- //
