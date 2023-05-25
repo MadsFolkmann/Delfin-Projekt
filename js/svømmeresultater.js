@@ -35,6 +35,10 @@ function start() {
   // Delete //
   document.querySelector("#form-delete-time").addEventListener("submit", deleteTimeClicked)
 
+  //Search//
+   document.querySelector("#search-input").addEventListener("keyup", inputSearchChanged);
+   document.querySelector("#search-input").addEventListener("search", inputSearchChanged);
+
   updateGrid();
   swimmerAddedToSelect();
 }
@@ -357,7 +361,7 @@ function sortByCompetetionU18() {
   displayResults(results);
 }
 
-//Senior, virker ikke
+//Senior
 
 function sortByNameSenior() {
   results.sort((swimmer1, swimmer2) => swimmer1.memberObject.name.localeCompare(swimmer2.memberObject.name));
@@ -382,4 +386,19 @@ function sortByTrainingSenior() {
 function sortByCompetetionSenior() {
   results.sort((swimmer1, swimmer2) => swimmer1.placement - swimmer2.placement);
   displayResults(results);
+}
+
+// ----------------------------Search-------------------------------//
+
+function inputSearchChanged(event) {
+  const value = event.target.value;
+  const membersToShow = searchMembers(value);
+  console.log(membersToShow);
+  displayResults(membersToShow);
+}
+
+function searchMembers(searchValue) {
+  searchValue = searchValue.toLowerCase();
+  const swimResults = results.filter((result) => result.memberObject.name.toLowerCase().includes(searchValue));
+  return swimResults;
 }
