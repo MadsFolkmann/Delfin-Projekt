@@ -88,10 +88,7 @@ function showMembers(member) {
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
   }
 
-  // document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
-  //   event.stopPropagation();
-  // openUpdateDialog();
-  // });
+
 
   document.querySelector("#members tr:last-child").addEventListener("click", () => kontigentShow(member));
 }

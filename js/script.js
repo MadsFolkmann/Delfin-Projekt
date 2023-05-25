@@ -2,7 +2,7 @@
 
 export { getSwimmer, prepareSwimmer, deleteSwimmer, updateMember, endpoint, getResults, prepareResult, getCompSwimmer };
 
-// window.addEventListener("load", start);
+
 
 const endpoint = "https://svoemmeklubben-delfinen-default-rtdb.europe-west1.firebasedatabase.app/";
 

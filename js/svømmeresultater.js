@@ -43,19 +43,13 @@ getResults();
 
 prepareResult();
 
-// async function updateGrid() {
-//   swimmer = await getSwimmer();
-//   displayMembers(swimmer);
-// }
+
 async function updateGrid() {
   results = await getResults();
   for (const result of results) {
       const member = await getCompSwimmer(result.member);
-    // console.log(member);
     result.memberObject = member
   }
-  // console.log(results.memberObject)
-  // console.log(results)
   displayResults(results);
 }
 
@@ -333,11 +327,6 @@ async function deleteTime(id) {
     showDeleteFeedback("Tiden er blevet slettet")
   }
 }
-// function deleteCancelClicked() {
-//   document.querySelector("#dialog")
-// }
-
-
 
 // ---------- ------Sort By--------------- //
 
