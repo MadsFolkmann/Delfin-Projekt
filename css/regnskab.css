@@ -210,6 +210,11 @@ td::first-letter {
   top: 30%;
 }
 
+#members-dialog h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
 #members-dialog h3 {
   font-size: 18px;
   margin-bottom: 10px;
@@ -224,6 +229,16 @@ td::first-letter {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
+}
+
+#btn-close-dialog {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 /* ----------Update---------- */
@@ -293,8 +308,8 @@ td::first-letter {
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  left: 80%;
-  top: 88.2%;
+  left: 84%;
+  top: 93%;
 }
 
 .closeButtonKontigent:hover {

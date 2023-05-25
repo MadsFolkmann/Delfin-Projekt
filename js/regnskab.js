@@ -50,7 +50,7 @@ function showMembers(member) {
         <td>1600,-</td>
         <td ${member.paid}</td>
         <td class="debt">1600,-</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
 
       </tr>
     `;
@@ -63,7 +63,7 @@ function showMembers(member) {
         <td>1000,-</td>
         <td ${member.paid}</td>
         <td class="debt">1000,-</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
       </tr>
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
@@ -75,7 +75,7 @@ function showMembers(member) {
         <td>1200,-</td>
         <td ${member.paid}</td>
         <td class="debt">1200,-</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
 
       </tr>
     `;
@@ -88,7 +88,7 @@ function showMembers(member) {
         <td>500,-</td>
         <td ${member.paid}</td>
         <td class="debt">500,-</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
       </tr>
       
     `;
