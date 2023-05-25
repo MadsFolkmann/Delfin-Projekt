@@ -113,11 +113,10 @@ function calculateTotalPay() {
   return totalPay.toFixed(2);
 }
 
-
 function updateTotalPay() {
   const totalPayCell = document.getElementById("total-pay");
   const totalPay = calculateTotalPay();
-  const formattedTotalPay = "Kontingent betaling i alt" + " " + totalPay.toLocaleString("en") + ",-"; 
+  const formattedTotalPay = "Kontingent betaling i alt" + " " + totalPay.toLocaleString("en") + ",-";
   totalPayCell.textContent = formattedTotalPay;
 }
 
