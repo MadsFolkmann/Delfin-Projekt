@@ -87,8 +87,8 @@ async function showU18Members(result) {
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>${result.placement}</td>
-      <td><button class="update-btn">Update</button>
-        <button class="delete-btn">Delete</button></td>
+      <td><button class="update-btn">Opdater</button>
+        <button class="delete-btn">Slet</button></td>
     </tr>
   `;
     document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
@@ -101,8 +101,8 @@ async function showU18Members(result) {
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>Trænings Pas</td>
-      <td><button class="update-btn">Update</button>
-        <button class="delete-btn">Delete</button></td>
+      <td><button class="update-btn">Opdater</button>
+        <button class="delete-btn">Slet</button></td>
     </tr>
   `;
         document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
@@ -124,8 +124,8 @@ async function showSeniorMembers(result) {
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>${result.placement}</td>
-      <td><button class="update-btn">Update</button>
-        <button class="delete-btn">Delete</button></td>
+      <td><button class="update-btn">Opdater</button>
+        <button class="delete-btn">Slet</button></td>
     </tr>
   `;
     document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
@@ -138,8 +138,8 @@ async function showSeniorMembers(result) {
       <td>${result.memberObject.disciplin}</td>
       <td>${result.time} min</td>
       <td>Trænings Pas</td>
-      <td><button class="update-btn">Update</button>
-      <button class="delete-btn">Delete</button></td>
+      <td><button class="update-btn">Opdater</button>
+      <button class="delete-btn">Slet</button></td>
     </tr>
   `;
     document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
