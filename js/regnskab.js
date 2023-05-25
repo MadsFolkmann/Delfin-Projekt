@@ -47,7 +47,7 @@ function showMembers(member) {
         <td class="pay">1600,-</td>
         <td class="paid">0,-</td>
         <td class="debt">1600,-</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
 
       </tr>
     `;
@@ -60,7 +60,7 @@ function showMembers(member) {
         <td class="pay">1000,-</td>
         <td class="paid">0,-</td>
         <td class="debt">1000,-</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
       </tr>
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
@@ -72,7 +72,7 @@ function showMembers(member) {
         <td class="pay">1200,-</td>
         <td class="paid">0,-</td>
         <td class="debt">1200,-</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
 
       </tr>
     `;
@@ -85,17 +85,17 @@ function showMembers(member) {
         <td class="pay">500,-</td>
         <td class="paid">0,-</td>
         <td class="debt">500,-</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
       </tr>
       
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
   }
 
-  document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
-    event.stopPropagation();
-    openUpdateDialog();
-  });
+  // document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
+  //   event.stopPropagation();
+  //   openUpdateDialog(member);
+  // });
   document.querySelector("#members tr:last-child").addEventListener("click", () => kontigentShow(member));
   updateTotalPay();
 }
@@ -113,11 +113,10 @@ function calculateTotalPay() {
   return totalPay.toFixed(2);
 }
 
-
 function updateTotalPay() {
   const totalPayCell = document.getElementById("total-pay");
   const totalPay = calculateTotalPay();
-  const formattedTotalPay = "Kontingent betaling i alt" + " " + totalPay.toLocaleString("en") + ",-"; 
+  const formattedTotalPay = "Kontingent betaling i alt" + " " + totalPay.toLocaleString("en") + ",-";
   totalPayCell.textContent = formattedTotalPay;
 }
 
@@ -183,35 +182,47 @@ function showKontigentDialog(member) {
 
 // ------------------ Update ------------------- \\
 
-function openUpdateDialog() {
-  const dialog = document.querySelector("#updateDialog");
-  const form = document.querySelector("#updateForm");
-  const newPaidInput = document.querySelector("#newPaid");
+// function openUpdateDialog(member) {
+//   const dialog = document.querySelector("#updateDialog");
+//   const form = document.querySelector("#updateForm");
+//   const newPaidInput = document.querySelector("#newPaid");
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const newPaidValue = newPaidInput.value;
-    const paidCells = document.querySelectorAll("#members .paid");
-    paidCells.forEach((paidCell) => {
-      paidCell.textContent = newPaidValue;
-    });
-    showUpdateFeedBack("Medlemmernes kontingent er blevet ændret!");
-    dialog.close();
-  });
+//   // Indstil medlemmets navn og betaling i dialogen
+//   document.querySelector("#name").textContent = member.name;
+//   newPaidInput.value = member.paid;
 
-  dialog.showModal();
-}
+//   // Gem opdateringsformular
+//   form.addEventListener("submit", (event) => {
+//     event.preventDefault();
+//     const newPaidValue = newPaidInput.value;
 
-function showUpdateFeedBack(message) {
-  const feedbackElement = document.createElement("div");
-  feedbackElement.classList.add("kontigent-feedback");
-  feedbackElement.textContent = message;
-  document.body.appendChild(feedbackElement);
+//     // Opdater medlemsdata
+//     member.paid = newPaidValue;
 
-  setTimeout(() => {
-    feedbackElement.classList.add("fade-out");
-    setTimeout(() => {
-      feedbackElement.remove();
-    }, 500);
-  }, 2000);
-}
+//     // Opdater betalingsstatus i tabellen
+//     const paidCell = document.querySelector(`#members data-id .paid`);
+//     paidCell.textContent = newPaidValue;
+
+//     // Luk dialogen
+//     dialog.close();
+
+//     // Vis feedback
+//     showUpdateFeedBack(`Medlemmets kontingent er blevet ændret til ${newPaidValue}`);
+//   });
+
+//   dialog.showModal();
+// }
+
+// function showUpdateFeedBack(message) {
+//   const feedbackElement = document.createElement("div");
+//   feedbackElement.classList.add("kontigent-feedback");
+//   feedbackElement.textContent = message;
+//   document.body.appendChild(feedbackElement);
+
+//   setTimeout(() => {
+//     feedbackElement.classList.add("fade-out");
+//     setTimeout(() => {
+//       feedbackElement.remove();
+//     }, 500);
+//   }, 2000);
+// }
