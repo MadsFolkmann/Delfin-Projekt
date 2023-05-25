@@ -19,8 +19,8 @@ function start() {
     document.querySelector("#sort-by-training-u18").addEventListener("click", sortByTrainingU18);
     document.querySelector("#sort-by-competetion-u18").addEventListener("click", sortByCompetetionU18);
   // Sort Senior //
-   document.querySelector("#sort-by-name-senior").addEventListener("click", sortByNameSenior);
-  document.querySelector("#sort-by-age-senior").addEventListener("click", sortByAgeSenior);
+      document.querySelector("#sort-by-name-senior").addEventListener("click", sortByNameSenior);
+      document.querySelector("#sort-by-age-senior").addEventListener("click", sortByAgeSenior);
       document.querySelector("#sort-by-trainer-senior").addEventListener("click", sortByTrainerSenior);
       document.querySelector("#sort-by-disciplin-senior").addEventListener("click", sortByDisciplinSenior);
       document.querySelector("#sort-by-training-senior").addEventListener("click", sortByTrainingSenior);
@@ -106,8 +106,15 @@ async function showU18Members(result) {
         document.querySelector("#u-18").insertAdjacentHTML("beforeend", html);
   }
 
-  document.querySelector("#u-18 tr:last-child .update-btn").addEventListener("click", () => updateClicked(result));
-  document.querySelector("#u-18 tr:last-child .delete-btn").addEventListener("click", () => deleteClicked(result));
+  document.querySelector("#u-18 tr:last-child .update-btn").addEventListener("click", (event) => {
+    event.stopPropagation();
+    updateClicked(result);
+  });
+
+  document.querySelector("#u-18 tr:last-child .delete-btn").addEventListener("click", (event) => {
+    event.stopPropagation();
+    deleteClicked(result);
+  });
    document.querySelector("#u-18 tr:last-child").addEventListener("click", () => resultClicked(result));
 
 }
@@ -143,8 +150,16 @@ async function showSeniorMembers(result) {
   `;
     document.querySelector("#senior").insertAdjacentHTML("beforeend", html);
   }
-  document.querySelector("#senior tr:last-child .update-btn").addEventListener("click", () => updateClicked(result));
-  document.querySelector("#senior tr:last-child .delete-btn").addEventListener("click", () => deleteClicked(result));
+  
+  document.querySelector("#senior tr:last-child .update-btn").addEventListener("click", (event) => {
+    event.stopPropagation();
+    updateClicked(result);
+  });
+
+  document.querySelector("#senior tr:last-child .delete-btn").addEventListener("click", (event) => {
+    event.stopPropagation();
+    deleteClicked(result);
+  });
   document.querySelector("#senior tr:last-child").addEventListener("click", () => resultClicked(result));
 
 
@@ -350,7 +365,7 @@ function showDialogResult(result) {
   document.querySelector("#about-dialog").textContent = result.memberObject.about;
   document.querySelector("#time-dialog").textContent = result.time;
   document.querySelector("#date-dialog").textContent = result.date;
-  document.querySelector("#disciplin-dialog").textContent = result.disciplin;
+  document.querySelector("#disciplin-dialog").textContent = result.memberObject.disciplin;
   document.querySelector("#placement-dialog").textContent = result.placement;
 }
 

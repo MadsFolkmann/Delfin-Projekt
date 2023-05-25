@@ -208,7 +208,7 @@ td::first-letter {
 #result-dialog {
   border-radius: 10px;
   position: fixed;
-  top: 95%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;

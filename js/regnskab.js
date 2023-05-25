@@ -38,17 +38,14 @@ function displayMembers(listOfMembers) {
 }
 
 function showMembers(member) {
-  console.log("hej");
   if (member.membership === "18+") {
     const html = /*html*/ `
       <tr>
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td class="pay">1600,-</td>
-        <td class="paid">0,-</td>
-        <td class="debt">1600,-</td>
-        <td> <button class="btn-update">Opdater</button></td>
-
+        <td class="paid">1600,-</td>
+        <td class="debt">0,-</td>
       </tr>
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
@@ -58,9 +55,8 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td class="pay">1000,-</td>
-        <td class="paid">0,-</td>
-        <td class="debt">1000,-</td>
-        <td> <button class="btn-update">Opdater</button></td>
+        <td class="paid">1000,-</td>
+        <td class="debt">0,-</td>
       </tr>
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
@@ -70,9 +66,8 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td class="pay">1200,-</td>
-        <td class="paid">0,-</td>
-        <td class="debt">1200,-</td>
-        <td> <button class="btn-update">Opdater</button></td>
+        <td class="paid">1200,-</td>
+        <td class="debt">0,-</td>
 
       </tr>
     `;
@@ -83,19 +78,15 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td class="pay">500,-</td>
-        <td class="paid">0,-</td>
-        <td class="debt">500,-</td>
-        <td> <button class="btn-update">Opdater</button></td>
+        <td class="paid">500,-</td>
+        <td class="debt">0,-</td>
       </tr>
       
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
   }
 
-  // document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
-  //   event.stopPropagation();
-  //   openUpdateDialog(member);
-  // });
+
   document.querySelector("#members tr:last-child").addEventListener("click", () => kontigentShow(member));
   updateTotalPay();
 }
@@ -147,20 +138,6 @@ function sortByMembership() {
   displayMembers(swimmer);
 }
 
-// function sortByPayment() {
-//   swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
-//   displayMembers(swimmer)
-// }
-
-// function sortByPaid() {
-//   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
-//   displayMembers(swimmer);
-// }
-
-// function sortByMissingPayment() {
-//   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
-//   displayMembers(swimmer);
-// }
 // ------------------ Kontigent show dialog ------------------- \\
 
 function kontigentShow(member) {
@@ -180,49 +157,3 @@ function showKontigentDialog(member) {
   document.querySelector("#about").textContent = member.about;
 }
 
-// ------------------ Update ------------------- \\
-
-// function openUpdateDialog(member) {
-//   const dialog = document.querySelector("#updateDialog");
-//   const form = document.querySelector("#updateForm");
-//   const newPaidInput = document.querySelector("#newPaid");
-
-//   // Indstil medlemmets navn og betaling i dialogen
-//   document.querySelector("#name").textContent = member.name;
-//   newPaidInput.value = member.paid;
-
-//   // Gem opdateringsformular
-//   form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     const newPaidValue = newPaidInput.value;
-
-//     // Opdater medlemsdata
-//     member.paid = newPaidValue;
-
-//     // Opdater betalingsstatus i tabellen
-//     const paidCell = document.querySelector(`#members data-id .paid`);
-//     paidCell.textContent = newPaidValue;
-
-//     // Luk dialogen
-//     dialog.close();
-
-//     // Vis feedback
-//     showUpdateFeedBack(`Medlemmets kontingent er blevet ændret til ${newPaidValue}`);
-//   });
-
-//   dialog.showModal();
-// }
-
-// function showUpdateFeedBack(message) {
-//   const feedbackElement = document.createElement("div");
-//   feedbackElement.classList.add("kontigent-feedback");
-//   feedbackElement.textContent = message;
-//   document.body.appendChild(feedbackElement);
-
-//   setTimeout(() => {
-//     feedbackElement.classList.add("fade-out");
-//     setTimeout(() => {
-//       feedbackElement.remove();
-//     }, 500);
-//   }, 2000);
-// }
