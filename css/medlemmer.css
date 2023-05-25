@@ -160,7 +160,6 @@ td::first-letter {
   background-color: #fff;
 }
 
-
 /*-------------- show swimmer dialog -------------*/
 
 #members-dialog {
@@ -199,7 +198,7 @@ td::first-letter {
   border-radius: 50%;
 }
 
-#members-dialog section {
+/* #members-dialog section {
   display: flex;
   align-items: center;
 }
@@ -207,19 +206,15 @@ td::first-letter {
 #members-dialog figure {
   flex: 0 0 auto;
   margin-right: 80px;
-}
+} */
 
 #members-dialog figure img {
   width: 125px;
   height: 125px;
   border-radius: 10%;
   position: fixed;
-  left: 0.5%;
-  top: 40%;
-}
-
-#members-dialog article {
-  flex: 1 1 auto;
+  left: 60%;
+  top: 30%;
 }
 
 #members-dialog h2 {
@@ -286,7 +281,6 @@ td::first-letter {
   background: lightblue;
   color: #fff;
 }
-
 
 .add-btn {
   background: linear-gradient(45deg, #00c6ff, #023b80);
@@ -530,7 +524,3 @@ td::first-letter {
   background: lightblue;
   color: #fff;
 }
-
-
-
-

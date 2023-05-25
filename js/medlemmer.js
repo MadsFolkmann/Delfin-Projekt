@@ -58,7 +58,7 @@ function showMembers(member) {
       <td>${member.age}</td>
       <td>${member.membership}</td>
       <td>${member.activity}</td>
-        <td> <button class="btn-update">Opdatere</button></td>
+        <td> <button class="btn-update">Opdater</button></td>
         <td> <button class="btn-delete">Slet</button></td>
     </tr>
   `;
@@ -243,8 +243,8 @@ function showDeleteFeedback(message) {
     feedbackElement.classList.add("fade-out");
     setTimeout(() => {
       feedbackElement.remove();
-    }, 500); 
-  }, 2000); 
+    }, 500);
+  }, 2000);
 }
 // ------------------ Update member ------------------- \\
 updateMember();
