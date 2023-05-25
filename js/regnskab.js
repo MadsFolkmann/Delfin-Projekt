@@ -94,7 +94,7 @@ function showMembers(member) {
 
   document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
     event.stopPropagation();
-  openUpdateDialog();
+    openUpdateDialog();
   });
 
   document.querySelector("#members tr:last-child").addEventListener("click", () => kontigentShow(member));
@@ -153,7 +153,6 @@ function showKontigentDialog(member) {
   document.querySelector("#image").src = member.image;
   document.querySelector("#name").textContent = member.name;
   document.querySelector("#gender").textContent = member.gender;
-  document.querySelector("#paid").textContent = member.paid;
   document.querySelector("#age").textContent = member.age;
   document.querySelector("#membership").textContent = member.membership;
   document.querySelector("#activity").textContent = member.activity;
@@ -163,7 +162,6 @@ function showKontigentDialog(member) {
 
 // ------------------ Update ------------------- \\
 
-
 function openUpdateDialog() {
   const dialog = document.querySelector("#updateDialog");
   const form = document.querySelector("#updateForm");
@@ -172,24 +170,16 @@ function openUpdateDialog() {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const newPaidValue = newPaidInput.value;
-    const paidCell = document.querySelector("#members tr:last-child .paid");
-    if (paidCell) {
+    const paidCells = document.querySelectorAll("#members .paid");
+    paidCells.forEach((paidCell) => {
       paidCell.textContent = newPaidValue;
-    }
+    });
+    showUpdateFeedBack("Medlemmernes kontingent er blevet ændret!");
     dialog.close();
   });
 
   dialog.showModal();
 }
-
-
-
-
-
-
-
-
-
 
 function showUpdateFeedBack(message) {
   const feedbackElement = document.createElement("div");

@@ -180,7 +180,7 @@ td::first-letter {
 #kontigent-dialog-show {
   border-radius: 10px;
   position: fixed;
-  top: 65%;
+  top: 90%;
   left: 40%;
   transform: translate(-50%, -50%);
   width: 400px;
@@ -210,9 +210,23 @@ td::first-letter {
   top: 30%;
 }
 
-#members-dialog h3 {
-  font-size: 18px;
+.field {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+}
+#kontigent-dialog-show label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+#kontigent-dialog-show h3 {
+  font-size: 18px;
+}
+
+#kontigent-dialog-show label {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 @keyframes kontigentDialogAnimation {
@@ -224,6 +238,16 @@ td::first-letter {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
+}
+
+#btn-close-dialog {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 /* ----------Update---------- */

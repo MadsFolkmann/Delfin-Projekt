@@ -48,7 +48,12 @@
               </tr>
             </thead>
             <tbody id="members"></tbody>
+              <tr id="specificMemberRow"></tr>
+              </tr>
           </tr>
+
+     
+            
         </table>
       </div>
       <div class="table-container-right">
@@ -82,14 +87,43 @@
         <section>
           <figure><img id="image" src="" /></figure>
           <article>
-            <h2 id="name"></h2>
-            <h3 id="gender"></h3>
-            <h3 id="age"></h3>
-            <h3 id="paid"></h3>
-            <h3 id="membership"></h3>
-            <h3 id="activity"></h3>
-            <h3 id="disciplin"></h3>
-            <h3 id="about"></h3>
+    <h2 id="name"></h2>
+
+
+                <div class="field">
+      <label for="gender">Køn:</label>
+      <h3 id="gender"></h3>
+    </div>
+
+    <div class="field">
+      <label for="age">Alder:</label>
+      <h3 id="age"></h3>
+    </div>
+
+ <div class="field">
+      <label for="paid">Paid:</label>
+      <h3 id="paid"></h3>
+    </div>
+
+    <div class="field">
+      <label for="membership">Medlemskab:</label>
+      <h3 id="membership"></h3>
+    </div>
+
+    <div class="field">
+      <label for="activity">Aktivitet:</label>
+      <h3 id="activity"></h3>
+    </div>
+
+    <div class="field">
+      <label for="disciplin">Disciplin:</label>
+      <h3 id="disciplin"></h3>
+    </div>
+
+    <div class="field">
+      <label for="about">Om:</label>
+      <h3 id="about"></h3>
+    </div>
           </article>
         </section>
       </form>
@@ -98,16 +132,14 @@
       </form>
     </dialog>
 
-
     <dialog id="updateDialog">
-    <form id="updateForm">
-      <label for="newPaid">Enter new value for "paid":</label>
-      <input type="text" id="newPaid" required placeholder="0000,-">
-      <br>
-      <button type="submit">Update</button>
-    </form>
-  </dialog>
-
+      <form id="updateForm">
+        <label for="newPaid">Betaling":</label>
+        <input type="text" id="newPaid" required placeholder="0,-" />
+        <br />
+        <button type="submit">Opdater</button>
+      </form>
+    </dialog>
 
     <script src="js/regnskab.js" type="module"></script>
     <!-- <script src="js/script.js"></script> -->
