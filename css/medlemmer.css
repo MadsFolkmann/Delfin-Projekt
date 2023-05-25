@@ -165,7 +165,7 @@ td::first-letter {
 #members-dialog {
   border-radius: 10px;
   position: fixed;
-  top: 65%;
+  top: 90%;
   left: 40%;
   transform: translate(-50%, -50%);
   width: 400px;
@@ -198,16 +198,6 @@ td::first-letter {
   border-radius: 50%;
 }
 
-/* #members-dialog section {
-  display: flex;
-  align-items: center;
-}
-
-#members-dialog figure {
-  flex: 0 0 auto;
-  margin-right: 80px;
-} */
-
 #members-dialog figure img {
   width: 125px;
   height: 125px;
@@ -217,16 +207,25 @@ td::first-letter {
   top: 30%;
 }
 
-#members-dialog h2 {
-  font-size: 24px;
+.field {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+}
+
+#members-dialog label {
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 #members-dialog h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 17px;
 }
 
+#members-dialog label {
+  font-size: 20px;
+  font-weight: bold;
+}
 #members-dialog #btn-close-dialog {
   background: linear-gradient(45deg, #00c6ff, #023b80);
   color: #ffffff;

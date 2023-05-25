@@ -180,7 +180,7 @@ td::first-letter {
 #kontigent-dialog-show {
   border-radius: 10px;
   position: fixed;
-  top: 65%;
+  top: 90%;
   left: 40%;
   transform: translate(-50%, -50%);
   width: 400px;
@@ -210,14 +210,23 @@ td::first-letter {
   top: 30%;
 }
 
-#members-dialog h2 {
-  font-size: 24px;
+.field {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
 }
+#kontigent-dialog-show label {
+  margin-right: 10px;
+  font-weight: bold;
+}
 
-#members-dialog h3 {
+#kontigent-dialog-show h3 {
   font-size: 18px;
-  margin-bottom: 10px;
+}
+
+#kontigent-dialog-show label {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 @keyframes kontigentDialogAnimation {
