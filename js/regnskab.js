@@ -47,6 +47,7 @@ function showMembers(member) {
         <td>1600,-</td>
         <td class="paid">0,-</td>
         <td class="debt">1600,-</td>
+        <td> <button class="btn-update">Opdatere</button></td>
 
       </tr>
     `;
@@ -59,6 +60,7 @@ function showMembers(member) {
         <td>1000,-</td>
         <td class="paid">0,-</td>
         <td class="debt">1000,-</td>
+        <td> <button class="btn-update">Opdatere</button></td>
       </tr>
     `;
     document.querySelector("#members").insertAdjacentHTML("beforeend", html);
@@ -70,6 +72,7 @@ function showMembers(member) {
         <td>1200,-</td>
         <td class="paid">0,-</td>
         <td class="debt">1200,-</td>
+        <td> <button class="btn-update">Opdatere</button></td>
 
       </tr>
     `;
@@ -82,6 +85,7 @@ function showMembers(member) {
         <td>500,-</td>
         <td class="paid">0,-</td>
         <td class="debt">500,-</td>
+        <td> <button class="btn-update">Opdatere</button></td>
       </tr>
       
     `;
@@ -123,6 +127,20 @@ function sortByMembership() {
   displayMembers(swimmer);
 }
 
+// function sortByPayment() {
+//   swimmer.sort((swimmer1, swimmer2) => swimmer2.age - swimmer1.age);
+//   displayMembers(swimmer)
+// }
+
+// function sortByPaid() {
+//   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
+//   displayMembers(swimmer);
+// }
+
+// function sortByMissingPayment() {
+//   swimmer.sort((swimmer1, swimmer2) => swimmer1.activity.localeCompare(swimmer2.activity));
+//   displayMembers(swimmer);
+// }
 // ------------------ Kontigent show dialog ------------------- \\
 
 function kontigentShow(member) {
