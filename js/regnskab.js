@@ -1,6 +1,6 @@
 "use strict";
 
-import { prepareSwimmer, getSwimmer, updateKontigent } from "./script.js";
+import { prepareSwimmer, getSwimmer } from "./script.js";
 
 console.log("Regnskab");
 
@@ -10,9 +10,6 @@ let swimmer;
 
 function start() {
   console.log("Velkommen Medlem");
-
-  // Update //
-  document.querySelector("#form-update-kontigent").addEventListener("submit", updateKontigentClicked);
 
   // SortBy //
   document.querySelector("#sort-by-name").addEventListener("click", sortByName);
@@ -48,7 +45,7 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>1600,-</td>
-        <td ${member.paid}</td>
+        <td class="paid">0,-</td>
         <td class="debt">1600,-</td>
         <td> <button class="btn-update">Opdatere</button></td>
 
@@ -61,7 +58,7 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>1000,-</td>
-        <td ${member.paid}</td>
+        <td class="paid">0,-</td>
         <td class="debt">1000,-</td>
         <td> <button class="btn-update">Opdatere</button></td>
       </tr>
@@ -73,7 +70,7 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>1200,-</td>
-        <td ${member.paid}</td>
+        <td class="paid">0,-</td>
         <td class="debt">1200,-</td>
         <td> <button class="btn-update">Opdatere</button></td>
 
@@ -86,7 +83,7 @@ function showMembers(member) {
         <td>${member.name}</td>
         <td>${member.membership}</td>
         <td>500,-</td>
-        <td ${member.paid}</td>
+        <td class="paid">0,-</td>
         <td class="debt">500,-</td>
         <td> <button class="btn-update">Opdatere</button></td>
       </tr>
@@ -97,7 +94,7 @@ function showMembers(member) {
 
   document.querySelector("#members tr:last-child .btn-update").addEventListener("click", (event) => {
     event.stopPropagation();
-    updateClicked(member);
+  openUpdateDialog();
   });
 
   document.querySelector("#members tr:last-child").addEventListener("click", () => kontigentShow(member));
@@ -165,57 +162,34 @@ function showKontigentDialog(member) {
 }
 
 // ------------------ Update ------------------- \\
-updateKontigent();
 
-function updateClicked(member) {
-  console.log("Update Kontigent Button Clicked");
-  const updateForm = document.querySelector("#form-update-kontigent");
-  const dialog = document.querySelector("#dialog-update-kontigent");
 
-  updateForm.name.value = member.name;
-  updateForm.age.value = member.age;
-  updateForm.paid.value = member.paid;
-  updateForm.about.value = member.about;
-  updateForm.gender.value = member.gender;
-  updateForm.membership.value = member.membership;
-  updateForm.activity.value = member.activity;
-  updateForm.disciplin.value = member.disciplin;
-  updateForm.trainer.value = member.trainer;
-  updateForm.image.value = member.image;
+function openUpdateDialog() {
+  const dialog = document.querySelector("#updateDialog");
+  const form = document.querySelector("#updateForm");
+  const newPaidInput = document.querySelector("#newPaid");
 
-  document.querySelector("#form-update-kontigent").setAttribute("data-id", member.id);
-  dialog.showModal();
-
-  dialog.querySelector(".closeButtonKontigent").addEventListener("click", () => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const newPaidValue = newPaidInput.value;
+    const paidCell = document.querySelector("#members tr:last-child .paid");
+    if (paidCell) {
+      paidCell.textContent = newPaidValue;
+    }
     dialog.close();
-    console.log("Update dialog closed");
   });
+
+  dialog.showModal();
 }
 
-async function updateKontigentClicked(event) {
-  event.preventDefault();
-  const form = event.target;
-  const id = event.target.getAttribute("data-id");
 
-  const name = form.name.value;
-  const age = form.age.value;
-  const paid = form.paid.value;
-  const about = form.about.value;
-  const gender = form.gender.value;
-  const membership = form.membership.value;
-  const activity = form.activity.value;
-  const disciplin = form.disciplin.value;
-  const trainer = form.trainer.value;
-  const image = form.image.value;
 
-  const response = await updateKontigent(id, name, age, paid, about, gender, membership, activity, disciplin, trainer, image);
-  if (response.ok) {
-    showUpdateFeedBack("Medlemmets kontigent er blevet opdateret!");
-    updateGrid();
-    updateKontigent(id, name, membership, paid);
-  }
-  document.querySelector("#dialog-update-kontigent").close();
-}
+
+
+
+
+
+
 
 function showUpdateFeedBack(message) {
   const feedbackElement = document.createElement("div");
