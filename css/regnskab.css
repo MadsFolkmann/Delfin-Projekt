@@ -60,7 +60,7 @@ h1 {
 .header {
   text-align: center;
   position: fixed;
-  left: 48%;
+  left: 42%;
 }
 
 /* -----Tilføj Svømmer----- */
@@ -163,6 +163,57 @@ td {
   background-color: #fff;
 }
 
+/* ----------Show dialog---------- */
+
+#kontigent-dialog-show {
+  border-radius: 10px;
+  position: fixed;
+  top: 65%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #ffffff;
+  animation: kontigentDialogAnimation 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#kontigent-dialog-show .logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+#kontigent-dialog-show figure img {
+  width: 125px;
+  height: 125px;
+  border-radius: 10%;
+  position: fixed;
+  left: 60%;
+  top: 30%;
+}
+
+#members-dialog h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+@keyframes kontigentDialogAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
 /* ----------Update---------- */
 
 #update-button {
@@ -263,4 +314,31 @@ td {
 .btn-update:hover {
   background-color: #a0dad5;
   color: #fff;
+}
+
+/* ----------Kontigent Respons---------- */
+
+.kontigent-feedback {
+  position: fixed;
+  top: 15%;
+  left: 53.2%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #f2f2f2, #5100ff);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.kontigent-feedback.fade-out {
+  opacity: 0;
+}
+
+/* ----------Roll down animation tabel---------- */
+.account-table-right {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  max-height: 50px; /* Startværdi for højden af tabellen */
 }

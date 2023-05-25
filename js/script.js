@@ -1,6 +1,6 @@
 "use strict";
 
-export { getSwimmer, prepareSwimmer, deleteSwimmer, updateMember, endpoint, getResults, prepareResult, getCompSwimmer };
+export { getSwimmer, prepareSwimmer, deleteSwimmer, updateMember, endpoint, getResults, prepareResult, getCompSwimmer, updateKontigent };
 
 // window.addEventListener("load", start);
 
@@ -30,11 +30,12 @@ async function deleteSwimmer(id) {
   return response;
 }
 
-async function updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image) {
+async function updateMember(id, name, age, paid, about, gender, membership, activity, disciplin, trainer, image) {
   const updatedMember = {
     name: name,
     age: age,
     about: about,
+    paid: paid,
     gender: gender,
     membership: membership,
     activity: activity,
@@ -73,6 +74,25 @@ async function getCompSwimmer(uid) {
   const response = await fetch(`${endpoint}/member/${uid}.json`);
   const result = await response.json();
   return result;
+}
+
+async function updateKontigent(id, name, age, paid, about, gender, membership, activity, disciplin, trainer, image) {
+  const updatedKontigent = {
+    name: name,
+    age: age,
+    about: about,
+    paid: paid,
+    gender: gender,
+    membership: membership,
+    activity: activity,
+    disciplin: disciplin,
+    trainer: trainer,
+    image: image,
+  };
+  const json = JSON.stringify(updatedKontigent);
+  const response = await fetch(`${endpoint}/member/${id}.json`, { method: "PUT", body: json });
+
+  return response;
 }
 
 // async function getResults(uid) {

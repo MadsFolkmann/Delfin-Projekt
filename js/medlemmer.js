@@ -257,6 +257,7 @@ function updateClicked(member) {
   updateForm.name.value = member.name;
   updateForm.age.value = member.age;
   updateForm.about.value = member.about;
+  updateForm.paid.value = member.paid;
   updateForm.gender.value = member.gender;
   updateForm.membership.value = member.membership;
   updateForm.activity.value = member.activity;
@@ -281,6 +282,7 @@ async function updateMemberClicked(event) {
   const name = form.name.value;
   const age = form.age.value;
   const about = form.about.value;
+  const paid = form.paid.value;
   const gender = form.gender.value;
   const membership = form.membership.value;
   const activity = form.activity.value;
@@ -288,11 +290,11 @@ async function updateMemberClicked(event) {
   const trainer = form.trainer.value;
   const image = form.image.value;
 
-  const response = await updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image);
+  const response = await updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image, paid);
   if (response.ok) {
     showUpdateFeedBack("Medlemmet er blevet opdateret!");
     updateGrid();
-    updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image);
+    updateMember(id, name, age, about, gender, membership, activity, disciplin, trainer, image, paid);
   }
   document.querySelector("#dialog-update-member").close();
 }
