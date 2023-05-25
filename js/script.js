@@ -1,6 +1,6 @@
 "use strict";
 
-export { getSwimmer, prepareSwimmer, deleteSwimmer, updateMember, endpoint, getResults, prepareResult, getCompSwimmer, updateKontigent };
+export { getSwimmer, prepareSwimmer, deleteSwimmer, updateMember, endpoint, getResults, prepareResult, getCompSwimmer };
 
 // window.addEventListener("load", start);
 
@@ -74,33 +74,3 @@ async function getCompSwimmer(uid) {
   return result;
 }
 
-async function updateKontigent(id, name, age, about, gender, membership, activity, disciplin, trainer, image) {
-  const updatedKontigent = {
-    name: name,
-    age: age,
-    about: about,
-    gender: gender,
-    membership: membership,
-    activity: activity,
-    disciplin: disciplin,
-    trainer: trainer,
-    image: image,
-  };
-  const json = JSON.stringify(updatedKontigent);
-  const response = await fetch(`${endpoint}/member/${id}.json`, { method: "PUT", body: json });
-
-  return response;
-}
-
-// async function getResults(uid) {
-//   const response = await fetch(`${endpoint}/results/${uid}.json`);
-//   const result = await response.json();
-//   console.log(result);
-//   return result;
-// }
-// async function getTraining(uid) {
-//   const response = await fetch(`${endpoint}/results/${uid}.json`);
-//   const result = await response.json();
-//   console.log(result);
-//   return result;
-// }
