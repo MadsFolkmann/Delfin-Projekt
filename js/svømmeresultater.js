@@ -259,8 +259,9 @@ function showSwimmerAddedToSelectUpdate(swimmer) {
 
 
 function updateClicked(result) {
+
   const updateForm = document.querySelector("#updateTime");
-  const dialog = document.querySelector("#update-time");
+  const dialog = document.querySelector("#dialog-update-time");
 
   updateForm.date.value = result.date
   updateForm.placement.value = result.placement
@@ -269,7 +270,7 @@ function updateClicked(result) {
 
   console.log(result.swimmer);
   updateForm.setAttribute("data-id", result.id);
-  document.querySelector("#update-time").showModal();
+  document.querySelector("#dialog-update-time").showModal();
 
     dialog.querySelector("#close-update-btn").addEventListener("click", () => {
       dialog.close();

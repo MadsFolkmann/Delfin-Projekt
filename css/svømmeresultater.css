@@ -180,9 +180,9 @@ td::first-letter {
   text-transform: uppercase;
 }
 
-/* -------------Add Time----------------- */
+/* -------------Add/update Time----------------- */
 
-#add-time {
+#add-time, #dialog-update-time {
   position: fixed;
   left: 10%;
   width: 30%;
@@ -194,7 +194,8 @@ td::first-letter {
   opacity: 1;
   animation: dialogOpenAnimation 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-#add-time .logo {
+#add-time .logo,
+#dialog-update-time .logo {
   width: 150px;
   height: auto;
   display: block;
@@ -203,19 +204,23 @@ td::first-letter {
   object-fit: cover;
   border-radius: 50%;
 }
-#add-time form {
+#add-time form,
+#dialog-update-time form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
-#add-time label {
+#add-time label,
+#dialog-update-time label {
   margin-bottom: 10px;
   color: #ffffff;
 }
 
 #add-time input,
-#add-time select {
+#add-time select,
+#dialog-update-time input,
+#dialog-update-time select {
   width: 100%;
   padding: 8px;
   margin-bottom: 15px;
@@ -236,7 +241,8 @@ td::first-letter {
   top: 2%;
 }
 
-#close-add-btn:hover {
+#close-add-btn:hover,
+#close-update-btn:hover {
   background: lightblue;
   color: #fff;
 }
@@ -257,7 +263,8 @@ td::first-letter {
   color: #fff;
 }
 
-#add-time select {
+#add-time select,
+#dialog-update-time select {
   font-size: 16px; 
 }
 
@@ -272,6 +279,105 @@ td::first-letter {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+#dialog-delete-member {
+  width: 26%;
+  height: 20%;
+  position: fixed;
+  left: 10%;
+  top: 1%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #fff;
+  animation: zoomOut 0.3s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* -------------delete---------------- */
+
+#dialog-delete-time {
+  width: 26%;
+  height: 20%;
+  position: fixed;
+  left: 10%;
+  top: 1%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: #fff;
+  animation: zoomOut 0.3s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#dialog-delete-time .logo {
+  width: 85px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 43%;
+  left: 76%;
+}
+
+.btn-cancel-no {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 19%;
+}
+
+.btn-cancel-yes {
+  background: linear-gradient(45deg, #00c6ff, #023b80);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 2%;
+}
+
+.btn-cancel-no:hover {
+  background: lightblue;
+  color: #fff;
+}
+
+.btn-cancel-yes:hover {
+  background: lightblue;
+  color: #fff;
 }
 
 /* -------------Feedback---------------- */
